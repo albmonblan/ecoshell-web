@@ -31,6 +31,14 @@
         </div>
     </header>
 
+    <div class="mobile-nav-overlay" id="mobile-overlay"></div>
+    <nav class="mobile-nav-menu" id="mobile-menu">
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="patrocinadores.html">Patrocinadores</a>
+        <a href="contactanos.html" class="btn-primary-outline">Contacto</a>
+    </nav>
+
     <div class="year-nav-wrapper glass-nav">
         <div class="container">
             <ul class="year-nav">
@@ -400,6 +408,36 @@
             };
             update();
         }
+
+        // LÓGICA DEL MENÚ MÓVIL
+        const toggleBtn = document.querySelector('.mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+        const body = document.body;
+
+        if(toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+                mobileOverlay.classList.toggle('active');
+                // Bloquear scroll al abrir
+                if(mobileMenu.classList.contains('active')) {
+                    body.style.overflow = 'hidden';
+                } else {
+                    body.style.overflow = 'auto';
+                }
+            });
+        }
+
+        if(mobileOverlay) {
+            mobileOverlay.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileOverlay.classList.remove('active');
+                body.style.overflow = 'auto';
+            });
+        }
+
+
+
     </script>
 
 </body>
