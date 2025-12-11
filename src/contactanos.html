@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | UPV Eco-marathon Team</title>
+    <meta name="description" content="Ponte en contacto con el equipo UPV Eco-marathon. Estudiantes, empresas y prensa.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header glass">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html"><img src="assets/img/logo_upv_ecomarathon.png" alt="Logo UPV Eco-Marathon"></a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="historia.html" class="nav-link">Historia</a></li>
+                    <li><a href="patrocinadores.html" class="nav-link">Patrocinadores</a></li>
+                    <li><a href="contactanos.html" class="btn-primary-outline">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-toggle"><i class="fa-solid fa-bars"></i></div>
+        </div>
+    </header>
+
+    <section class="page-hero small-hero">
+        <div class="hero-bg" style="background-image: url('assets/img/contactar.jpg'); filter: grayscale(100%) brightness(30%);"></div>
+        <div class="container relative z-10 text-center">
+            <span class="badge">¿HABLAMOS?</span>
+            <h1 class="title-decor">CONECTA CON EL <span class="text-gradient">FUTURO</span></h1>
+            
+            <div class="hero-desc-box reveal">
+                <p>Ya seas una empresa interesada en patrocinar, un estudiante con ganas de unirse al reto o un medio de comunicación, queremos escucharte. El equipo UPV Eco-marathon está siempre abierto a nuevas oportunidades.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section section-padding relative">
+        <div class="bg-fixed" style="background-image: url('assets/img/future.jpg');filter: grayscale(100%) brightness(50%);"></div>
+
+        <div class="container relative z-10">
+            <div class="contact-grid">
+                
+                <div class="contact-info reveal left">
+                    <h3>¿Tienes alguna duda o propuesta?</h3>
+                    <p class="info-intro">
+                        ¡Gracias por contactarnos! Nos esforzamos al máximo por responder rápidamente, aunque al ser un equipo pequeño compaginando estudios y taller, podríamos demorarnos un poco.
+                    </p>
+
+                    <div class="info-items">
+                        <div class="info-item">
+                            <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h4>Nuestro Taller</h4>
+                                <p>Pabellón Deportivo Georgina Blanes<br>C/ Alarcón, 1, 03801 Alcoy (Alicante)</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <h4>Email Oficial</h4>
+                                <p><a href="mailto:upvecomarathon@upv.edu.es">upvecomarathon@upv.edu.es</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-container">
+                        <iframe src="https://maps.google.com/maps?q=Campus%20de%20Alcoy%20UPV&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+
+                    <div class="backup-link mt-30">
+                        <p class="text-sm text-muted">¿Problemas con el formulario?</p>
+                        <a href="https://forms.gle/oeFr1eyUQM4R5pMW8" target="_blank" class="text-link-yellow">Usar formulario alternativo de Google <i class="fa-solid fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper glass reveal right">
+                    <form action="#" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="apellidos">Apellidos</label>
+                                <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="label-main">Te contactas como...</label>
+                            <div class="radio-group">
+                                <label class="radio-box">
+                                    <input type="radio" name="perfil" value="empresa">
+                                    <span class="radio-custom"></span> Empresa
+                                </label>
+                                <label class="radio-box">
+                                    <input type="radio" name="perfil" value="estudiante">
+                                    <span class="radio-custom"></span> Estudiante
+                                </label>
+                                <label class="radio-box">
+                                    <input type="radio" name="perfil" value="otro">
+                                    <span class="radio-custom"></span> Otro
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary full-width">Enviar Mensaje <i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col brand">
+                    <img src="assets/img/logo_upv.png" alt="Logo" class="footer-logo">
+                    <p><strong>Generación Espontánea UPV</strong><br>Campus de Alcoy</p>
+                </div>
+                <div class="footer-col links">
+                    <h4>Secciones</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="historia.html">Historia</a></li>
+                        <li><a href="patrocinadores.html">Patrocinadores</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact">
+                    <h4>Contacto</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> Pabellón Deportivo Georgina Blanes</p>
+                    <p>C/ Alarcón, 1, 03801 Alcoy (Alicante)</p>
+                    <p><i class="fa-solid fa-envelope"></i> upvecomarathon@upv.edu.es</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 UPV Eco-Marathon Team.</p>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/upvecomarathon/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://es.linkedin.com/company/upv-ecomarathon-team"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        });
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    </script>
+
+</body>
+</html>
