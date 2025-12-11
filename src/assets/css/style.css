@@ -457,3 +457,18 @@ ul { list-style: none; }
     .stat-item h3 { font-size: 2.5rem; }
     .hero h1 { font-size: 2.2rem; }
 }
+
+.year-nav-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 20px;
+    min-width: max-content;
+}
+
+.year-label {
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
