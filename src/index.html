@@ -7,7 +7,8 @@
     <meta name="description" content="Equipo oficial UPV Eco-marathon. Proyecto de Generación Espontánea del Campus de Alcoy.">
     <meta property="og:title" content="UPV Eco-marathon Team">
     <meta property="og:description" content="Ingeniería y eficiencia. Equipo oficial de Generación Espontánea del Campus de Alcoy.">
-    <meta property="og:image" content="https://upvecomarathon.webs.upv.es//assets/img/banter_coche.jpeg"> <meta property="og:url" content="https://upvecomarathon.webs.upv.es/">
+    <meta property="og:image" content="https://upvecomarathon.webs.upv.es//assets/img/banter_coche.jpeg">
+    <meta property="og:url" content="https://upvecomarathon.webs.upv.es/">
     <meta property="og:type" content="website">
 
     <link rel="icon" type="image/png" href="assets/img/logo_upv_ecomarathon.png"> 
@@ -123,11 +124,19 @@
         </div>
     </section>
 
-    <section class="sponsors section-padding relative">
+
+
+    <!-- ████████████████████████████████████ -->
+    <!--   SECCIÓN UNIFICADA: COLABORADORES + CTA   -->
+    <!-- ████████████████████████████████████ -->
+
+    <section class="sponsors-cta-section section-padding relative">
         <div class="bg-fixed" style="background-image: url('assets/img/future.jpg');"></div>
         <div class="overlay-gradient"></div>
 
         <div class="container text-center" style="position: relative; z-index: 2;">
+            
+            <!-- 🔵 Colaboradores -->
             <h2 class="title-decor center">Nuestros <span class="highlight">Colaboradores</span></h2>
             <p class="subtitle max-w-700">El respaldo de empresas líderes e instituciones es el motor que hace rodar este proyecto. Gracias a su apoyo técnico y económico, transformamos ideas universitarias en realidad sobre la pista.</p>
             
@@ -137,25 +146,26 @@
                 <img src="assets/img/patro_textreme.png" alt="Textreme" class="home-sponsor-logo">
                 <img src="assets/img/patro_gurit.png" alt="Gurit" class="home-sponsor-logo">
             </div>
-            
+
             <div class="spacer-large"></div>
-
             <a href="patrocinadores.html" class="btn-secondary">Ver todos los patrocinadores</a>
+
+            <div style="height: 130px;"></div>
+
+            <!-- 🔵 CTA -->
+            <div class="cta-content glass reveal" style="margin: 0 auto; max-width: 650px;">
+                <h2>¿Te unes al equipo?</h2>
+                <p>Si eres estudiante de la UPV y te apasiona el motor y la ingeniería, este es tu sitio.</p>
+                <div class="cta-buttons">
+                    <a href="contactanos.html" class="btn-primary">Soy Estudiante</a>
+                    <a href="contactanos.html" class="btn-white">Contacto Empresas</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <section class="cta-section">
-        <div class="cta-bg" style="background-image: url('assets/img/future.jpg');"></div>
-        <div class="overlay-gradient"></div>
-        <div class="cta-content glass reveal">
-            <h2>¿Te unes al equipo?</h2>
-            <p>Si eres estudiante de la UPV y te apasiona el motor y la ingeniería, este es tu sitio.</p>
-            <div class="cta-buttons">
-                <a href="contactanos.html" class="btn-primary">Soy Estudiante</a>
-                <a href="contactanos.html" class="btn-white">Contacto Empresas</a>
-            </div>
-        </div>
-    </section>
+
 
     <footer class="main-footer">
         <div class="container">
@@ -202,7 +212,7 @@
         });
         document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-        // LÓGICA DEL MENÚ MÓVIL
+        // Menú móvil
         const toggleBtn = document.querySelector('.mobile-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileOverlay = document.getElementById('mobile-overlay');
@@ -212,12 +222,7 @@
             toggleBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('active');
                 mobileOverlay.classList.toggle('active');
-                // Bloquear scroll al abrir
-                if(mobileMenu.classList.contains('active')) {
-                    body.style.overflow = 'hidden';
-                } else {
-                    body.style.overflow = 'auto';
-                }
+                body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
             });
         }
 
@@ -228,9 +233,6 @@
                 body.style.overflow = 'auto';
             });
         }
-
-
-
     </script>
 
 </body>
