@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Contacto | UPV Eco-marathon Team</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="nav_contact">Contacto | UPV Eco-marathon Team</title>
+    
     <meta name="description" content="Ponte en contacto con el equipo UPV Eco-marathon. Estudiantes, empresas y prensa.">
-    <meta property="og:title" content="UPV Eco-marathon Team">
-    <meta property="og:description" content="Ingeniería y eficiencia. Equipo oficial de Generación Espontánea del Campus de Alcoy.">
-    <meta property="og:image" content="https://upvecomarathon.webs.upv.es//assets/img/banter_coche.jpeg"> <meta property="og:url" content="https://upvecomarathon.webs.upv.es/">
+    <meta property="og:title" content="Contacto | UPV Eco-marathon Team">
+    <meta property="og:image" content="assets/img/banter_coche.jpeg">
     <meta property="og:type" content="website">
     
     <link rel="icon" type="image/png" href="assets/img/logo_upv_ecomarathon.png"> 
@@ -16,6 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="assets/js/i18n.js"></script>
 </head>
 <body>
 
@@ -26,32 +28,52 @@
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html" class="nav-link">Inicio</a></li>
-                    <li><a href="historia.html" class="nav-link">Historia</a></li>
-                    <li><a href="patrocinadores.html" class="nav-link">Patrocinadores</a></li>
-                    <li><a href="contactanos.html" class="btn-primary-outline">Contacto</a></li>
+                    <li><a href="index.html" class="nav-link" data-i18n="nav_home">Inicio</a></li>
+                    <li><a href="historia.html" class="nav-link" data-i18n="nav_history">Historia</a></li>
+                    <li><a href="patrocinadores.html" class="nav-link" data-i18n="nav_sponsors">Patrocinadores</a></li>
+                    <li><a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact">Contacto</a></li>
                 </ul>
             </nav>
+            <div class="custom-lang-selector">
+                <button class="lang-btn" id="lang-btn">
+                    <span id="current-flag">🇪🇸</span> <span id="current-lang-code">ES</span> <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="lang-dropdown" id="lang-dropdown">
+                    <div class="lang-option" data-lang="es"><span>🇪🇸</span> Español</div>
+                    <div class="lang-option" data-lang="en"><span>🇬🇧</span> English</div>
+                    <div class="lang-option" data-lang="fr"><span>🇫🇷</span> Français</div>
+                    <div class="lang-option" data-lang="de"><span>🇩🇪</span> Deutsch</div>
+                </div>
+            </div>
             <div class="mobile-toggle"><i class="fa-solid fa-bars"></i></div>
         </div>
     </header>
 
     <div class="mobile-nav-overlay" id="mobile-overlay"></div>
     <nav class="mobile-nav-menu" id="mobile-menu">
-        <a href="index.html">Inicio</a>
-        <a href="historia.html">Historia</a>
-        <a href="patrocinadores.html">Patrocinadores</a>
-        <a href="contactanos.html" class="btn-primary-outline">Contacto</a>
-    </nav>
+        <a href="index.html" data-i18n="nav_home">Inicio</a>
+        <a href="historia.html" data-i18n="nav_history">Historia</a>
+        <a href="patrocinadores.html" data-i18n="nav_sponsors">Patrocinadores</a>
+        <a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact">Contacto</a>
+        
+        <div class="mobile-lang-wrapper">
+            <label data-i18n="menu_lang_label"><i class="fa-solid fa-globe"></i> Idioma / Language</label>
+            <select id="mobile-lang-select" class="mobile-lang-select">
+                <option value="es">🇪🇸 Español</option>
+                <option value="en">🇬🇧 English</option>
+                <option value="fr">🇫🇷 Français</option>
+                <option value="de">🇩🇪 Deutsch</option>
+            </select>
+        </div>
+    </nav>  
 
     <section class="page-hero small-hero">
         <div class="hero-bg" style="background-image: url('assets/img/contactar.jpg'); filter: grayscale(100%) brightness(30%);"></div>
         <div class="container relative z-10 text-center">
-            <span class="badge">¿HABLAMOS?</span>
-            <h1 class="title-decor">CONECTA CON EL <span class="text-gradient">FUTURO</span></h1>
-            
+            <span class="badge" data-i18n="contact_hero_badge">¿HABLAMOS?</span>
+            <h1 class="title-decor" data-i18n="contact_hero_title">CONECTA CON EL <span class="text-gradient">FUTURO</span></h1>
             <div class="hero-desc-box reveal">
-                <p>Ya seas una empresa interesada en patrocinar, un estudiante con ganas de unirse al reto o un medio de comunicación, queremos escucharte. El equipo UPV Eco-marathon está siempre abierto a nuevas oportunidades.</p>
+                <p data-i18n="contact_hero_text">Ya seas una empresa interesada en patrocinar, un estudiante con ganas de unirse al reto o un medio de comunicación, queremos escucharte.</p>
             </div>
         </div>
     </section>
@@ -60,26 +82,84 @@
         <div class="bg-fixed" style="background-image: url('assets/img/future.jpg');filter: grayscale(100%) brightness(50%);"></div>
 
         <div class="container relative z-10">
+            
+            <div class="contact-intro-mobile reveal">
+                <h3 data-i18n="contact_form_title">¿Tienes alguna duda o propuesta?</h3>
+                <p class="info-intro" data-i18n="contact_form_intro">
+                    ¡Gracias por contactarnos! Nos esforzamos al máximo por responder rápidamente.
+                </p>
+            </div>
+
             <div class="contact-grid">
                 
-                <div class="contact-info reveal left">
-                    <h3>¿Tienes alguna duda o propuesta?</h3>
-                    <p class="info-intro">
-                        ¡Gracias por contactarnos! Nos esforzamos al máximo por responder rápidamente, aunque al ser un equipo pequeño compaginando estudios y taller, podríamos demorarnos un poco.
-                    </p>
+                <div class="contact-form-wrapper glass reveal">
+                    <form action="#" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre" data-i18n="form_name">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" data-i18n="form_name" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="apellidos" data-i18n="form_surname">Apellidos</label>
+                                <input type="text" id="apellidos" name="apellidos" data-i18n="form_surname" placeholder="Tus apellidos">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono" data-i18n="form_phone">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono" data-i18n="form_phone" placeholder="+34 600 000 000">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="label-main" data-i18n="form_profile_label">Te contactas como...</label>
+                            <div class="radio-group">
+                                <label class="radio-box">
+                                    <input type="radio" name="perfil" value="empresa">
+                                    <span class="radio-custom"></span> <span data-i18n="form_prof_company">Empresa</span>
+                                </label>
+                                <label class="radio-box">
+                                    <input type="radio" name="perfil" value="estudiante">
+                                    <span class="radio-custom"></span> <span data-i18n="form_prof_student">Estudiante</span>
+                                </label>
+                                <label class="radio-box">
+                                    <input type="radio" name="perfil" value="otro">
+                                    <span class="radio-custom"></span> <span data-i18n="form_prof_other">Otro</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje" data-i18n="form_msg">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" data-i18n="form_msg" placeholder="Mensaje" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary full-width"><span data-i18n="btn_send">Enviar Mensaje</span> <i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+
+                <div class="contact-info reveal">
+                    
+                    <div class="desktop-intro">
+                        <h3 data-i18n="contact_form_title">¿Tienes alguna duda o propuesta?</h3>
+                        <p class="info-intro" data-i18n="contact_form_intro">
+                            ¡Gracias por contactarnos! Nos esforzamos al máximo por responder rápidamente.
+                        </p>
+                    </div>
 
                     <div class="info-items">
                         <div class="info-item">
                             <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
                             <div>
-                                <h4>Nuestro Taller</h4>
+                                <h4 data-i18n="contact_loc_title">Nuestro Taller</h4>
                                 <p>Pabellón Deportivo Georgina Blanes<br>C/ Alarcón, 1, 03801 Alcoy (Alicante)</p>
                             </div>
                         </div>
                         <div class="info-item">
                             <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
                             <div>
-                                <h4>Email Oficial</h4>
+                                <h4 data-i18n="contact_email_title">Email Oficial</h4>
                                 <p><a href="mailto:upvecomarathon@upv.edu.es">upvecomarathon@upv.edu.es</a></p>
                             </div>
                         </div>
@@ -90,60 +170,9 @@
                     </div>
 
                     <div class="backup-link mt-30">
-                        <p class="text-sm text-muted">¿Problemas con el formulario?</p>
-                        <a href="https://forms.gle/oeFr1eyUQM4R5pMW8" target="_blank" class="text-link-yellow">Usar formulario alternativo de Google <i class="fa-solid fa-external-link-alt"></i></a>
+                        <p class="text-sm text-muted" data-i18n="contact_backup">¿Problemas con el formulario?</p>
+                        <a href="https://forms.gle/oeFr1eyUQM4R5pMW8" target="_blank" class="text-link-yellow"><span data-i18n="contact_backup_link">Usar formulario alternativo de Google</span> <i class="fa-solid fa-external-link-alt"></i></a>
                     </div>
-                </div>
-
-                <div class="contact-form-wrapper glass reveal right">
-                    <form action="#" class="contact-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="nombre">Nombre</label>
-                                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="apellidos">Apellidos</label>
-                                <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos">
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="telefono">Teléfono</label>
-                                <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="label-main">Te contactas como...</label>
-                            <div class="radio-group">
-                                <label class="radio-box">
-                                    <input type="radio" name="perfil" value="empresa">
-                                    <span class="radio-custom"></span> Empresa
-                                </label>
-                                <label class="radio-box">
-                                    <input type="radio" name="perfil" value="estudiante">
-                                    <span class="radio-custom"></span> Estudiante
-                                </label>
-                                <label class="radio-box">
-                                    <input type="radio" name="perfil" value="otro">
-                                    <span class="radio-custom"></span> Otro
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn-primary full-width">Enviar Mensaje <i class="fa-solid fa-paper-plane"></i></button>
-                    </form>
                 </div>
 
             </div>
@@ -158,18 +187,18 @@
                         <img src="assets/img/logo_upv.png" alt="Logo UPV" class="footer-logo" style="height: 50px; width: auto;">
                         <img src="assets/img/logo_generacion_espontanea.png" alt="Generación Espontánea" class="footer-logo" style="height: 50px; width: auto;"> 
                     </div>
-                    <p><strong>Generación Espontánea UPV</strong><br>Campus de Alcoy<br>Ingeniería, esfuerzo y equipo.</p>
+                    <p data-i18n="footer_desc"><strong>Generación Espontánea UPV</strong><br>Campus de Alcoy<br>Ingeniería, esfuerzo y equipo.</p>
                 </div>
                 <div class="footer-col links">
-                    <h4>Secciones</h4>
+                    <h4 data-i18n="footer_sections">Secciones</h4>
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="historia.html">Historia</a></li>
-                        <li><a href="patrocinadores.html">Patrocinadores</a></li>
+                        <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+                        <li><a href="historia.html" data-i18n="nav_history">Historia</a></li>
+                        <li><a href="patrocinadores.html" data-i18n="nav_sponsors">Patrocinadores</a></li>
                     </ul>
                 </div>
                 <div class="footer-col contact">
-                    <h4>Contacto</h4>
+                    <h4 data-i18n="nav_contact">Contacto</h4>
                     <p><i class="fa-solid fa-location-dot"></i> Pabellón Deportivo Georgina Blanes</p>
                     <p>C/ Alarcón, 1, 03801 Alcoy (Alicante)</p>
                     <p><i class="fa-solid fa-envelope"></i> upvecomarathon@upv.edu.es</p>
@@ -192,11 +221,10 @@
                     entry.target.classList.add('active');
                 }
             });
-        });
+        }, { threshold: 0.3 });
         document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-
-        // LÓGICA DEL MENÚ MÓVIL
+        // Menú Móvil
         const toggleBtn = document.querySelector('.mobile-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileOverlay = document.getElementById('mobile-overlay');
@@ -206,15 +234,9 @@
             toggleBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('active');
                 mobileOverlay.classList.toggle('active');
-                // Bloquear scroll al abrir
-                if(mobileMenu.classList.contains('active')) {
-                    body.style.overflow = 'hidden';
-                } else {
-                    body.style.overflow = 'auto';
-                }
+                body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
             });
         }
-
         if(mobileOverlay) {
             mobileOverlay.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
@@ -222,10 +244,6 @@
                 body.style.overflow = 'auto';
             });
         }
-
-
-
-
     </script>
 
 </body>

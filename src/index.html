@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>UPV Eco-marathon Team | Generación Espontánea</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="meta_title">UPV Eco-marathon Team | Generación Espontánea</title>
+    
     <meta name="description" content="Equipo oficial UPV Eco-marathon. Proyecto de Generación Espontánea del Campus de Alcoy.">
     <meta property="og:title" content="UPV Eco-marathon Team">
     <meta property="og:description" content="Ingeniería y eficiencia. Equipo oficial de Generación Espontánea del Campus de Alcoy.">
-    <meta property="og:image" content="https://upvecomarathon.webs.upv.es//assets/img/banter_coche.jpeg">
+    <meta property="og:image" content="assets/img/banter_coche.jpeg">
     <meta property="og:url" content="https://upvecomarathon.webs.upv.es/">
     <meta property="og:type" content="website">
 
@@ -17,6 +18,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="assets/js/i18n.js"></script>
 </head>
 <body>
 
@@ -25,25 +28,49 @@
             <div class="logo">
                 <a href="index.html"><img src="assets/img/logo_upv_ecomarathon.png" alt="Logo UPV Eco-Marathon"></a>
             </div>
+            
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html" class="nav-link active">Inicio</a></li>
-                    <li><a href="historia.html" class="nav-link">Historia</a></li>
-                    <li><a href="patrocinadores.html" class="nav-link">Patrocinadores</a></li>
-                    <li><a href="contactanos.html" class="btn-primary-outline">Contacto</a></li>
+                    <li><a href="index.html" class="nav-link active" data-i18n="nav_home">Inicio</a></li>
+                    <li><a href="historia.html" class="nav-link" data-i18n="nav_history">Historia</a></li>
+                    <li><a href="patrocinadores.html" class="nav-link" data-i18n="nav_sponsors">Patrocinadores</a></li>
+                    <li><a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact">Contacto</a></li>
                 </ul>
             </nav>
+
+            <div class="custom-lang-selector">
+                <button class="lang-btn" id="lang-btn">
+                    <span id="current-flag">🇪🇸</span> <span id="current-lang-code">ES</span> <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="lang-dropdown" id="lang-dropdown">
+                    <div class="lang-option" data-lang="es"><span>🇪🇸</span> Español</div>
+                    <div class="lang-option" data-lang="en"><span>🇬🇧</span> English</div>
+                    <div class="lang-option" data-lang="fr"><span>🇫🇷</span> Français</div>
+                    <div class="lang-option" data-lang="de"><span>🇩🇪</span> Deutsch</div>
+                </div>
+            </div>
+
             <div class="mobile-toggle"><i class="fa-solid fa-bars"></i></div>
         </div>
     </header>
 
     <div class="mobile-nav-overlay" id="mobile-overlay"></div>
     <nav class="mobile-nav-menu" id="mobile-menu">
-        <a href="index.html">Inicio</a>
-        <a href="historia.html">Historia</a>
-        <a href="patrocinadores.html">Patrocinadores</a>
-        <a href="contactanos.html" class="btn-primary-outline">Contacto</a>
-    </nav>
+        <a href="index.html" data-i18n="nav_home">Inicio</a>
+        <a href="historia.html" data-i18n="nav_history">Historia</a>
+        <a href="patrocinadores.html" data-i18n="nav_sponsors">Patrocinadores</a>
+        <a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact">Contacto</a>
+        
+        <div class="mobile-lang-wrapper">
+            <label data-i18n="menu_lang_label"><i class="fa-solid fa-globe"></i> Idioma / Language</label>
+            <select id="mobile-lang-select" class="mobile-lang-select">
+                <option value="es">🇪🇸 Español</option>
+                <option value="en">🇬🇧 English</option>
+                <option value="fr">🇫🇷 Français</option>
+                <option value="de">🇩🇪 Deutsch</option>
+            </select>
+        </div>
+    </nav>  
 
     <section class="hero">
         <div class="hero-bg" style="background-image: url('assets/img/banter_coche.jpeg');"></div>
@@ -51,18 +78,18 @@
         
         <div class="container hero-container">
             <div class="hero-text fade-in-up">
-                <span class="badge">PROYECTO GENERACIÓN ESPONTÁNEA • UPV</span>
-                <h1>UPV-<span class="text-gradient">ECOMARATHON</span></h1>
-                <p>Estudiantes del Campus de Alcoy diseñando la movilidad del mañana. <br>Récord del equipo: <strong>1.294 km con 1 litro de etanol.</strong></p>
+                <span class="badge" data-i18n="hero_badge">PROYECTO GENERACIÓN ESPONTÁNEA • UPV</span>
+                <h1 data-i18n="hero_title">UPV-<span class="text-gradient">ECOMARATHON</span></h1>
+                <p data-i18n="hero_subtitle">Estudiantes del Campus de Alcoy diseñando la movilidad del mañana. <br>Récord del equipo: <strong>1.294 km con 1 litro de etanol.</strong></p>
                 <div class="hero-btns">
-                    <a href="#quienes-somos" class="btn-primary">Conoce el equipo</a>
-                    <a href="historia.html" class="btn-text">Ver trayectoria <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#quienes-somos" class="btn-primary" data-i18n="btn_meet">Conoce el equipo</a>
+                    <a href="historia.html" class="btn-text"><span data-i18n="btn_track">Ver trayectoria</span> <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
         
         <div class="scroll-indicator">
-            <span>Desliza</span>
+            <span data-i18n="scroll_text">Desliza</span>
             <div class="line"></div>
         </div>
     </section>
@@ -74,13 +101,13 @@
         <div class="container" style="position: relative; z-index: 2;">
             <div class="grid-2-col">
                 <div class="section-header reveal">
-                    <h2 class="title-decor">Nuestra <span class="highlight">Misión</span></h2>
-                    <p class="lead-text">Más que un equipo de competición, somos un proyecto educativo de alto rendimiento.</p>
+                    <h2 class="title-decor" data-i18n="mission_title">Nuestra <span class="highlight">Misión</span></h2>
+                    <p class="lead-text" data-i18n="mission_lead">Más que un equipo de competición, somos un proyecto educativo de alto rendimiento.</p>
                 </div>
                 <div class="text-content reveal delay-100">
-                    <p>Formamos parte del programa <strong>Generación Espontánea</strong> de la Universitat Politècnica de València (Campus de Alcoy). Nuestro objetivo es aplicar los conocimientos teóricos en un entorno real y exigente.</p>
-                    <p>Competimos en la <strong>Shell Eco-Marathon</strong>, donde el desafío no es la velocidad, sino la eficiencia. Buscamos recorrer la mayor distancia posible con la menor cantidad de energía, innovando año tras año en nuestro prototipo.</p>
-                    <a href="historia.html" class="link-arrow">Descubre nuestra historia <i class="fa-solid fa-arrow-right-long"></i></a>
+                    <p data-i18n="mission_text_1">Formamos parte del programa <strong>Generación Espontánea</strong> de la Universitat Politècnica de València (Campus de Alcoy). Nuestro objetivo es aplicar los conocimientos teóricos en un entorno real y exigente.</p>
+                    <p data-i18n="mission_text_2">Competimos en la <strong>Shell Eco-Marathon</strong>, donde el desafío no es la velocidad, sino la eficiencia. Buscamos recorrer la mayor distancia posible con la menor cantidad de energía, innovando año tras año en nuestro prototipo.</p>
+                    <a href="historia.html" class="link-arrow"><span data-i18n="link_history">Descubre nuestra historia</span> <i class="fa-solid fa-arrow-right-long"></i></a>
                 </div>
             </div>
         </div>
@@ -93,15 +120,18 @@
             <div class="stats-grid-clean">
                 <div class="stat-item reveal">
                     <h3>1.294 <span class="unit">km/l</span></h3>
-                    <p>Récord de Eficiencia</p>
+                    <p data-i18n="stats_record">Récord de Eficiencia</p>
                 </div>
                 <div class="stat-item reveal delay-100">
-                    <h3>1º <span class="unit">Puesto</span></h3>
-                    <p>Turquía (2018)</p>
+                    <h3>
+                        <span data-i18n="stats_rank_1">1º</span> 
+                        <span class="unit" data-i18n="stats_pos_unit">PUESTO</span>
+                    </h3>
+                    <p data-i18n="stats_pos_text">Turquía (2018)</p>
                 </div>
                 <div class="stat-item reveal delay-200">
-                    <h3>+15 <span class="unit">Años</span></h3>
-                    <p>De Innovación</p>
+                    <h3>+15 <span class="unit" data-i18n="stats_years_unit">Años</span></h3>
+                    <p data-i18n="stats_innovation_text">De Innovación</p>
                 </div>
             </div>
         </div>
@@ -112,23 +142,17 @@
         <div class="overlay-gradient"></div>
         <div class="container relative z-10" style="position: relative; z-index: 2;">
             <div class="comp-content reveal">
-                <span class="overline">EL DESAFÍO</span>
-                <h2>Shell Eco-Marathon</h2>
-                <p>Una de las competiciones de ingeniería para estudiantes más reconocidas a nivel global. Equipos de universidades de toda Europa y África se reúnen para poner a prueba sus vehículos en circuitos profesionales.</p>
+                <span class="overline" data-i18n="comp_overline">EL DESAFÍO</span>
+                <h2 data-i18n="comp_title">Shell Eco-Marathon</h2>
+                <p data-i18n="comp_text">Una de las competiciones de ingeniería para estudiantes más reconocidas a nivel global. Equipos de universidades de toda Europa y África se reúnen para poner a prueba sus vehículos en circuitos profesionales.</p>
                 
                 <div class="social-row">
                     <a href="https://www.instagram.com/shell_ecomarathon" target="_blank" class="social-pill"><i class="fa-brands fa-instagram"></i> @shell_ecomarathon</a>
-                    <a href="https://www.shellecomarathon.com/" target="_blank" class="social-pill"><i class="fa-solid fa-globe"></i> Web Oficial</a>
+                    <a href="https://www.shellecomarathon.com/" target="_blank" class="social-pill"><i class="fa-solid fa-globe"></i> <span data-i18n="link_web">Web Oficial</span></a>
                 </div>
             </div>
         </div>
     </section>
-
-
-
-    <!-- ████████████████████████████████████ -->
-    <!--   SECCIÓN UNIFICADA: COLABORADORES + CTA   -->
-    <!-- ████████████████████████████████████ -->
 
     <section class="sponsors-cta-section section-padding relative">
         <div class="bg-fixed" style="background-image: url('assets/img/future.jpg');"></div>
@@ -136,9 +160,8 @@
 
         <div class="container text-center" style="position: relative; z-index: 2;">
             
-            <!-- 🔵 Colaboradores -->
-            <h2 class="title-decor center">Nuestros <span class="highlight">Colaboradores</span></h2>
-            <p class="subtitle max-w-700">El respaldo de empresas líderes e instituciones es el motor que hace rodar este proyecto. Gracias a su apoyo técnico y económico, transformamos ideas universitarias en realidad sobre la pista.</p>
+            <h2 class="title-decor center" data-i18n="sponsors_title">Nuestros <span class="highlight">Colaboradores</span></h2>
+            <p class="subtitle max-w-700" data-i18n="sponsors_text">El respaldo de empresas líderes e instituciones es el motor que hace rodar este proyecto. Gracias a su apoyo técnico y económico, transformamos ideas universitarias en realidad sobre la pista.</p>
             
             <div class="home-sponsors-grid reveal">
                 <img src="assets/img/logo_upv2.png" alt="UPV" class="home-sponsor-logo">
@@ -148,24 +171,21 @@
             </div>
 
             <div class="spacer-large"></div>
-            <a href="patrocinadores.html" class="btn-secondary">Ver todos los patrocinadores</a>
+            <a href="patrocinadores.html" class="btn-secondary" data-i18n="btn_sponsors">Ver todos los patrocinadores</a>
 
             <div style="height: 130px;"></div>
 
-            <!-- 🔵 CTA -->
             <div class="cta-content glass reveal" style="margin: 0 auto; max-width: 650px;">
-                <h2>¿Te unes al equipo?</h2>
-                <p>Si eres estudiante de la UPV y te apasiona el motor y la ingeniería, este es tu sitio.</p>
+                <h2 data-i18n="cta_title">¿Te unes al equipo?</h2>
+                <p data-i18n="cta_text">Si eres estudiante de la UPV y te apasiona el motor y la ingeniería, este es tu sitio.</p>
                 <div class="cta-buttons">
-                    <a href="contactanos.html" class="btn-primary">Soy Estudiante</a>
-                    <a href="contactanos.html" class="btn-white">Contacto Empresas</a>
+                    <a href="contactanos.html" class="btn-primary" data-i18n="btn_student">Soy Estudiante</a>
+                    <a href="contactanos.html" class="btn-white" data-i18n="btn_company">Contacto Empresas</a>
                 </div>
             </div>
 
         </div>
     </section>
-
-
 
     <footer class="main-footer">
         <div class="container">
@@ -175,18 +195,18 @@
                         <img src="assets/img/logo_upv.png" alt="Logo UPV" class="footer-logo" style="height: 50px; width: auto;">
                         <img src="assets/img/logo_generacion_espontanea.png" alt="Generación Espontánea" class="footer-logo" style="height: 50px; width: auto;"> 
                     </div>
-                    <p><strong>Generación Espontánea UPV</strong><br>Campus de Alcoy<br>Ingeniería, esfuerzo y equipo.</p>
+                    <p data-i18n="footer_desc"><strong>Generación Espontánea UPV</strong><br>Campus de Alcoy<br>Ingeniería, esfuerzo y equipo.</p>
                 </div>
                 <div class="footer-col links">
-                    <h4>Secciones</h4>
+                    <h4 data-i18n="footer_sections">Secciones</h4>
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="historia.html">Historia</a></li>
-                        <li><a href="patrocinadores.html">Patrocinadores</a></li>
+                        <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+                        <li><a href="historia.html" data-i18n="nav_history">Historia</a></li>
+                        <li><a href="patrocinadores.html" data-i18n="nav_sponsors">Patrocinadores</a></li>
                     </ul>
                 </div>
                 <div class="footer-col contact">
-                    <h4>Contacto</h4>
+                    <h4 data-i18n="nav_contact">Contacto</h4>
                     <p><i class="fa-solid fa-location-dot"></i> Pabellón Deportivo Georgina Blanes</p>
                     <p>C/ Alarcón, 1, 03801 Alcoy (Alicante)</p>
                     <p><i class="fa-solid fa-envelope"></i> upvecomarathon@upv.edu.es</p>
@@ -197,6 +217,7 @@
                 <div class="footer-socials">
                     <a href="https://www.instagram.com/upvecomarathon/"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://es.linkedin.com/company/upv-ecomarathon-team"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
                 </div>
             </div>
         </div>
@@ -207,12 +228,15 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
+                    if(entry.target.querySelector('#record-counter')) {
+                        animateCounter();
+                    }
                 }
             });
-        });
+        }, { threshold: 0.3 });
         document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-        // Menú móvil
+        // Menú Móvil
         const toggleBtn = document.querySelector('.mobile-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileOverlay = document.getElementById('mobile-overlay');
@@ -222,16 +246,41 @@
             toggleBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('active');
                 mobileOverlay.classList.toggle('active');
-                body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+                if(mobileMenu.classList.contains('active')) {
+                    body.style.overflow = 'hidden';
+                } else {
+                    body.style.overflow = 'auto';
+                }
             });
         }
-
         if(mobileOverlay) {
             mobileOverlay.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
                 mobileOverlay.classList.remove('active');
                 body.style.overflow = 'auto';
             });
+        }
+
+        // Contador
+        let counterPlayed = false;
+        function animateCounter() {
+            if(counterPlayed) return;
+            counterPlayed = true;
+            const counter = document.getElementById('record-counter');
+            const target = 1294;
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+            const update = () => {
+                current += increment;
+                if (current < target) {
+                    counter.innerText = Math.ceil(current).toLocaleString();
+                    requestAnimationFrame(update);
+                } else {
+                    counter.innerText = target.toLocaleString();
+                }
+            };
+            update();
         }
     </script>
 

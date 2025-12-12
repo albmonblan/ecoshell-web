@@ -6,15 +6,14 @@
     <title>Historia | UPV Eco-marathon Team</title>
     <meta name="description" content="Trayectoria del equipo UPV Eco-marathon. Desde 2006 innovando en eficiencia.">
     
-    <link rel="icon" type="image/png" href="assets/img/logo_upv_ecomarathon.png">
-    <meta property="og:title" content="Historia | UPV Eco-marathon Team">
-    <meta property="og:image" content="assets/img/banter_coche.jpeg">
-    
+    <link rel="icon" type="image/png" href="assets/img/logo_upv_ecomarathon.png"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="assets/js/i18n.js"></script>
 </head>
 <body>
 
@@ -23,73 +22,77 @@
             <div class="logo">
                 <a href="index.html"><img src="assets/img/logo_upv_ecomarathon.png" alt="Logo UPV Eco-Marathon"></a>
             </div>
+            
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html" class="nav-link">Inicio</a></li>
-                    <li><a href="historia.html" class="nav-link active">Historia</a></li>
-                    <li><a href="patrocinadores.html" class="nav-link">Patrocinadores</a></li>
-                    <li><a href="contactanos.html" class="btn-primary-outline">Contacto</a></li>
+                    <li><a href="index.html" class="nav-link" data-i18n="nav_home">Inicio</a></li>
+                    <li><a href="historia.html" class="nav-link active" data-i18n="nav_history">Historia</a></li>
+                    <li><a href="patrocinadores.html" class="nav-link" data-i18n="nav_sponsors">Patrocinadores</a></li>
+                    <li><a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact">Contacto</a></li>
                 </ul>
             </nav>
+
+            <div class="custom-lang-selector">
+                <button class="lang-btn" id="lang-btn">
+                    <span id="current-flag">🇪🇸</span> <span id="current-lang-code">ES</span> <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="lang-dropdown" id="lang-dropdown">
+                    <div class="lang-option" data-lang="es"><span>🇪🇸</span> Español</div>
+                    <div class="lang-option" data-lang="en"><span>🇬🇧</span> English</div>
+                    <div class="lang-option" data-lang="fr"><span>🇫🇷</span> Français</div>
+                    <div class="lang-option" data-lang="de"><span>🇩🇪</span> Deutsch</div>
+                </div>
+            </div>
+
             <div class="mobile-toggle"><i class="fa-solid fa-bars"></i></div>
         </div>
     </header>
 
     <div class="mobile-nav-overlay" id="mobile-overlay"></div>
     <nav class="mobile-nav-menu" id="mobile-menu">
-        <a href="index.html">Inicio</a>
-        <a href="historia.html">Historia</a>
-        <a href="patrocinadores.html">Patrocinadores</a>
-        <a href="contactanos.html" class="btn-primary-outline">Contacto</a>
-    </nav>
+        <a href="index.html" data-i18n="nav_home">Inicio</a>
+        <a href="historia.html" data-i18n="nav_history">Historia</a>
+        <a href="patrocinadores.html" data-i18n="nav_sponsors">Patrocinadores</a>
+        <a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact">Contacto</a>
+        
+        <div class="mobile-lang-wrapper">
+            <label data-i18n="menu_lang_label"><i class="fa-solid fa-globe"></i> Idioma / Language</label>
+            <select id="mobile-lang-select" class="mobile-lang-select">
+                <option value="es">🇪🇸 Español</option>
+                <option value="en">🇬🇧 English</option>
+                <option value="fr">🇫🇷 Français</option>
+                <option value="de">🇩🇪 Deutsch</option>
+            </select>
+        </div>
+    </nav>  
 
     <div class="year-nav-wrapper glass-nav">
         <div class="container">
             <div class="year-nav-container">
-                <span class="year-label">TEMPORADA:</span>
+                <span class="year-label" data-i18n="nav_season">TEMPORADA:</span>
                 <ul class="year-nav">
-                    <li><a href="#year-2006">'06</a></li>
-                    <li><a href="#year-2007">'07</a></li>
-                    <li><a href="#year-2008">'08</a></li>
-                    <li><a href="#year-2009">'09</a></li>
-                    <li><a href="#year-2010">'10</a></li>
-                    <li><a href="#year-2011">'11</a></li>
-                    <li><a href="#year-2012">'12</a></li>
-                    <li><a href="#year-2013">'13</a></li>
-                    <li><a href="#year-2014" class="highlight-year-link">'14</a></li>
-                    <li><a href="#year-2015" class="highlight-year-link">'15</a></li>
-                    <li><a href="#year-2016">'16</a></li>
-                    <li><a href="#year-2017">'17</a></li>
-                    <li><a href="#year-2018" class="highlight-year-link">'18</a></li>
-                    <li><a href="#year-2019">'19</a></li>
-                    <li><a href="#year-2020">'20</a></li>
-                    <li><a href="#year-2021">'21</a></li>
-                    <li><a href="#year-2022">'22</a></li>
-                    <li><a href="#year-2023">'23</a></li>
-                    <li><a href="#year-2024">'24</a></li>
-                    <li><a href="#year-2025" class="highlight-year-link">'25</a></li>
-                    <li><a href="#year-2026">'26</a></li>
+                    <li><a href="#year-2006">'06</a></li><li><a href="#year-2007">'07</a></li><li><a href="#year-2008">'08</a></li><li><a href="#year-2009">'09</a></li><li><a href="#year-2010">'10</a></li><li><a href="#year-2011">'11</a></li><li><a href="#year-2012">'12</a></li><li><a href="#year-2013">'13</a></li><li><a href="#year-2014" class="highlight-year-link">'14</a></li><li><a href="#year-2015" class="highlight-year-link">'15</a></li><li><a href="#year-2016">'16</a></li><li><a href="#year-2017">'17</a></li><li><a href="#year-2018" class="highlight-year-link">'18</a></li><li><a href="#year-2019">'19</a></li><li><a href="#year-2020">'20</a></li><li><a href="#year-2021">'21</a></li><li><a href="#year-2022">'22</a></li><li><a href="#year-2023">'23</a></li><li><a href="#year-2024">'24</a></li><li><a href="#year-2025" class="highlight-year-link">'25</a></li><li><a href="#year-2026">'26</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
     <section class="history-hero relative">
-        <div class="hero-bg" style="background-image: url('assets/img/banter_coche.jpeg'); filter: grayscale(100%) brightness(30%);"></div>
+        <div class="hero-bg" style="background-image: url('assets/img/logo_upv_ecomarathon3.png'); filter: grayscale(100%) brightness(30%);"></div>
         <div class="container relative z-10">
             <div class="history-grid align-center">
                 <div class="hero-text-block reveal">
-                    <span class="badge">GENERACIÓN ESPONTÁNEA UPV</span>
-                    <h1 class="title-decor">NUESTRA <span class="text-gradient">HISTORIA</span></h1>
+                    <span class="badge" data-i18n="hero_badge">GENERACIÓN ESPONTÁNEA UPV</span>
+                    <h1 class="title-decor" data-i18n="hist_hero_title">NUESTRA <span class="text-gradient">HISTORIA</span></h1>
                     <div class="academic-text">
-                        <p>Nuestra historia sobre la pista comenzó en 2006. Desde entonces, el vehículo ha evolucionado temporada tras temporada gracias al ingenio de cada generación de estudiantes. Competimos en la <strong>Shell Eco-Marathon</strong> con un objetivo claro: máxima eficiencia.</p>
-                        <p>Entre nuestros hitos: el récord de <strong>1.294 km/l de etanol</strong> y la victoria absoluta en Turquía 2018.</p>
+                        <p data-i18n="hist_hero_text_1">Nuestra historia sobre la pista comenzó en 2006...</p>
+                        <p data-i18n="hist_hero_text_2">Entre nuestros hitos: el récord...</p>
                     </div>
                 </div>
                 
                 <div class="counter-display reveal delay-200">
                     <div class="counter-content">
-                        <span class="counter-label">CONSUMO RÉCORD (ETANOL)</span>
+                        <span class="counter-label" data-i18n="hist_record_label">CONSUMO RÉCORD (ETANOL)</span>
                         <div class="counter-number">
                             <span id="record-counter" data-target="1294">0</span>
                             <span class="unit">Km/L</span>
@@ -99,15 +102,14 @@
                 </div>
             </div>
         </div>
-
         <div class="scroll-indicator">
-            <span>Desliza</span>
+            <span data-i18n="scroll_text">Desliza</span>
             <div class="line"></div>
         </div>
     </section>
 
     <section class="timeline-section relative">
-        <div class="bg-fixed" style="background-image: url('assets/img/future.jpg'); opacity: 0.15;"></div>
+        <div class="bg-fixed" style="background-image: url('assets/img/circuito_vacio.png'); opacity: 0.15;"></div>
         
         <div class="container relative z-10">
             <div class="timeline-line"></div>
@@ -117,8 +119,8 @@
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2006.jpg" alt="2006" onerror="this.style.display='none'"></div>
                     <div class="card-content">
-                        <h3>El comienzo</h3>
-                        <p>Todo comenzó con la ilusión de unos alumnos que inscribieron su proyecto en la European Shell Eco-Marathon. Para hacer realidad esta meta, acudieron a Vicente Colomer en busca de apoyo.</p>
+                        <h3 data-i18n="h_2006_t">El comienzo</h3>
+                        <p data-i18n="h_2006_d">Todo comenzó con la ilusión...</p>
                     </div>
                 </div>
             </div>
@@ -127,10 +129,7 @@
                 <div class="timeline-date">2007</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2007.jpg" alt="2007" onerror="this.style.display='none'"></div>
-                    <div class="card-content">
-                        <h3>Segundo Prototipo</h3>
-                        <p>A pesar de que en aquella edición no hubo categoría de etanol, esto no frenó nuestro trabajo: continuamos con el desarrollo y construimos el segundo prototipo.</p>
-                    </div>
+                    <div class="card-content"><h3 data-i18n="h_2007_t">Segundo Prototipo</h3><p data-i18n="h_2007_d">...</p></div>
                 </div>
             </div>
 
@@ -138,21 +137,15 @@
                 <div class="timeline-date">2008</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2008.jpg" alt="2008" onerror="this.style.display='none'"></div>
-                    <div class="card-content">
-                        <h3>Estreno y Podio</h3>
-                        <p>Primera competición con el nuevo prototipo, se notan las mejoras y conseguimos una 2ª posición en la competición.</p>
-                    </div>
+                    <div class="card-content"><h3 data-i18n="h_2008_t">Estreno y Podio</h3><p data-i18n="h_2008_d">...</p></div>
                 </div>
             </div>
-            
+
             <div id="year-2009" class="timeline-row reveal right">
                 <div class="timeline-date">2009</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2009.jpg" alt="2009" onerror="this.style.display='none'"></div>
-                    <div class="card-content">
-                        <h3>Energía Solar</h3>
-                        <p>Año con varias carreras en el horizonte, pero bien preparados y consiguiendo podios. Se modifica el coche para poder competir en energía solar.</p>
-                    </div>
+                    <div class="card-content"><h3 data-i18n="h_2009_t">Energía Solar</h3><p data-i18n="h_2009_d">...</p></div>
                 </div>
             </div>
 
@@ -160,21 +153,15 @@
                 <div class="timeline-date">2010</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2010.jpg" alt="2010" onerror="this.style.display='none'"></div>
-                    <div class="card-content">
-                        <h3>Aerodinámica</h3>
-                        <p>Tercer prototipo que creamos, empezamos a tener el diseño casi perfecto en aerodinámica y en los siguientes prototipos se usará la misma forma.</p>
-                    </div>
+                    <div class="card-content"><h3 data-i18n="h_2010_t">Aerodinámica</h3><p data-i18n="h_2010_d">...</p></div>
                 </div>
             </div>
-            
-             <div id="year-2011" class="timeline-row reveal right">
+
+            <div id="year-2011" class="timeline-row reveal right">
                 <div class="timeline-date">2011</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2011.jpg" alt="2011" onerror="this.style.display='none'"></div>
-                    <div class="card-content">
-                        <h3>Progresión Imparable</h3>
-                        <p>Primera toma de contacto con el nuevo prototipo, mejoramos las marcas y conseguimos podio. Todo va sobre ruedas.</p>
-                    </div>
+                    <div class="card-content"><h3 data-i18n="h_2011_t">Progresión Imparable</h3><p data-i18n="h_2011_d">...</p></div>
                 </div>
             </div>
 
@@ -182,10 +169,7 @@
                 <div class="timeline-date">2012</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2012.jpg" alt="2012" onerror="this.style.display='none'"></div>
-                    <div class="card-content">
-                        <h3>Dominio Nacional</h3>
-                        <p>Año con varias carreras a la vista, en carreras dentro de España conseguimos el primer puesto.</p>
-                    </div>
+                    <div class="card-content"><h3 data-i18n="h_2012_t">Dominio Nacional</h3><p data-i18n="h_2012_d">...</p></div>
                 </div>
             </div>
 
@@ -193,10 +177,7 @@
                 <div class="timeline-date">2013</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2013.jpg" alt="2013" onerror="this.style.display='none'"></div>
-                    <div class="card-content">
-                        <h3>Rozando el Mil</h3>
-                        <p>Otro año con varias carreras, poco a poco nos acercamos a los 1000km/l, pero este año no será. Primer puesto en la competición celebrada en Valencia.</p>
-                    </div>
+                    <div class="card-content"><h3 data-i18n="h_2013_t">Rozando el Mil</h3><p data-i18n="h_2013_d">...</p></div>
                 </div>
             </div>
 
@@ -204,10 +185,7 @@
                 <div class="timeline-date">2014</div>
                 <div class="timeline-card glass border-accent">
                     <div class="card-image"><img src="assets/img/2014.jpg" alt="2014" onerror="this.style.display='none'"></div>
-                    <div class="card-content">
-                        <h3>Barrera Superada</h3>
-                        <p>Primer año en el que conseguimos superar la barrera de los 1000km/l. Varias competiciones en España, conseguimos primer puesto y el premio al mejor diseño.</p>
-                    </div>
+                    <div class="card-content"><h3 data-i18n="h_2014_t">Barrera Superada</h3><p data-i18n="h_2014_d">...</p></div>
                 </div>
             </div>
 
@@ -215,10 +193,7 @@
                 <div class="timeline-date highlight">2015</div>
                 <div class="timeline-card glass card-record">
                     <div class="card-image"><img src="assets/img/2015.jpg" alt="2015" onerror="this.style.display='none'"></div>
-                    <div class="card-content">
-                        <h3>Récord Histórico</h3>
-                        <p>Volvemos mas fuertes que nunca. 1º en la categoría de etanol, 4º en la clasificación global. Conseguimos nuestro récord que por ahora no se ha vuelto a batir 1294km/l.</p>
-                    </div>
+                    <div class="card-content"><h3 data-i18n="h_2015_t">Récord Histórico</h3><p data-i18n="h_2015_d">...</p></div>
                 </div>
             </div>
 
@@ -226,21 +201,15 @@
                 <div class="timeline-date">2016</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2016.jpg" alt="2016" onerror="this.style.display='none'"></div>
-                    <div class="card-content">
-                        <h3>Desafíos Técnicos</h3>
-                        <p>Dos competiciones a la vista este año, por problemas técnicos no podemos hacer marca en una de ellas y aunque conseguimos arreglarlos no conseguimos buena marca en la siguiente.</p>
-                    </div>
+                    <div class="card-content"><h3 data-i18n="h_2016_t">Desafíos Técnicos</h3><p data-i18n="h_2016_d">...</p></div>
                 </div>
             </div>
-            
+
             <div id="year-2017" class="timeline-row reveal right">
                 <div class="timeline-date">2017</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2017.jpg" alt="2017" onerror="this.style.display='none'"></div>
-                    <div class="card-content">
-                        <h3>Regreso al Podio</h3>
-                        <p>Después del año anterior, damos un gran esfuerzo para tenerlo todo listo y conseguimos la 2ª posición en la categoría de etanol, 12º en la global.</p>
-                    </div>
+                    <div class="card-content"><h3 data-i18n="h_2017_t">Regreso al Podio</h3><p data-i18n="h_2017_d">...</p></div>
                 </div>
             </div>
 
@@ -248,43 +217,31 @@
                 <div class="timeline-date highlight">2018</div>
                 <div class="timeline-card glass border-accent">
                     <div class="card-image"><img src="assets/img/2018.jpg" alt="2018" onerror="this.style.display='none'"></div>
-                    <div class="card-content">
-                        <h3>Victoria en Turquía</h3>
-                        <p>Con dos competiciones a la vista, la internacional donde quedamos 3º en nuestra categoría y 11º en la general y la celebrada en Turquía donde conseguimos el 1º puesto absoluto.</p>
-                    </div>
+                    <div class="card-content"><h3 data-i18n="h_2018_t">Victoria en Turquía</h3><p data-i18n="h_2018_d">...</p></div>
                 </div>
             </div>
-            
+
             <div id="year-2019" class="timeline-row reveal right">
                 <div class="timeline-date">2019</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2019.jpg" alt="2019" onerror="this.style.display='none'"></div>
-                    <div class="card-content">
-                        <h3>Nuevo Monocasco</h3>
-                        <p>Año de estreno del nuevo monocasco manteniendo el diseño anterior, pero mejorando en el peso. Mejoramos la marca con respecto el año anterior.</p>
-                    </div>
+                    <div class="card-content"><h3 data-i18n="h_2019_t">Nuevo Monocasco</h3><p data-i18n="h_2019_d">...</p></div>
                 </div>
             </div>
-            
+
             <div id="year-2020" class="timeline-row reveal left">
                 <div class="timeline-date">2020</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2020.jpg" alt="2020" onerror="this.style.display='none'"></div>
-                    <div class="card-content">
-                        <h3>Pausa Obligada</h3>
-                        <p>Cancelación de la competición por la pandemia. Tampoco pudimos trabajar en el coche.</p>
-                    </div>
+                    <div class="card-content"><h3 data-i18n="h_2020_t">Pausa Obligada</h3><p data-i18n="h_2020_d">...</p></div>
                 </div>
             </div>
-            
+
             <div id="year-2021" class="timeline-row reveal right">
                 <div class="timeline-date">2021</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2021.jpg" alt="2021" onerror="this.style.display='none'"></div>
-                    <div class="card-content">
-                        <h3>Edición Virtual</h3>
-                        <p>Debido a la pandemia se canceló la competición in situ y solamente hubo presentación de los coches online.</p>
-                    </div>
+                    <div class="card-content"><h3 data-i18n="h_2021_t">Edición Virtual</h3><p data-i18n="h_2021_d">...</p></div>
                 </div>
             </div>
 
@@ -292,21 +249,15 @@
                 <div class="timeline-date">2022</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2022.jpg" alt="2022" onerror="this.style.display='none'"></div>
-                    <div class="card-content">
-                        <h3>Clima Adverso</h3>
-                        <p>Año agridulce pues aunque teníamos el coche a punto por las condiciones climatológicas no tuvimos oportunidad de conseguir una marca.</p>
-                    </div>
+                    <div class="card-content"><h3 data-i18n="h_2022_t">Clima Adverso</h3><p data-i18n="h_2022_d">...</p></div>
                 </div>
             </div>
 
-             <div id="year-2023" class="timeline-row reveal right">
+            <div id="year-2023" class="timeline-row reveal right">
                 <div class="timeline-date">2023</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2023.jpg" alt="2023" onerror="this.style.display='none'"></div>
-                    <div class="card-content">
-                        <h3>Espíritu de Equipo</h3>
-                        <p>Debido a fallos mecánicos en los días de la competición no conseguimos hacer una marca.</p>
-                    </div>
+                    <div class="card-content"><h3 data-i18n="h_2023_t">Espíritu de Equipo</h3><p data-i18n="h_2023_d">...</p></div>
                 </div>
             </div>
 
@@ -314,10 +265,7 @@
                 <div class="timeline-date">2024</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2024.jpg" alt="2024" onerror="this.style.display='none'"></div>
-                    <div class="card-content">
-                        <h3>Vuelta a Pista</h3>
-                        <p>Después de varios años sin poder rodar el coche, este año tuvimos la oportunidad de competir en Nogaro, Francia.</p>
-                    </div>
+                    <div class="card-content"><h3 data-i18n="h_2024_t">Vuelta a Pista</h3><p data-i18n="h_2024_d">...</p></div>
                 </div>
             </div>
 
@@ -325,10 +273,7 @@
                 <div class="timeline-date">2025</div>
                 <div class="timeline-card glass border-accent">
                     <div class="card-image"><img src="assets/img/2025.jpg" alt="2025" onerror="this.style.display='none'"></div>
-                    <div class="card-content">
-                        <h3>Éxito en Polonia</h3>
-                        <p>Viajamos a Polonia, al Silesia Ring. Logramos una marca de 727 km/l de etanol, alcanzando la 11ª posición general y siendo el 2º mejor equipo español.</p>
-                    </div>
+                    <div class="card-content"><h3 data-i18n="h_2025_t">Éxito en Polonia</h3><p data-i18n="h_2025_d">...</p></div>
                 </div>
             </div>
 
@@ -337,16 +282,14 @@
                 <div class="timeline-card glass dashed-border">
                     <div class="card-image"><img src="assets/img/future.jpg" alt="Futuro" onerror="this.style.display='none'"></div>
                     <div class="card-content">
-                        <h3 class="text-gradient">El Futuro Promete</h3>
-                        <p>¿Qué nos deparará el futuro? Que el motor marque el ritmo y las ruedas tracen el camino. Estamos listos para devorar kilómetros.</p>
+                        <h3 class="text-gradient" data-i18n="hist_future_title">El Futuro Promete</h3>
+                        <p data-i18n="hist_future_text">¿Qué nos deparará el futuro?...</p>
                     </div>
                 </div>
             </div>
 
             <div class="timeline-continuation">
-                <div class="arrow-icon">
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
+                <div class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></div>
             </div>
 
         </div>
@@ -360,19 +303,20 @@
                         <img src="assets/img/logo_upv.png" alt="Logo UPV" class="footer-logo" style="height: 50px; width: auto;">
                         <img src="assets/img/logo_generacion_espontanea.png" alt="Generación Espontánea" class="footer-logo" style="height: 50px; width: auto;"> 
                     </div>
-                    <p><strong>Generación Espontánea UPV</strong><br>Campus de Alcoy<br>Ingeniería, esfuerzo y equipo.</p>
+                    <p data-i18n="footer_desc"><strong>Generación Espontánea UPV</strong><br>Campus de Alcoy<br>Ingeniería, esfuerzo y equipo.</p>
                 </div>
                 <div class="footer-col links">
-                    <h4>Secciones</h4>
+                    <h4 data-i18n="footer_sections">Secciones</h4>
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="historia.html">Historia</a></li>
-                        <li><a href="patrocinadores.html">Patrocinadores</a></li>
+                        <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+                        <li><a href="historia.html" data-i18n="nav_history">Historia</a></li>
+                        <li><a href="patrocinadores.html" data-i18n="nav_sponsors">Patrocinadores</a></li>
                     </ul>
                 </div>
                 <div class="footer-col contact">
-                    <h4>Contacto</h4>
+                    <h4 data-i18n="nav_contact">Contacto</h4>
                     <p><i class="fa-solid fa-location-dot"></i> Pabellón Deportivo Georgina Blanes</p>
+                    <p>C/ Alarcón, 1, 03801 Alcoy (Alicante)</p>
                     <p><i class="fa-solid fa-envelope"></i> upvecomarathon@upv.edu.es</p>
                 </div>
             </div>
@@ -388,7 +332,6 @@
     </footer>
 
     <script>
-        // Animación Scroll y Menú Móvil
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -399,7 +342,6 @@
                 }
             });
         }, { threshold: 0.3 });
-
         document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
         // Contador
@@ -434,14 +376,9 @@
             toggleBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('active');
                 mobileOverlay.classList.toggle('active');
-                if(mobileMenu.classList.contains('active')) {
-                    body.style.overflow = 'hidden';
-                } else {
-                    body.style.overflow = 'auto';
-                }
+                body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
             });
         }
-
         if(mobileOverlay) {
             mobileOverlay.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
@@ -450,39 +387,61 @@
             });
         }
 
-        // --- NUEVO: SCROLLSPY PARA LA BARRA DE AÑOS ---
-    const yearLinks = document.querySelectorAll('.year-nav a');
-    const yearSections = document.querySelectorAll('.timeline-row');
+        // --- SOLUCIÓN DEL BUG DEL SCROLL: BLOQUEAR EVENTO DURANTE EL CLICK ---
+        const yearLinks = document.querySelectorAll('.year-nav a');
+        const yearSections = document.querySelectorAll('.timeline-row');
+        let isManualScrolling = false; // Bandera para saber si fue un clic
 
-    const yearObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Quitar active de todos
-                yearLinks.forEach(link => link.classList.remove('active'));
-                
-                // Buscar el link que corresponde a esta sección
-                const id = entry.target.getAttribute('id');
-                const activeLink = document.querySelector(`.year-nav a[href="#${id}"]`);
-                
-                if (activeLink) {
-                    activeLink.classList.add('active');
+        const yearObserver = new IntersectionObserver((entries) => {
+            if(isManualScrolling) return; // Si fue clic, no actualizamos nada para evitar saltos
+
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    yearLinks.forEach(link => link.classList.remove('active'));
+                    const id = entry.target.getAttribute('id');
+                    const activeLink = document.querySelector(`.year-nav a[href="#${id}"]`);
                     
-                    // Hacer que la barra de scroll horizontal se mueva sola para mostrar el activo
-                    activeLink.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'nearest',
-                        inline: 'center'
-                    });
+                    if (activeLink) {
+                        activeLink.classList.add('active');
+                        activeLink.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                    }
                 }
-            }
-        });
-    }, { 
-        rootMargin: '-40% 0px -60% 0px' // Esto define la "zona activa" en el centro de la pantalla
-    });
+            });
+        }, { rootMargin: '-40% 0px -60% 0px' });
 
-    yearSections.forEach(section => {
-        yearObserver.observe(section);
-    });
+        yearSections.forEach(section => yearObserver.observe(section));
+
+        // Evento Click en la barra de años (Navegación directa sin freno)
+        yearLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Evitar el salto brusco del ancla por defecto
+                isManualScrolling = true; // Pausamos el espía
+
+                // Poner activo visualmente ya
+                yearLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+
+                if(targetSection) {
+                    // Scroll suave manual
+                    const headerOffset = 180; // Ajuste para que no lo tape el header fijo
+                    const elementPosition = targetSection.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+
+                    // Reactivar el espía después de que termine la animación (aprox 1s)
+                    setTimeout(() => {
+                        isManualScrolling = false;
+                    }, 1000);
+                }
+            });
+        });
 
     </script>
 

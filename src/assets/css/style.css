@@ -472,3 +472,192 @@ ul { list-style: none; }
     font-size: 0.9rem;
     letter-spacing: 1px;
 }
+
+/* --- SELECTOR DE IDIOMA PERSONALIZADO --- */
+.custom-lang-selector {
+    position: relative;
+    margin-left: 20px;
+    padding-left: 20px;
+    border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+.lang-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    color: white;
+    padding: 6px 12px;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.lang-btn:hover {
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: #0f161d;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 10px;
+    min-width: 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    
+    /* Oculto por defecto */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* Mostrar al hacer hover o cuando tenga clase active (por si quieres click) */
+.custom-lang-selector:hover .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-option {
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.2s;
+}
+
+.lang-option:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.lang-option span { font-size: 1.2rem; } /* Tamaño bandera emoji */
+
+@media (max-width: 992px) {
+    .custom-lang-selector {
+        margin-left: auto;
+        margin-right: 60px; /* Separar del menú hamburguesa */
+        border: none;
+    }
+}
+
+/* --- CORRECCIONES CONTACTO MÓVIL --- */
+@media (max-width: 992px) {
+    .contact-grid {
+        display: flex;
+        flex-direction: column-reverse; /* Formulario ARRIBA, Info ABAJO */
+        gap: 60px;
+    }
+    
+    /* Pequeño ajuste para que el texto introductorio de la izq se vea arriba del todo */
+    .contact-info { display: flex; flex-direction: column; }
+    .contact-info h3, .contact-info .info-intro { order: -1; margin-bottom: 20px; } 
+    /* Pero como queremos el formulario PRIMERO, mejor reordenamos el HTML (ver abajo) */
+}
+
+/* --- SELECTOR DE IDIOMA MÓVIL --- */
+.mobile-lang-wrapper {
+    margin-top: auto; /* Empujar al fondo del menú */
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+.mobile-lang-wrapper label {
+    color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px; display: block;
+}
+.mobile-lang-select {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+.mobile-lang-select option { background: #0f161d; color: white; }
+
+/* Ocultar selector de escritorio en móvil */
+@media (max-width: 992px) {
+    .custom-lang-selector { display: none; }
+}
+
+/* --- ARREGLO SCROLL HISTORIA --- */
+/* Scroll suave nativo para toda la página */
+html { scroll-behavior: smooth; }
+
+/* Ajuste del scroll-margin para que el sticky header no tape el título */
+.timeline-row { scroll-margin-top: 180px; }
+
+/* Ocultar intro móvil en PC */
+.contact-intro-mobile-only { display: none; margin-bottom: 30px; text-align: center; }
+.contact-intro-mobile-only h3 { font-size: 2rem; margin-bottom: 15px; color: white; }
+.contact-intro-mobile-only p { color: var(--text-muted); }
+
+@media (max-width: 992px) {
+    .contact-grid { display: flex; flex-direction: column; gap: 40px; }
+    
+    /* Mostrar intro móvil y ocultar la de dentro de la columna izquierda */
+    .contact-intro-mobile-only { display: block; }
+    .desktop-intro { display: none; }
+    
+    /* El orden natural ahora será: Intro -> Formulario -> Info (mapa) */
+}
+
+/* =========================================
+   AJUSTES FINALES DE CONTACTO (REORDENAMIENTO)
+   ========================================= */
+
+/* 1. LAYOUT ESCRITORIO (Defecto) */
+.contact-grid {
+    display: grid;
+    /* INFO a la Izquierda (1fr) | FORM a la Derecha (1.2fr) */
+    grid-template-columns: 1fr 1.2fr; 
+    gap: 80px;
+}
+
+/* Ocultar el título móvil en escritorio */
+.contact-intro-mobile { display: none; }
+/* Mostrar el título de la columna izquierda */
+.desktop-intro { display: block; }
+
+
+/* 2. LAYOUT MÓVIL (max-width: 992px) */
+@media (max-width: 992px) {
+    .contact-grid {
+        display: flex;
+        flex-direction: column; /* Uno debajo de otro */
+        gap: 50px;
+    }
+
+    /* Mostrar título móvil arriba del todo */
+    .contact-intro-mobile { 
+        display: block; 
+        text-align: center; 
+        margin-bottom: 20px;
+    }
+    .contact-intro-mobile h3 { color: white; font-size: 2rem; margin-bottom: 15px; }
+    .contact-intro-mobile p { color: var(--text-muted); font-size: 1.1rem; }
+
+    /* Ocultar título duplicado dentro de la info */
+    .desktop-intro { display: none; }
+
+    /* Orden visual: Formulario ya está antes en el HTML, así que sale primero */
+    .contact-form-wrapper { order: 1; }
+    .contact-info { order: 2; }
+}
