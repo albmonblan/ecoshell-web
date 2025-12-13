@@ -3,41 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="nav_sponsors">Patrocinadores | UPV Eco-marathon Team</title>
+    <title data-i18n="nav_sponsors">Patrocinadores | UPV Eco-Marathon</title>
     
     <meta name="description" content="Nuestros partners. Ingeniería e innovación impulsada por la industria.">
-    <meta property="og:title" content="Patrocinadores | UPV Eco-marathon Team">
+    <meta property="og:title" content="Patrocinadores | UPV Eco-Marathon Team">
     <meta property="og:image" content="assets/img/banter_coche.jpeg">
     <meta property="og:type" content="website">
 
-    <link rel="icon" type="image/png" href="assets/img/logo_upv_ecomarathon.png"> 
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicons/site.webmanifest">
+    <link rel="shortcut icon" href="assets/img/favicons/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <script src="assets/js/i18n.js"></script>
+
+
+    <link rel="preload" as="image" href="assets/img/motor1.jpg">
+
+    <style>
+        .hero-bg-sponsors {
+            background-image: url('assets/img/motor1.jpg'); 
+            filter: grayscale(100%) brightness(25%);
+        }
+        .bg-dark-texture {
+            background-image: url('assets/img/fondo_oscuro.jpg');
+        }
+        .bg-cta-collab {
+            background-image: url('assets/img/socio_colaborar.jpg'); 
+            opacity: 0.2;
+        }
+        .cta-text-container {
+            max-width: 600px; 
+            margin: 0 auto 30px;
+        }
+        .footer-brand-row {
+            display: flex; 
+            gap: 15px; 
+            align-items: center; 
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 <body>
 
     <header class="main-header glass">
         <div class="container header-content">
             <div class="logo">
-                <a href="index.html"><img src="assets/img/logo_upv_ecomarathon.png" alt="Logo UPV Eco-Marathon"></a>
+                <a href="index.html" aria-label="Ir al inicio"><img src="assets/img/logo_upv_ecomarathon.png" alt="Logo UPV Eco-Marathon"></a>
             </div>
             
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html" class="nav-link" data-i18n="nav_home">Inicio</a></li>
-                    <li><a href="historia.html" class="nav-link" data-i18n="nav_history">Historia</a></li>
-                    <li><a href="patrocinadores.html" class="nav-link active" data-i18n="nav_sponsors">Patrocinadores</a></li>
-                    <li><a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact">Contacto</a></li>
+                    <li><a href="index.html" class="nav-link" data-i18n="nav_home" aria-label="Inicio"></a></li>
+                    <li><a href="historia.html" class="nav-link" data-i18n="nav_history" aria-label="Historia"></a></li>
+                    <li><a href="patrocinadores.html" class="nav-link active" data-i18n="nav_sponsors" aria-label="Patrocinadores"></a></li>
+                    <li><a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact" aria-label="Contacto"></a></li>
                 </ul>
             </nav>
 
             <div class="custom-lang-selector">
-                <button class="lang-btn" id="lang-btn">
+                <button class="lang-btn" id="lang-btn" aria-label="Cambiar idioma">
                     <span id="current-flag">🇪🇸</span> <span id="current-lang-code">ES</span> <i class="fa-solid fa-chevron-down"></i>
                 </button>
                 <div class="lang-dropdown" id="lang-dropdown">
@@ -54,14 +86,14 @@
 
     <div class="mobile-nav-overlay" id="mobile-overlay"></div>
     <nav class="mobile-nav-menu" id="mobile-menu">
-        <a href="index.html" data-i18n="nav_home">Inicio</a>
-        <a href="historia.html" data-i18n="nav_history">Historia</a>
-        <a href="patrocinadores.html" data-i18n="nav_sponsors">Patrocinadores</a>
-        <a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact">Contacto</a>
+        <a href="index.html" data-i18n="nav_home" aria-label="Inicio"></a>
+        <a href="historia.html" data-i18n="nav_history" aria-label="Historia"></a>
+        <a href="patrocinadores.html" data-i18n="nav_sponsors" aria-label="Patrocinadores"></a>
+        <a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact" aria-label="Contacto"></a>
         
         <div class="mobile-lang-wrapper">
-            <label data-i18n="menu_lang_label"><i class="fa-solid fa-globe"></i> Idioma / Language</label>
-            <select id="mobile-lang-select" class="mobile-lang-select">
+            <label data-i18n="menu_lang_label"></label>
+            <select id="mobile-lang-select" class="mobile-lang-select" aria-label="Seleccionar idioma">
                 <option value="es">🇪🇸 Español</option>
                 <option value="en">🇬🇧 English</option>
                 <option value="fr">🇫🇷 Français</option>
@@ -71,31 +103,31 @@
     </nav>  
 
     <section class="page-hero compact-hero relative">
-        <div class="hero-bg" style="background-image: url('assets/img/motor1.jpg'); filter: grayscale(100%) brightness(25%);"></div>
+        <div class="hero-bg hero-bg-sponsors"></div>
         <div class="container relative z-10 text-center">
-            <span class="badge" data-i18n="sponsors_hero_badge">NUESTROS PARTNERS</span>
-            <h1 class="title-decor" data-i18n="sponsors_hero_title">EL MOTOR DEL <span class="text-gradient">PROYECTO</span></h1>
+            <span class="badge" data-i18n="sponsors_hero_badge"></span>
+            <h1 class="title-decor" data-i18n="sponsors_hero_title"></h1>
             
             <div class="hero-desc-box reveal">
-                <p data-i18n="sponsors_hero_text">El apoyo de nuestros patrocinadores es el combustible que mueve este equipo.</p>
-                <p class="small-note" data-i18n="sponsors_idea_text"><strong>¿Tienes una idea?</strong> Buscamos empresas que compartan nuestra visión.</p>
+                <p data-i18n="sponsors_hero_text"></p>
+                <p class="small-note" data-i18n="sponsors_idea_text"></p>
             </div>
         </div>
     </section>
 
     <section class="institutions-section section-padding relative">
-        <div class="bg-fixed" style="background-image: url('assets/img/fondo_oscuro.jpg');"></div>
+        <div class="bg-fixed bg-dark-texture"></div>
         
         <div class="container relative z-10">
-            <h2 class="section-title text-center mb-80" data-i18n="sponsors_inst_title">Respaldo <span class="highlight">Institucional</span></h2>
+            <h2 class="section-title text-center mb-80" data-i18n="sponsors_inst_title"></h2>
             
             <div class="institutions-grid reveal">
                 <div class="institution-card">
                     <div class="inst-header"><img src="assets/img/logo_campus_alcoy.jpg" alt="UPV" class="inst-logo"></div>
                     <div class="inst-body">
                         <h3>Universitat Politècnica de València (Campus Alcoy)</h3>
-                        <p data-i18n="upv_desc">El corazón del proyecto. La UPV nos proporciona las instalaciones y el conocimiento.</p>
-                        <a href="https://www.upv.es/" target="_blank" class="text-link"><span data-i18n="btn_visit">Visitar Web</span> <i class="fa-solid fa-arrow-right"></i></a>
+                        <p data-i18n="upv_desc"></p>
+                        <a href="https://www.upv.es/" target="_blank" class="text-link" aria-label="Visitar web UPV"><span data-i18n="btn_visit"></span> <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -103,8 +135,8 @@
                     <div class="inst-header"><img src="assets/img/logo_generacion_espontanea.png" alt="Generación Espontánea" class="inst-logo"></div>
                     <div class="inst-body">
                         <h3>Generación Espontánea</h3>
-                        <p data-i18n="ge_desc">El programa institucional que impulsa las competencias transversales.</p>
-                        <a href="https://generacionespontanea.upv.es/" target="_blank" class="text-link"><span data-i18n="btn_visit">Visitar Web</span> <i class="fa-solid fa-arrow-right"></i></a>
+                        <p data-i18n="ge_desc"></p>
+                        <a href="https://generacionespontanea.upv.es/" target="_blank" class="text-link" aria-label="Visitar web Generación Espontánea"><span data-i18n="btn_visit"></span> <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -112,10 +144,10 @@
     </section>
 
     <section class="tech-sponsors section-padding relative">
-        <div class="bg-fixed" style="background-image: url('assets/img/fondo_oscuro.jpg');"></div>
+        <div class="bg-fixed bg-dark-texture"></div>
         
         <div class="container relative z-10">
-            <h2 class="section-title text-center mb-80" data-i18n="sponsors_tech_title">Partners <span class="highlight">Técnicos</span></h2>
+            <h2 class="section-title text-center mb-80" data-i18n="sponsors_tech_title"></h2>
             
             <div class="clean-grid" id="sponsors-grid">
                 
@@ -126,7 +158,7 @@
                      data-link="https://www.henkel-adhesives.com/"
                      data-insta="https://instagram.com/loctite" 
                      data-linkedin="https://linkedin.com/company/loctite">
-                    <span class="hidden-desc" data-i18n="sp_loctite_desc" style="display:none;"></span>
+                    <span class="hidden-desc" data-i18n="sp_loctite_desc" hidden></span>
                     <img src="assets/img/patro_loctite.png" alt="Loctite">
                 </div>
 
@@ -136,7 +168,7 @@
                      data-logo="assets/img/patro_gurit.png"
                      data-link="https://www.gurit.com/"
                      data-linkedin="https://www.linkedin.com/company/gurit">
-                    <span class="hidden-desc" data-i18n="sp_gurit_desc" style="display:none;"></span>
+                    <span class="hidden-desc" data-i18n="sp_gurit_desc" hidden></span>
                     <img src="assets/img/patro_gurit.png" alt="Gurit">
                 </div>
 
@@ -145,7 +177,7 @@
                      data-name="TeXtreme" 
                      data-logo="assets/img/patro_textreme.png"
                      data-link="https://www.textreme.com/">
-                    <span class="hidden-desc" data-i18n="sp_textreme_desc" style="display:none;"></span>
+                    <span class="hidden-desc" data-i18n="sp_textreme_desc" hidden></span>
                     <img src="assets/img/patro_textreme.png" alt="TeXtreme">
                 </div>
 
@@ -155,7 +187,7 @@
                      data-logo="assets/img/patro_nzihelmets2.png"
                      data-link="https://nzi.es/"
                      data-insta="https://www.instagram.com/nzihelmets/">
-                    <span class="hidden-desc" data-i18n="sp_nzi_desc" style="display:none;"></span>
+                    <span class="hidden-desc" data-i18n="sp_nzi_desc" hidden></span>
                     <img src="assets/img/patro_nzihelmets2.png" alt="NZI" onerror="this.src='assets/img/logo-placeholder.png'">
                 </div>
 
@@ -164,7 +196,7 @@
                      data-name="Cadenas Moblat" 
                      data-logo="assets/img/patro_cadenasmoblat.png"
                      data-link="https://cadenasmoblat.com/">
-                    <span class="hidden-desc" data-i18n="sp_moblat_desc" style="display:none;"></span>
+                    <span class="hidden-desc" data-i18n="sp_moblat_desc" hidden></span>
                     <img src="assets/img/patro_cadenasmoblat.png" alt="Moblat" onerror="this.src='assets/img/logo-placeholder.png'">
                 </div>
 
@@ -173,7 +205,7 @@
                      data-name="Industrias Muvisa" 
                      data-logo="assets/img/patro_muvisa.png"
                      data-link="https://www.industriasmuvisa.com/">
-                    <span class="hidden-desc" data-i18n="sp_muvisa_desc" style="display:none;"></span>
+                    <span class="hidden-desc" data-i18n="sp_muvisa_desc" hidden></span>
                     <img src="assets/img/patro_muvisa.png" alt="Muvisa" onerror="this.src='assets/img/logo-placeholder.png'">
                 </div>
 
@@ -182,7 +214,7 @@
                      data-name="Xuquer" 
                      data-logo="assets/img/patro_xuquer.png"
                      data-link="https://xuquer-sl.es/">
-                    <span class="hidden-desc" data-i18n="sp_xuquer_desc" style="display:none;"></span>
+                    <span class="hidden-desc" data-i18n="sp_xuquer_desc" hidden></span>
                     <img src="assets/img/patro_xuquer.png" alt="Xuquer" onerror="this.src='assets/img/logo-placeholder.png'">
                 </div>
 
@@ -191,7 +223,7 @@
                      data-name="Mecanizados XYZ" 
                      data-logo="assets/img/patro_mecanizados.jpeg"
                      data-link="#">
-                    <span class="hidden-desc" data-i18n="sp_xyz_desc" style="display:none;"></span>
+                    <span class="hidden-desc" data-i18n="sp_xyz_desc" hidden></span>
                     <img src="assets/img/patro_mecanizados.jpeg" alt="XYZ" onerror="this.src='assets/img/logo-placeholder.png'">
                 </div>
 
@@ -201,7 +233,7 @@
                      data-logo="assets/img/patro_3dconnexion.png"
                      data-link="https://3dconnexion.com/"
                      data-linkedin="https://www.linkedin.com/company/3dconnexion">
-                    <span class="hidden-desc" data-i18n="sp_3d_desc" style="display:none;"></span>
+                    <span class="hidden-desc" data-i18n="sp_3d_desc" hidden></span>
                     <img src="assets/img/patro_3dconnexion.png" alt="3Dconnexion" onerror="this.src='assets/img/logo-placeholder.png'">
                 </div>
 
@@ -211,8 +243,8 @@
 
     <div id="sponsor-modal" class="modal-overlay">
         <div class="modal-content glass">
-            <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
-            <button class="modal-nav prev"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="modal-close" aria-label="Cerrar modal"><i class="fa-solid fa-xmark"></i></button>
+            <button class="modal-nav prev" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
             
             <div class="modal-body">
                 <div class="modal-logo-container">
@@ -223,23 +255,23 @@
                 <p id="modal-desc">Descripción detallada...</p>
                 
                 <div class="modal-socials">
-                    <a href="#" target="_blank" id="modal-insta" class="social-link"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" target="_blank" id="modal-linkedin" class="social-link"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" target="_blank" id="modal-insta" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" target="_blank" id="modal-linkedin" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
 
-                <a id="modal-link" href="#" target="_blank" class="btn-primary-outline"><span data-i18n="btn_visit">Visitar Web Oficial</span></a>
+                <a id="modal-link" href="#" target="_blank" class="btn-primary-outline" aria-label="Visitar Web"><span data-i18n="btn_visit"></span></a>
             </div>
 
-            <button class="modal-nav next"><i class="fa-solid fa-chevron-right"></i></button>
+            <button class="modal-nav next" aria-label="Siguiente"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
     </div>
 
     <section class="sponsor-cta relative">
-        <div class="cta-bg" style="background-image: url('assets/img/socio_colaborar.jpg'); opacity: 0.2;"></div>
+        <div class="cta-bg bg-cta-collab"></div>
         <div class="container text-center relative z-10">
-            <h2 class="title-decor" data-i18n="cta_title">¿Te unes al equipo?</h2>
-            <p style="max-width: 600px; margin: 0 auto 30px;" data-i18n="cta_text">Asocia tu marca a la innovación, la sostenibilidad y el talento universitario.</p>
-            <a href="contactanos.html" class="btn-primary" data-i18n="btn_company">Contactar con el equipo</a>
+            <h2 class="title-decor" data-i18n="cta_title"></h2>
+            <!--<p class="cta-text-container" data-i18n="cta_text"></p>-->
+            <a href="contactanos.html" class="btn-primary" data-i18n="btn_company" aria-label="Contactar"></a>
         </div>
     </section>
 
@@ -247,129 +279,50 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-col brand">
-                    <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 15px;">
-                        <img src="assets/img/logo_upv.png" alt="Logo UPV" class="footer-logo" style="height: 50px; width: auto;">
-                        <img src="assets/img/logo_generacion_espontanea.png" alt="Generación Espontánea" class="footer-logo" style="height: 50px; width: auto;"> 
+                    <div class="footer-brand-row">
+                        <a href="https://www.upv.es/" target="_blank" rel="noopener noreferrer" aria-label="Visitar web de la UPV">
+                            <img src="assets/img/logo_upv.png" alt="Logo UPV" class="footer-logo">
+                        </a>
+
+                        <a href="https://generacionespontanea.upv.es/" target="_blank" rel="noopener noreferrer" aria-label="Visitar web de Generación Espontánea">
+                            <img src="assets/img/logo_generacion_espontanea_sinfondo.png" alt="Generación Espontánea" class="footer-logo"> 
+                        </a>
                     </div>
-                    <p data-i18n="footer_desc"><strong>Generación Espontánea UPV</strong><br>Campus de Alcoy<br>Ingeniería, esfuerzo y equipo.</p>
+                    <p data-i18n="footer_desc"></p>
                 </div>
                 <div class="footer-col links">
-                    <h4 data-i18n="footer_sections">Secciones</h4>
+                    <h4 data-i18n="footer_sections"></h4>
                     <ul>
-                        <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
-                        <li><a href="historia.html" data-i18n="nav_history">Historia</a></li>
-                        <li><a href="patrocinadores.html" data-i18n="nav_sponsors">Patrocinadores</a></li>
+                        <li><a href="index.html" data-i18n="nav_home" aria-label="Inicio"></a></li>
+                        <li><a href="historia.html" data-i18n="nav_history" aria-label="Historia"></a></li>
+                        <li><a href="patrocinadores.html" data-i18n="nav_sponsors" aria-label="Patrocinadores"></a></li>
                     </ul>
                 </div>
                 <div class="footer-col contact">
-                    <h4 data-i18n="nav_contact">Contacto</h4>
+                    <h4 data-i18n="nav_contact"></h4>
                     <p><i class="fa-solid fa-location-dot"></i> Pabellón Deportivo Georgina Blanes</p>
                     <p>C/ Alarcón, 1, 03801 Alcoy (Alicante)</p>
-                    <p><i class="fa-solid fa-envelope"></i> upvecomarathon@upv.edu.es</p>
+                    <p><i class="fa-solid fa-envelope"></i> ecomarathon@upv.es</p>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 UPV Eco-Marathon Team.</p>
                 <div class="footer-socials">
-                    <a href="https://www.instagram.com/upvecomarathon/"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://es.linkedin.com/company/upv-ecomarathon-team"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/upvecomarathon/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/upvecomarathon/" aria-label="Facebook"<i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://es.linkedin.com/company/upv-ecomarathon-team" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    
                 </div>
             </div>
         </div>
     </footer>
 
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        });
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    <<script src="assets/js/i18n.js"></script> 
 
-        // --- LÓGICA DEL MODAL DE PATROCINADORES ---
-        const modal = document.getElementById('sponsor-modal');
-        const modalLogo = document.getElementById('modal-logo');
-        const modalTitle = document.getElementById('modal-title');
-        const modalDesc = document.getElementById('modal-desc');
-        const modalLink = document.getElementById('modal-link');
-        const modalInsta = document.getElementById('modal-insta');
-        const modalLinkedin = document.getElementById('modal-linkedin');
-        const triggers = document.querySelectorAll('.sponsor-trigger');
-        let currentIndex = 0;
+<script src="assets/js/main.js" defer></script> 
 
-        function openModal(index) {
-            const item = document.querySelector(`.sponsor-trigger[data-index="${index}"]`);
-            if(!item) return;
-
-            currentIndex = index;
-            modalLogo.src = item.getAttribute('data-logo');
-            modalTitle.innerText = item.getAttribute('data-name');
-            
-            // TRUCO I18N
-            modalDesc.innerHTML = item.querySelector('.hidden-desc').innerHTML; 
-            
-            modalLink.href = item.getAttribute('data-link');
-
-            const insta = item.getAttribute('data-insta');
-            const linkedin = item.getAttribute('data-linkedin');
-
-            modalInsta.style.display = insta ? 'inline-flex' : 'none';
-            if(insta) modalInsta.href = insta;
-
-            modalLinkedin.style.display = linkedin ? 'inline-flex' : 'none';
-            if(linkedin) modalLinkedin.href = linkedin;
-
-            modal.classList.add('active');
-        }
-
-        triggers.forEach((item, index) => {
-            item.setAttribute('data-index', index);
-            item.addEventListener('click', () => openModal(index));
-        });
-
-        document.querySelector('.modal-nav.prev').addEventListener('click', () => {
-            let newIndex = currentIndex - 1;
-            if(newIndex < 0) newIndex = triggers.length - 1;
-            openModal(newIndex);
-        });
-
-        document.querySelector('.modal-nav.next').addEventListener('click', () => {
-            let newIndex = currentIndex + 1;
-            if(newIndex >= triggers.length) newIndex = 0;
-            openModal(newIndex);
-        });
-
-        document.querySelector('.modal-close').addEventListener('click', () => modal.classList.remove('active'));
-        modal.addEventListener('click', (e) => { if(e.target === modal) modal.classList.remove('active'); });
-
-        // LÓGICA DEL MENÚ MÓVIL (Igual a la de Historia)
-        const toggleBtn = document.querySelector('.mobile-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileOverlay = document.getElementById('mobile-overlay');
-        const body = document.body;
-
-        if(toggleBtn) {
-            toggleBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('active');
-                mobileOverlay.classList.toggle('active');
-                if(mobileMenu.classList.contains('active')) {
-                    body.style.overflow = 'hidden';
-                } else {
-                    body.style.overflow = 'auto';
-                }
-            });
-        }
-
-        if(mobileOverlay) {
-            mobileOverlay.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                mobileOverlay.classList.remove('active');
-                body.style.overflow = 'auto';
-            });
-        }
-    </script>
+</body>
+</html>
 
 </body>
 </html>

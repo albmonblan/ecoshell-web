@@ -5,8 +5,8 @@
     "nav_contact": "Contact",
     
     "hero_badge": "PROJET GENERACIÓN ESPONTÁNEA • UPV",
-    "hero_title": "UPV <span class='text-gradient'>ECOMARATHON</span>",
-    "hero_subtitle": "Étudiants du campus d'Alcoy concevant la mobilité de demain.<br>Record de l'équipe : <strong>1 294 km avec 1 litre d'éthanol.</strong>",
+    "hero_title": "UPV <span class='text-gradient'>ECO-MARATHON</span>",
+    "hero_subtitle": "Étudiants du UPV concevant la mobilité de demain.",
     "btn_meet": "Rencontrer l'équipe",
     "btn_track": "Voir la trajectoire",
     "scroll_text": "Défiler",
@@ -37,7 +37,7 @@
     "cta_title": "Rejoindre l'équipe ?",
     "cta_text": "Si vous êtes étudiant à l'UPV et passionné par les moteurs et l'ingénierie, c'est votre place.",
     "btn_student": "Je suis Étudiant",
-    "btn_company": "Contact Entreprises",
+    "btn_company": "Contact",
     
     "footer_desc": "<strong>Generación Espontánea UPV</strong><br>Campus d'Alcoy<br>Ingénierie, effort et équipe.",
     "footer_sections": "Sections",

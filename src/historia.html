@@ -3,37 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historia | UPV Eco-marathon Team</title>
-    <meta name="description" content="Trayectoria del equipo UPV Eco-marathon. Desde 2006 innovando en eficiencia.">
+    <title data-i18n="nav_history">Historia | UPV Eco-Marathon</title>
     
-    <link rel="icon" type="image/png" href="assets/img/logo_upv_ecomarathon.png"> 
+    <meta name="description" content="Trayectoria del equipo UPV Eco-Marathon. Desde 2006 innovando en eficiencia.">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicons/site.webmanifest">
+    <link rel="shortcut icon" href="assets/img/favicons/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <script src="assets/js/i18n.js"></script>
+
+    <link rel="preload" as="image" href="assets/img/logo_upv_ecomarathon3.png">
+
+    <style>
+        .history-bg-image {
+            background-image: url('assets/img/logo_upv_ecomarathon3.png');
+            filter: grayscale(100%) brightness(30%);
+        }
+        .timeline-bg-image {
+            background-image: url('assets/img/circuito_vacio.png');
+            opacity: 0.15;
+        }
+        .footer-brand-row {
+            display: flex; 
+            gap: 15px; 
+            align-items: center; 
+            margin-bottom: 15px;
+        }
+        /* Clase para evitar scroll en el body cuando el menú móvil está abierto */
+        .no-scroll {
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
 
     <header class="main-header glass">
         <div class="container header-content">
             <div class="logo">
-                <a href="index.html"><img src="assets/img/logo_upv_ecomarathon.png" alt="Logo UPV Eco-Marathon"></a>
+                <a href="index.html" aria-label="Ir al inicio"><img src="assets/img/logo_upv_ecomarathon.png" alt="Logo UPV Eco-Marathon"></a>
             </div>
             
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html" class="nav-link" data-i18n="nav_home">Inicio</a></li>
-                    <li><a href="historia.html" class="nav-link active" data-i18n="nav_history">Historia</a></li>
-                    <li><a href="patrocinadores.html" class="nav-link" data-i18n="nav_sponsors">Patrocinadores</a></li>
-                    <li><a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact">Contacto</a></li>
+                    <li><a href="index.html" class="nav-link" data-i18n="nav_home" aria-label="Inicio"></a></li>
+                    <li><a href="historia.html" class="nav-link active" data-i18n="nav_history" aria-label="Historia"></a></li>
+                    <li><a href="patrocinadores.html" class="nav-link" data-i18n="nav_sponsors" aria-label="Patrocinadores"></a></li>
+                    <li><a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact" aria-label="Contacto"></a></li>
                 </ul>
             </nav>
 
             <div class="custom-lang-selector">
-                <button class="lang-btn" id="lang-btn">
+                <button class="lang-btn" id="lang-btn" aria-label="Cambiar idioma">
                     <span id="current-flag">🇪🇸</span> <span id="current-lang-code">ES</span> <i class="fa-solid fa-chevron-down"></i>
                 </button>
                 <div class="lang-dropdown" id="lang-dropdown">
@@ -50,14 +79,14 @@
 
     <div class="mobile-nav-overlay" id="mobile-overlay"></div>
     <nav class="mobile-nav-menu" id="mobile-menu">
-        <a href="index.html" data-i18n="nav_home">Inicio</a>
-        <a href="historia.html" data-i18n="nav_history">Historia</a>
-        <a href="patrocinadores.html" data-i18n="nav_sponsors">Patrocinadores</a>
-        <a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact">Contacto</a>
+        <a href="index.html" data-i18n="nav_home" aria-label="Inicio"></a>
+        <a href="historia.html" data-i18n="nav_history" aria-label="Historia"></a>
+        <a href="patrocinadores.html" data-i18n="nav_sponsors" aria-label="Patrocinadores"></a>
+        <a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact" aria-label="Contacto"></a>
         
         <div class="mobile-lang-wrapper">
-            <label data-i18n="menu_lang_label"><i class="fa-solid fa-globe"></i> Idioma / Language</label>
-            <select id="mobile-lang-select" class="mobile-lang-select">
+            <label data-i18n="menu_lang_label"></label>
+            <select id="mobile-lang-select" class="mobile-lang-select" aria-label="Seleccionar idioma">
                 <option value="es">🇪🇸 Español</option>
                 <option value="en">🇬🇧 English</option>
                 <option value="fr">🇫🇷 Français</option>
@@ -69,30 +98,52 @@
     <div class="year-nav-wrapper glass-nav">
         <div class="container">
             <div class="year-nav-container">
-                <span class="year-label" data-i18n="nav_season">TEMPORADA:</span>
+                <span class="year-label" data-i18n="nav_season"></span>
                 <ul class="year-nav">
-                    <li><a href="#year-2006">'06</a></li><li><a href="#year-2007">'07</a></li><li><a href="#year-2008">'08</a></li><li><a href="#year-2009">'09</a></li><li><a href="#year-2010">'10</a></li><li><a href="#year-2011">'11</a></li><li><a href="#year-2012">'12</a></li><li><a href="#year-2013">'13</a></li><li><a href="#year-2014" class="highlight-year-link">'14</a></li><li><a href="#year-2015" class="highlight-year-link">'15</a></li><li><a href="#year-2016">'16</a></li><li><a href="#year-2017">'17</a></li><li><a href="#year-2018" class="highlight-year-link">'18</a></li><li><a href="#year-2019">'19</a></li><li><a href="#year-2020">'20</a></li><li><a href="#year-2021">'21</a></li><li><a href="#year-2022">'22</a></li><li><a href="#year-2023">'23</a></li><li><a href="#year-2024">'24</a></li><li><a href="#year-2025" class="highlight-year-link">'25</a></li><li><a href="#year-2026">'26</a></li>
+                    <li><a href="#year-2006" aria-label="Año 2006">'06</a></li>
+                    <li><a href="#year-2007" aria-label="Año 2007">'07</a></li>
+                    <li><a href="#year-2008" aria-label="Año 2008">'08</a></li>
+                    <li><a href="#year-2009" aria-label="Año 2009">'09</a></li>
+                    <li><a href="#year-2010" aria-label="Año 2010">'10</a></li>
+                    <li><a href="#year-2011" aria-label="Año 2011">'11</a></li>
+                    <li><a href="#year-2012" aria-label="Año 2012">'12</a></li>
+                    <li><a href="#year-2013" aria-label="Año 2013">'13</a></li>
+                    <li><a href="#year-2014" class="highlight-year-link" aria-label="Año 2014">'14</a></li>
+                    <li><a href="#year-2015" class="highlight-year-link" aria-label="Año 2015">'15</a></li>
+                    <li><a href="#year-2016" aria-label="Año 2016">'16</a></li>
+                    <li><a href="#year-2017" aria-label="Año 2017">'17</a></li>
+                    <li><a href="#year-2018" class="highlight-year-link" aria-label="Año 2018">'18</a></li>
+                    <li><a href="#year-2019" aria-label="Año 2019">'19</a></li>
+                    <li><a href="#year-2020" aria-label="Año 2020">'20</a></li>
+                    <li><a href="#year-2021" aria-label="Año 2021">'21</a></li>
+                    <li><a href="#year-2022" aria-label="Año 2022">'22</a></li>
+                    <li><a href="#year-2023" aria-label="Año 2023">'23</a></li>
+                    <li><a href="#year-2024" aria-label="Año 2024">'24</a></li>
+                    <li><a href="#year-2025" class="highlight-year-link" aria-label="Año 2025">'25</a></li>
+                    <li><a href="#year-2026" aria-label="Año 2026">'26</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
     <section class="history-hero relative">
-        <div class="hero-bg" style="background-image: url('assets/img/logo_upv_ecomarathon3.png'); filter: grayscale(100%) brightness(30%);"></div>
+        <div class="hero-bg history-bg-image"></div>
         <div class="container relative z-10">
             <div class="history-grid align-center">
                 <div class="hero-text-block reveal">
-                    <span class="badge" data-i18n="hero_badge">GENERACIÓN ESPONTÁNEA UPV</span>
-                    <h1 class="title-decor" data-i18n="hist_hero_title">NUESTRA <span class="text-gradient">HISTORIA</span></h1>
+                    <span class="badge" data-i18n="hero_badge"></span>
+                    <h1 class="title-decor" data-i18n="hist_hero_title"></h1>
+                    <p data-i18n="hist_hero_text_2"></p>
+                    <p data-i18n="hist_hero_text_1"></p>
                     <div class="academic-text">
-                        <p data-i18n="hist_hero_text_1">Nuestra historia sobre la pista comenzó en 2006...</p>
-                        <p data-i18n="hist_hero_text_2">Entre nuestros hitos: el récord...</p>
+                        <!--<p data-i18n="hist_hero_text_1"></p>
+                        <p data-i18n="hist_hero_text_2"></p>-->
                     </div>
                 </div>
                 
                 <div class="counter-display reveal delay-200">
                     <div class="counter-content">
-                        <span class="counter-label" data-i18n="hist_record_label">CONSUMO RÉCORD (ETANOL)</span>
+                        <span class="counter-label" data-i18n="hist_record_label"></span>
                         <div class="counter-number">
                             <span id="record-counter" data-target="1294">0</span>
                             <span class="unit">Km/L</span>
@@ -103,13 +154,13 @@
             </div>
         </div>
         <div class="scroll-indicator">
-            <span data-i18n="scroll_text">Desliza</span>
+            <!--<<span data-i18n="scroll_text"></span>-->
             <div class="line"></div>
         </div>
     </section>
 
     <section class="timeline-section relative">
-        <div class="bg-fixed" style="background-image: url('assets/img/circuito_vacio.png'); opacity: 0.15;"></div>
+        <div class="bg-fixed timeline-bg-image"></div>
         
         <div class="container relative z-10">
             <div class="timeline-line"></div>
@@ -119,8 +170,8 @@
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2006.jpg" alt="2006" onerror="this.style.display='none'"></div>
                     <div class="card-content">
-                        <h3 data-i18n="h_2006_t">El comienzo</h3>
-                        <p data-i18n="h_2006_d">Todo comenzó con la ilusión...</p>
+                        <h3 data-i18n="h_2006_t"></h3>
+                        <p data-i18n="h_2006_d"></p>
                     </div>
                 </div>
             </div>
@@ -129,7 +180,7 @@
                 <div class="timeline-date">2007</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2007.jpg" alt="2007" onerror="this.style.display='none'"></div>
-                    <div class="card-content"><h3 data-i18n="h_2007_t">Segundo Prototipo</h3><p data-i18n="h_2007_d">...</p></div>
+                    <div class="card-content"><h3 data-i18n="h_2007_t"></h3><p data-i18n="h_2007_d"></p></div>
                 </div>
             </div>
 
@@ -137,7 +188,7 @@
                 <div class="timeline-date">2008</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2008.jpg" alt="2008" onerror="this.style.display='none'"></div>
-                    <div class="card-content"><h3 data-i18n="h_2008_t">Estreno y Podio</h3><p data-i18n="h_2008_d">...</p></div>
+                    <div class="card-content"><h3 data-i18n="h_2008_t"></h3><p data-i18n="h_2008_d"></p></div>
                 </div>
             </div>
 
@@ -145,7 +196,7 @@
                 <div class="timeline-date">2009</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2009.jpg" alt="2009" onerror="this.style.display='none'"></div>
-                    <div class="card-content"><h3 data-i18n="h_2009_t">Energía Solar</h3><p data-i18n="h_2009_d">...</p></div>
+                    <div class="card-content"><h3 data-i18n="h_2009_t"></h3><p data-i18n="h_2009_d"></p></div>
                 </div>
             </div>
 
@@ -153,7 +204,7 @@
                 <div class="timeline-date">2010</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2010.jpg" alt="2010" onerror="this.style.display='none'"></div>
-                    <div class="card-content"><h3 data-i18n="h_2010_t">Aerodinámica</h3><p data-i18n="h_2010_d">...</p></div>
+                    <div class="card-content"><h3 data-i18n="h_2010_t"></h3><p data-i18n="h_2010_d"></p></div>
                 </div>
             </div>
 
@@ -161,7 +212,7 @@
                 <div class="timeline-date">2011</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2011.jpg" alt="2011" onerror="this.style.display='none'"></div>
-                    <div class="card-content"><h3 data-i18n="h_2011_t">Progresión Imparable</h3><p data-i18n="h_2011_d">...</p></div>
+                    <div class="card-content"><h3 data-i18n="h_2011_t"></h3><p data-i18n="h_2011_d"></p></div>
                 </div>
             </div>
 
@@ -169,7 +220,7 @@
                 <div class="timeline-date">2012</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2012.jpg" alt="2012" onerror="this.style.display='none'"></div>
-                    <div class="card-content"><h3 data-i18n="h_2012_t">Dominio Nacional</h3><p data-i18n="h_2012_d">...</p></div>
+                    <div class="card-content"><h3 data-i18n="h_2012_t"></h3><p data-i18n="h_2012_d"></p></div>
                 </div>
             </div>
 
@@ -177,7 +228,7 @@
                 <div class="timeline-date">2013</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2013.jpg" alt="2013" onerror="this.style.display='none'"></div>
-                    <div class="card-content"><h3 data-i18n="h_2013_t">Rozando el Mil</h3><p data-i18n="h_2013_d">...</p></div>
+                    <div class="card-content"><h3 data-i18n="h_2013_t"></h3><p data-i18n="h_2013_d"></p></div>
                 </div>
             </div>
 
@@ -185,7 +236,7 @@
                 <div class="timeline-date">2014</div>
                 <div class="timeline-card glass border-accent">
                     <div class="card-image"><img src="assets/img/2014.jpg" alt="2014" onerror="this.style.display='none'"></div>
-                    <div class="card-content"><h3 data-i18n="h_2014_t">Barrera Superada</h3><p data-i18n="h_2014_d">...</p></div>
+                    <div class="card-content"><h3 data-i18n="h_2014_t"></h3><p data-i18n="h_2014_d"></p></div>
                 </div>
             </div>
 
@@ -193,7 +244,7 @@
                 <div class="timeline-date highlight">2015</div>
                 <div class="timeline-card glass card-record">
                     <div class="card-image"><img src="assets/img/2015.jpg" alt="2015" onerror="this.style.display='none'"></div>
-                    <div class="card-content"><h3 data-i18n="h_2015_t">Récord Histórico</h3><p data-i18n="h_2015_d">...</p></div>
+                    <div class="card-content"><h3 data-i18n="h_2015_t"></h3><p data-i18n="h_2015_d"></p></div>
                 </div>
             </div>
 
@@ -201,7 +252,7 @@
                 <div class="timeline-date">2016</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2016.jpg" alt="2016" onerror="this.style.display='none'"></div>
-                    <div class="card-content"><h3 data-i18n="h_2016_t">Desafíos Técnicos</h3><p data-i18n="h_2016_d">...</p></div>
+                    <div class="card-content"><h3 data-i18n="h_2016_t"></h3><p data-i18n="h_2016_d"></p></div>
                 </div>
             </div>
 
@@ -209,7 +260,7 @@
                 <div class="timeline-date">2017</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2017.jpg" alt="2017" onerror="this.style.display='none'"></div>
-                    <div class="card-content"><h3 data-i18n="h_2017_t">Regreso al Podio</h3><p data-i18n="h_2017_d">...</p></div>
+                    <div class="card-content"><h3 data-i18n="h_2017_t"></h3><p data-i18n="h_2017_d"></p></div>
                 </div>
             </div>
 
@@ -217,7 +268,7 @@
                 <div class="timeline-date highlight">2018</div>
                 <div class="timeline-card glass border-accent">
                     <div class="card-image"><img src="assets/img/2018.jpg" alt="2018" onerror="this.style.display='none'"></div>
-                    <div class="card-content"><h3 data-i18n="h_2018_t">Victoria en Turquía</h3><p data-i18n="h_2018_d">...</p></div>
+                    <div class="card-content"><h3 data-i18n="h_2018_t"></h3><p data-i18n="h_2018_d"></p></div>
                 </div>
             </div>
 
@@ -225,7 +276,7 @@
                 <div class="timeline-date">2019</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2019.jpg" alt="2019" onerror="this.style.display='none'"></div>
-                    <div class="card-content"><h3 data-i18n="h_2019_t">Nuevo Monocasco</h3><p data-i18n="h_2019_d">...</p></div>
+                    <div class="card-content"><h3 data-i18n="h_2019_t"></h3><p data-i18n="h_2019_d"></p></div>
                 </div>
             </div>
 
@@ -233,7 +284,7 @@
                 <div class="timeline-date">2020</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2020.jpg" alt="2020" onerror="this.style.display='none'"></div>
-                    <div class="card-content"><h3 data-i18n="h_2020_t">Pausa Obligada</h3><p data-i18n="h_2020_d">...</p></div>
+                    <div class="card-content"><h3 data-i18n="h_2020_t"></h3><p data-i18n="h_2020_d"></p></div>
                 </div>
             </div>
 
@@ -241,7 +292,7 @@
                 <div class="timeline-date">2021</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2021.jpg" alt="2021" onerror="this.style.display='none'"></div>
-                    <div class="card-content"><h3 data-i18n="h_2021_t">Edición Virtual</h3><p data-i18n="h_2021_d">...</p></div>
+                    <div class="card-content"><h3 data-i18n="h_2021_t"></h3><p data-i18n="h_2021_d"></p></div>
                 </div>
             </div>
 
@@ -249,7 +300,7 @@
                 <div class="timeline-date">2022</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2022.jpg" alt="2022" onerror="this.style.display='none'"></div>
-                    <div class="card-content"><h3 data-i18n="h_2022_t">Clima Adverso</h3><p data-i18n="h_2022_d">...</p></div>
+                    <div class="card-content"><h3 data-i18n="h_2022_t"></h3><p data-i18n="h_2022_d"></p></div>
                 </div>
             </div>
 
@@ -257,7 +308,7 @@
                 <div class="timeline-date">2023</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2023.jpg" alt="2023" onerror="this.style.display='none'"></div>
-                    <div class="card-content"><h3 data-i18n="h_2023_t">Espíritu de Equipo</h3><p data-i18n="h_2023_d">...</p></div>
+                    <div class="card-content"><h3 data-i18n="h_2023_t"></h3><p data-i18n="h_2023_d"></p></div>
                 </div>
             </div>
 
@@ -265,7 +316,7 @@
                 <div class="timeline-date">2024</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2024.jpg" alt="2024" onerror="this.style.display='none'"></div>
-                    <div class="card-content"><h3 data-i18n="h_2024_t">Vuelta a Pista</h3><p data-i18n="h_2024_d">...</p></div>
+                    <div class="card-content"><h3 data-i18n="h_2024_t"></h3><p data-i18n="h_2024_d"></p></div>
                 </div>
             </div>
 
@@ -273,7 +324,7 @@
                 <div class="timeline-date">2025</div>
                 <div class="timeline-card glass border-accent">
                     <div class="card-image"><img src="assets/img/2025.jpg" alt="2025" onerror="this.style.display='none'"></div>
-                    <div class="card-content"><h3 data-i18n="h_2025_t">Éxito en Polonia</h3><p data-i18n="h_2025_d">...</p></div>
+                    <div class="card-content"><h3 data-i18n="h_2025_t"></h3><p data-i18n="h_2025_d"></p></div>
                 </div>
             </div>
 
@@ -282,8 +333,8 @@
                 <div class="timeline-card glass dashed-border">
                     <div class="card-image"><img src="assets/img/future.jpg" alt="Futuro" onerror="this.style.display='none'"></div>
                     <div class="card-content">
-                        <h3 class="text-gradient" data-i18n="hist_future_title">El Futuro Promete</h3>
-                        <p data-i18n="hist_future_text">¿Qué nos deparará el futuro?...</p>
+                        <h3 class="text-gradient" data-i18n="hist_future_title"></h3>
+                        <p data-i18n="hist_future_text"></p>
                     </div>
                 </div>
             </div>
@@ -299,151 +350,50 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-col brand">
-                    <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 15px;">
-                        <img src="assets/img/logo_upv.png" alt="Logo UPV" class="footer-logo" style="height: 50px; width: auto;">
-                        <img src="assets/img/logo_generacion_espontanea.png" alt="Generación Espontánea" class="footer-logo" style="height: 50px; width: auto;"> 
+                    <div class="footer-brand-row">
+                        <a href="https://www.upv.es/" target="_blank" rel="noopener noreferrer" aria-label="Visitar web de la UPV">
+                            <img src="assets/img/logo_upv.png" alt="Logo UPV" class="footer-logo">
+                        </a>
+
+                        <a href="https://generacionespontanea.upv.es/" target="_blank" rel="noopener noreferrer" aria-label="Visitar web de Generación Espontánea">
+                            <img src="assets/img/logo_generacion_espontanea_sinfondo.png" alt="Generación Espontánea" class="footer-logo"> 
+                        </a>
                     </div>
-                    <p data-i18n="footer_desc"><strong>Generación Espontánea UPV</strong><br>Campus de Alcoy<br>Ingeniería, esfuerzo y equipo.</p>
+                    <p data-i18n="footer_desc"></p>
                 </div>
                 <div class="footer-col links">
-                    <h4 data-i18n="footer_sections">Secciones</h4>
+                    <h4 data-i18n="footer_sections"></h4>
                     <ul>
-                        <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
-                        <li><a href="historia.html" data-i18n="nav_history">Historia</a></li>
-                        <li><a href="patrocinadores.html" data-i18n="nav_sponsors">Patrocinadores</a></li>
+                        <li><a href="index.html" data-i18n="nav_home" aria-label="Inicio"></a></li>
+                        <li><a href="historia.html" data-i18n="nav_history" aria-label="Historia"></a></li>
+                        <li><a href="patrocinadores.html" data-i18n="nav_sponsors" aria-label="Patrocinadores"></a></li>
                     </ul>
                 </div>
                 <div class="footer-col contact">
-                    <h4 data-i18n="nav_contact">Contacto</h4>
+                    <h4 data-i18n="nav_contact"></h4>
                     <p><i class="fa-solid fa-location-dot"></i> Pabellón Deportivo Georgina Blanes</p>
                     <p>C/ Alarcón, 1, 03801 Alcoy (Alicante)</p>
-                    <p><i class="fa-solid fa-envelope"></i> upvecomarathon@upv.edu.es</p>
+                    <p><i class="fa-solid fa-envelope"></i> ecomarathon@upv.es</p>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 UPV Eco-Marathon Team.</p>
                 <div class="footer-socials">
-                    <a href="https://www.instagram.com/upvecomarathon/"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://es.linkedin.com/company/upv-ecomarathon-team"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/upvecomarathon/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/upvecomarathon/" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://es.linkedin.com/company/upv-ecomarathon-team" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    
                 </div>
             </div>
         </div>
     </footer>
 
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    if(entry.target.querySelector('#record-counter')) {
-                        animateCounter();
-                    }
-                }
-            });
-        }, { threshold: 0.3 });
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    <script src="assets/js/i18n.js"></script> 
 
-        // Contador
-        let counterPlayed = false;
-        function animateCounter() {
-            if(counterPlayed) return;
-            counterPlayed = true;
-            const counter = document.getElementById('record-counter');
-            const target = 1294;
-            const duration = 2000;
-            const increment = target / (duration / 16);
-            let current = 0;
-            const update = () => {
-                current += increment;
-                if (current < target) {
-                    counter.innerText = Math.ceil(current).toLocaleString();
-                    requestAnimationFrame(update);
-                } else {
-                    counter.innerText = target.toLocaleString();
-                }
-            };
-            update();
-        }
+<script src="assets/js/main.js" defer></script> 
 
-        // LÓGICA DEL MENÚ MÓVIL
-        const toggleBtn = document.querySelector('.mobile-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileOverlay = document.getElementById('mobile-overlay');
-        const body = document.body;
-
-        if(toggleBtn) {
-            toggleBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('active');
-                mobileOverlay.classList.toggle('active');
-                body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
-            });
-        }
-        if(mobileOverlay) {
-            mobileOverlay.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                mobileOverlay.classList.remove('active');
-                body.style.overflow = 'auto';
-            });
-        }
-
-        // --- SOLUCIÓN DEL BUG DEL SCROLL: BLOQUEAR EVENTO DURANTE EL CLICK ---
-        const yearLinks = document.querySelectorAll('.year-nav a');
-        const yearSections = document.querySelectorAll('.timeline-row');
-        let isManualScrolling = false; // Bandera para saber si fue un clic
-
-        const yearObserver = new IntersectionObserver((entries) => {
-            if(isManualScrolling) return; // Si fue clic, no actualizamos nada para evitar saltos
-
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    yearLinks.forEach(link => link.classList.remove('active'));
-                    const id = entry.target.getAttribute('id');
-                    const activeLink = document.querySelector(`.year-nav a[href="#${id}"]`);
-                    
-                    if (activeLink) {
-                        activeLink.classList.add('active');
-                        activeLink.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-                    }
-                }
-            });
-        }, { rootMargin: '-40% 0px -60% 0px' });
-
-        yearSections.forEach(section => yearObserver.observe(section));
-
-        // Evento Click en la barra de años (Navegación directa sin freno)
-        yearLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault(); // Evitar el salto brusco del ancla por defecto
-                isManualScrolling = true; // Pausamos el espía
-
-                // Poner activo visualmente ya
-                yearLinks.forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
-
-                const targetId = link.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-
-                if(targetSection) {
-                    // Scroll suave manual
-                    const headerOffset = 180; // Ajuste para que no lo tape el header fijo
-                    const elementPosition = targetSection.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: "smooth"
-                    });
-
-                    // Reactivar el espía después de que termine la animación (aprox 1s)
-                    setTimeout(() => {
-                        isManualScrolling = false;
-                    }, 1000);
-                }
-            });
-        });
-
-    </script>
+</body>
+</html>   
 
 </body>
 </html>

@@ -5,8 +5,8 @@
     "nav_contact": "Contacto",
     
     "hero_badge": "PROYECTO GENERACIÓN ESPONTÁNEA • UPV",
-    "hero_title": "UPV <span class='text-gradient'>ECOMARATHON</span>",
-    "hero_subtitle": "Estudiantes del Campus de Alcoy diseñando la movilidad del mañana.<br>Récord del equipo: <strong>1.294 km con 1 litro de etanol.</strong>",
+    "hero_title": "UPV <span class='text-gradient'>ECO-MARATHON</span>",
+    "hero_subtitle": "Estudiantes de la Universitat Politècnica de València diseñando la movilidad del mañana.", 
     "btn_meet": "Conoce el equipo",
     "btn_track": "Ver trayectoria",
     "scroll_text": "Desliza",
@@ -38,7 +38,7 @@
     "cta_title": "¿Te unes al equipo?",
     "cta_text": "Si eres estudiante de la UPV y te apasiona el motor y la ingeniería, este es tu sitio.",
     "btn_student": "Soy Estudiante",
-    "btn_company": "Contacto Empresas",
+    "btn_company": "Contacto",
     
     "footer_desc": "<strong>Generación Espontánea UPV</strong><br>Campus de Alcoy<br>Ingeniería, esfuerzo y equipo.",
     "footer_sections": "Secciones",
@@ -96,7 +96,7 @@
     "contact_hero_title": "CONECTA CON EL <span class='text-gradient'>FUTURO</span>",
     "contact_hero_text": "Ya seas una empresa interesada en patrocinar, un estudiante con ganas de unirse al reto o un medio de comunicación, queremos escucharte.",
     "contact_form_title": "¿Tienes alguna duda o propuesta?",
-    "contact_form_intro": "¡Gracias por contactarnos! Nos esforzamos al máximo por responder rápidamente.",
+    "contact_form_intro": "¡Gracias por contactarnos! Nos esforzamos por responder lo más rápido posible, aunque al ser un equipo pequeño que combina estudios y taller, podríamos tardar un poco más.",
     "form_name": "Nombre",
     "form_surname": "Apellidos",
     "form_phone": "Teléfono",
