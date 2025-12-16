@@ -1,7 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     /* ==============================================
-       1. MENÚ MÓVIL (Funciona en todas las páginas)
+       1. HEADER DINÁMICO (Sticky Effect)
+       ============================================== */
+    const header = document.querySelector('.main-header');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    /* ==============================================
+       2. MENÚ MÓVIL
        ============================================== */
     const toggleBtn = document.querySelector('.mobile-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -11,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function toggleMenu() {
         const isActive = mobileMenu.classList.toggle('active');
         mobileOverlay.classList.toggle('active');
-        // Bloquear scroll si el menú está abierto
         body.style.overflow = isActive ? 'hidden' : '';
     }
 
@@ -28,29 +40,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ==============================================
-       2. ANIMACIONES SCROLL (Observer)
+       3. ANIMACIONES SCROLL AVANZADAS (Observer)
        ============================================== */
     const revealElements = document.querySelectorAll('.reveal');
     
     if (revealElements.length > 0) {
-        const observer = new IntersectionObserver((entries) => {
+        const revealOptions = {
+            threshold: 0.15, // Se activa al ver el 15% del elemento
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealOnScroll = new IntersectionObserver((entries, revealOnScroll) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
                     entry.target.classList.add('active');
                     
-                    // Si el elemento revelado es el contador, iniciamos la animación
+                    // Si es el contador, arrancar animación
                     if (entry.target.querySelector('#record-counter')) {
                         animateCounter();
                     }
+                    
+                    // Dejar de observar una vez animado
+                    revealOnScroll.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.15 }); // Se activa cuando se ve el 15% del elemento
+        }, revealOptions);
 
-        revealElements.forEach(el => observer.observe(el));
+        revealElements.forEach(el => {
+            revealOnScroll.observe(el);
+        });
     }
 
     /* ==============================================
-       3. CONTADOR DE NÚMEROS (Solo si existe)
+       4. CONTADOR DE NÚMEROS
        ============================================== */
     let counterPlayed = false;
 
@@ -61,12 +85,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!counter) return;
 
         counterPlayed = true;
-        // Hacer visible el número
         counter.style.opacity = '1';
 
         const target = 1294; // Récord
-        const duration = 2000; // 2 segundos
-        const frameDuration = 1000 / 60; // 60fps
+        const duration = 2000;
+        const frameDuration = 1000 / 60;
         const totalFrames = Math.round(duration / frameDuration);
         const increment = target / totalFrames;
         
@@ -75,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const timer = setInterval(() => {
             current += increment;
             if (current >= target) {
-                counter.innerText = target.toLocaleString('es-ES'); // Formato 1.294
+                counter.innerText = target.toLocaleString('es-ES');
                 clearInterval(timer);
             } else {
                 counter.innerText = Math.ceil(current).toLocaleString('es-ES');
@@ -84,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ==============================================
-       4. MODAL PATROCINADORES (Solo en patrocinadores.html)
+       5. MODAL PATROCINADORES (Solo si existe)
        ============================================== */
     const triggers = document.querySelectorAll('.sponsor-trigger');
     
@@ -106,15 +129,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!item) return;
 
             currentIndex = index;
-            
-            // Rellenar datos
             modalElements.logo.src = item.dataset.logo;
             modalElements.title.innerText = item.dataset.name;
-            // Truco: Leemos el texto oculto traducido
             modalElements.desc.innerHTML = item.querySelector('.hidden-desc').innerHTML;
             modalElements.link.href = item.dataset.link;
 
-            // Redes sociales (mostrar solo si existen)
             const insta = item.dataset.insta;
             const linkedin = item.dataset.linkedin;
 
@@ -125,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (linkedin) modalElements.linkedin.href = linkedin;
 
             modal.classList.add('active');
-            body.style.overflow = 'hidden'; // Bloquear scroll fondo
+            body.style.overflow = 'hidden';
         }
 
         function closeModal() {
@@ -133,21 +152,14 @@ document.addEventListener('DOMContentLoaded', () => {
             body.style.overflow = '';
         }
 
-        // Eventos Click en Logos
         triggers.forEach((item, index) => {
-            item.setAttribute('data-index', index); // Asegurar índice
+            item.setAttribute('data-index', index);
             item.addEventListener('click', () => openModal(index));
         });
 
-        // Eventos Botones Modal
         document.querySelector('.modal-close')?.addEventListener('click', closeModal);
-        
-        // Click fuera para cerrar
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeModal();
-        });
+        modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
 
-        // Navegación (Flechas)
         document.querySelector('.modal-nav.prev')?.addEventListener('click', () => {
             let newIndex = currentIndex - 1;
             if (newIndex < 0) newIndex = triggers.length - 1;
@@ -162,32 +174,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ==============================================
-       5. FIX: PRECARGA IMAGEN HISTORIA (Solo historia.html)
+       6. FIX: PRECARGA IMAGEN HISTORIA
        ============================================== */
-    // Si estamos en la página de historia, coordinar la carga
     if (document.querySelector('.history-hero')) {
         const bgImageSrc = 'assets/img/logo_upv_ecomarathon3.png';
         const imgLoader = new Image();
         imgLoader.src = bgImageSrc;
-        
-        // Intentar animar si la imagen ya cargó
-        imgLoader.onload = () => {
-            // La animación real la dispara el IntersectionObserver de arriba
-            console.log("Imagen de fondo cargada");
-        };
+        imgLoader.onload = () => { console.log("Imagen de fondo cargada"); };
     }
     
     /* ==============================================
-       6. SCROLL NAVEGACIÓN AÑOS (Solo historia.html)
+       7. SCROLL NAVEGACIÓN AÑOS
        ============================================== */
     const yearLinks = document.querySelectorAll('.year-nav a');
     if (yearLinks.length > 0) {
         let isManualScrolling = false;
-
-        // Observer para resaltar el año activo al hacer scroll
         const yearObserver = new IntersectionObserver((entries) => {
             if(isManualScrolling) return;
-            
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     yearLinks.forEach(link => link.classList.remove('active'));
@@ -203,28 +206,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.querySelectorAll('.timeline-row').forEach(row => yearObserver.observe(row));
 
-        // Click en los años
         yearLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 isManualScrolling = true;
-                
                 yearLinks.forEach(l => l.classList.remove('active'));
                 link.classList.add('active');
-
                 const targetId = link.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
-                
                 if (targetSection) {
                     const headerOffset = 180;
                     const elementPosition = targetSection.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: "smooth"
-                    });
-
+                    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
                     setTimeout(() => { isManualScrolling = false; }, 1000);
                 }
             });
@@ -232,18 +226,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ==============================================
-       7. VALIDACIÓN DE FORMULARIO (Contactanos)
+       8. VALIDACIÓN DE FORMULARIO
        ============================================== */
     const contactForm = document.querySelector('.contact-form');
-    
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Evita que se envíe de golpe
-            
             let isValid = true;
             const inputs = contactForm.querySelectorAll('input[required], textarea[required]');
-            
-            // Limpiar errores previos
             document.querySelectorAll('.error-msg').forEach(el => el.remove());
             inputs.forEach(input => input.style.borderColor = '');
 
@@ -257,19 +246,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            if (isValid) {
-                // Aquí iría el código para enviar (ej: fetch o formspree)
-                // Por ahora simulamos envío:
+            if (!isValid) {
+                e.preventDefault();
+            } else {
                 const btn = contactForm.querySelector('button');
-                const originalText = btn.innerHTML;
-                btn.innerHTML = '<i class="fa-solid fa-check"></i> Enviado';
-                btn.style.background = '#4CAF50';
-                contactForm.reset();
-                
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.style.background = ''; // Volver al color original
-                }, 3000);
+                btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
             }
         });
     }
@@ -290,6 +271,57 @@ document.addEventListener('DOMContentLoaded', () => {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 
+    /* ==============================================
+       9. GESTIÓN DE COOKIES (FLOTANTE)
+       ============================================== */
+    (function initCookieConsent() {
+        const cookieModal = document.getElementById('cookie-consent');
+        const acceptBtn = document.getElementById('btn-accept-cookies');
+        const rejectBtn = document.getElementById('btn-reject-cookies');
+        const closeBtn = document.getElementById('btn-close-cookies');
+        const COOKIE_NAME = 'upv_consent_status';
 
+        const consent = localStorage.getItem(COOKIE_NAME);
+
+        if (!consent) {
+            setTimeout(() => {
+                if(cookieModal) {
+                    cookieModal.style.display = 'block';
+                    setTimeout(() => cookieModal.classList.add('show'), 10);
+                }
+            }, 2000);
+        }
+
+        function closeCookieModal() {
+            if(!cookieModal) return;
+            cookieModal.classList.remove('show');
+            setTimeout(() => {
+                cookieModal.style.display = 'none';
+            }, 500);
+        }
+
+        if (acceptBtn) {
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem(COOKIE_NAME, 'accepted');
+                closeCookieModal();
+            });
+        }
+
+        if (rejectBtn) {
+            rejectBtn.addEventListener('click', () => {
+                localStorage.setItem(COOKIE_NAME, 'rejected');
+                closeCookieModal();
+            });
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                closeCookieModal();
+            });
+        }
+    })();
+
+    
 
 });
+

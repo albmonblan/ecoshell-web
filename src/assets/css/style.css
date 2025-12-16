@@ -301,7 +301,7 @@ ul { list-style: none; }
 .academic-text p { color: var(--text-muted); margin-bottom: 20px; font-size: 1.05rem; line-height: 1.8; }
 
 /* Nav Años */
-.year-nav-wrapper { position: sticky; top: 75px; z-index: 900; border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(5, 10, 14, 0.6); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(15px); overflow-x: auto; padding: 10px 0; white-space: nowrap; }
+.year-nav-wrapper { position: sticky; top: 75px; z-index: 900; border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(5, 10, 14, 0.6); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); overflow-x: auto; padding: 10px 0; white-space: nowrap; }
 .year-nav-wrapper::-webkit-scrollbar { height: 4px; }
 .year-nav-wrapper::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 4px; }
 .year-nav { display: inline-flex; justify-content: center; gap: 10px; padding: 0 20px; min-width: 100%; }
@@ -433,6 +433,22 @@ ul { list-style: none; }
 .radio-box input:checked + .radio-custom::after { opacity: 1; transform: scale(1); }
 .radio-box input:checked ~ span { color: white; }
 .btn-primary.full-width { width: 100%; justify-content: center; margin-top: 10px; font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+
+/* --- CORRECCIÓN DEFINITIVA BOTÓN ACTIVO --- */
+.btn-primary-outline.active,
+.mobile-nav-menu .btn-primary-outline.active {
+    background-color: var(--primary) !important;
+    color: #000 !important; /* Negro forzado */
+    border-color: var(--primary) !important;
+    font-weight: 800 !important;
+    box-shadow: 0 0 15px rgba(255, 209, 0, 0.4); /* Un brillito extra para que destaque */
+}
+
+/* Efecto Hover cuando está activo */
+.btn-primary-outline.active:hover {
+    background-color: #e6bc00 !important; /* Un poco más oscuro */
+    transform: translateY(-2px);
+}
 
 /* =========================================
    9. FOOTER
@@ -905,5 +921,623 @@ html { scroll-behavior: smooth; }
 @media (max-width: 992px) {
     .texto-una-linea {
         white-space: normal; /* Vuelve al comportamiento normal en móvil */
+    }
+}
+
+/* --- BANDERAS DE IDIOMA --- */
+.lang-flag-icon {
+    width: 20px;
+    height: 15px;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-right: 8px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5); /* Sombrita para que se vean bien sobre fondo oscuro */
+}
+
+/* Ajuste para el botón principal */
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre bandera, texto y flecha */
+}
+
+/* =========================================
+   12. COOKIE CONSENT (FLOTANTE Y ELEGANTE)
+   ========================================= */
+.cookie-consent-modal {
+    position: fixed;
+    bottom: 30px;
+    left: 30px; /* Abajo a la izquierda, no molesta */
+    z-index: 9999;
+    max-width: 400px; /* Ancho contenido */
+    width: calc(100% - 60px);
+    font-family: var(--font-body);
+    
+    /* Animación de entrada suave */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    
+    /* Inicialmente oculto por display en HTML, pero la animación lo maneja */
+}
+
+/* Efecto de aparición */
+.cookie-consent-modal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cookie-content-wrapper.glass {
+    background: rgba(12, 18, 24, 0.95); /* Muy oscuro */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px; /* Bordes redondeados pero técnicos */
+    padding: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7); /* Sombra profunda */
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px); /* Efecto vidrio más fuerte */
+    position: relative; /* Para posicionar la X */
+}
+
+/* Botón de Cierre (X) */
+.cookie-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.cookie-close-btn:hover {
+    color: white;
+    background: rgba(255,255,255,0.1);
+}
+
+.cookie-header h4 {
+    color: white;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    padding-right: 30px; /* Espacio para la X */
+}
+
+.cookie-body p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.cookie-link {
+    color: var(--primary);
+    font-size: 0.85rem;
+    text-decoration: underline;
+    transition: 0.3s;
+}
+.cookie-link:hover { color: white; }
+
+.cookie-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-cookie-primary, .btn-cookie-secondary {
+    flex: 1;
+    padding: 10px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+    border: 1px solid;
+}
+
+.btn-cookie-primary {
+    background: var(--primary);
+    color: black;
+    border-color: var(--primary);
+}
+.btn-cookie-primary:hover {
+    background: #e6bc00;
+    border-color: #e6bc00;
+}
+
+.btn-cookie-secondary {
+    background: transparent;
+    color: var(--text-muted);
+    border-color: rgba(255,255,255,0.2);
+}
+.btn-cookie-secondary:hover {
+    color: white;
+    border-color: white;
+}
+
+/* En móvil ocupa todo el ancho abajo */
+@media (max-width: 768px) {
+    .cookie-consent-modal {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 12px 12px 0 0;
+    }
+    .cookie-content-wrapper.glass {
+        border-radius: 12px 12px 0 0;
+        border-bottom: none;
+    }
+}
+
+
+/* Aseguramos que la sección hero sea el contenedor relativo */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* O la altura que tengas definida */
+    overflow: hidden; /* Para recortar lo que sobre del video */
+}
+
+/* EL VIDEO (LA MAGIA) */
+.hero-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ESTO ES LA CLAVE: Rellena todo sin deformarse */
+    z-index: 0; /* Al fondo del todo */
+}
+
+/* AJUSTAR CAPAS (Z-INDEX) */
+/* El overlay debe estar encima del video pero debajo del texto */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Oscurecer video un 50% */
+    z-index: 1; 
+}
+
+/* El contenido (texto) encima de todo */
+.hero-container {
+    position: relative;
+    z-index: 2; 
+}
+
+/* El indicador de scroll también encima */
+.scroll-indicator {
+    z-index: 2;
+}
+
+/* =========================================
+   13. HEADER DINÁMICO & SCROLL REVEAL (MODERNO)
+   ========================================= */
+
+/* A. HEADER TRANSICIÓN */
+.main-header {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent; /* Transparente al inicio */
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 25px 0; /* Más alto al principio */
+}
+
+/* Estado cuando bajamos (Scrolled) */
+.main-header.scrolled {
+    background: rgba(5, 10, 14, 0.85); /* Fondo oscuro semitransparente */
+    padding: 10px 0; /* Se hace más pequeño */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px); /* Efecto vidrio más fuerte */
+    border-bottom: 1px solid rgba(255, 209, 0, 0.1); /* Sutil línea amarilla */
+}
+
+/* Logo transición */
+.logo img {
+    transition: height 0.4s ease;
+    height: 55px; /* Grande al inicio */
+}
+
+.main-header.scrolled .logo img {
+    height: 40px; /* Pequeño al bajar */
+}
+
+/* B. ANIMACIONES SCROLL (REVEAL) MÁS AVANZADAS */
+/* Clase base oculta */
+.reveal {
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+}
+
+/* Efecto: Subir desde abajo (Fade Up) - Default */
+.reveal {
+    transform: translateY(60px);
+}
+
+/* Efecto: Entrar desde la izquierda */
+.reveal.from-left {
+    transform: translateX(-60px);
+}
+
+/* Efecto: Entrar desde la derecha */
+.reveal.from-right {
+    transform: translateX(60px);
+}
+
+/* Efecto: Zoom In (Aparece creciendo) */
+.reveal.zoom-in {
+    transform: scale(0.8);
+}
+
+/* ESTADO ACTIVO (Cuando se ve en pantalla) */
+.reveal.active {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+/* Delays para escalonar elementos (Cascada) */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+
+/* Corrección Menú Móvil: Más espacio arriba para que no se tape */
+.mobile-nav-menu {
+    position: fixed; 
+    top: 0; 
+    right: -300px; 
+    width: 280px; 
+    height: 100%;
+    background: #0f161d; 
+    z-index: 999;
+    /* AUMENTADO A 120px para que el primer botón "Inicio" se vea bien abajo */
+    padding: 120px 30px 30px; 
+    box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+    transition: 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px;
+}
+
+/* =========================================
+   PARCHE PARA INDEX MÓVIL (Sustituye o añade esto al final del CSS)
+   ========================================= */
+
+@media (max-width: 768px) {
+    
+    /* 1. SOLUCIÓN A LA "RAYA" / DESBORDAMIENTO */
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden !important; /* Corta cualquier cosa que se salga lateralmente */
+    }
+
+    .hero {
+        width: 100%;
+        overflow: hidden; /* Asegura que el vídeo/imagen de fondo no empuje el ancho */
+    }
+
+    /* 2. SOLUCIÓN AL TÍTULO (2 LÍNEAS PERFECTAS) */
+    .hero h1 {
+        /* Usamos Flexbox vertical para separar UPV de ECO-MARATHON */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        /* Tamaño para "UPV" */
+        font-size: 4rem !important; 
+        line-height: 1;
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 0 10px; /* Margen de seguridad lateral */
+    }
+
+    /* Estilo específico para "ECO-MARATHON" (el span con gradiente) */
+    .hero h1 .text-gradient {
+        display: block;       /* Fuerza que vaya a la línea de abajo */
+        white-space: nowrap;  /* PROHIBIDO partir la palabra (Eco- / Marathon) */
+        
+        /* LA CLAVE: Usamos 'vw' (viewport width). 
+           Esto hace que la letra se calcule según el ancho del móvil.
+           10vw significa "el 10% del ancho de la pantalla". 
+           Así SIEMPRE cabrá, sea el móvil que sea. */
+        font-size: 10vw !important; 
+        
+        margin-top: 0;
+        line-height: 1.1;
+        padding-bottom: 5px; /* Para que se vea bien la parte baja de las letras */
+    }
+
+    /* Ajuste del párrafo de abajo para que no moleste */
+    .hero p {
+        font-size: 1rem;
+        padding: 0 20px;
+        margin-top: 15px;
+    }
+}
+
+/* =========================================
+   3. HEADER (LOGO GRANDE & DINÁMICO)
+   ========================================= */
+.main-header {
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    /* Padding inicial ajustado para dejar espacio al logo grande */
+    padding: 15px 0; 
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.header-content { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+/* --- LOGO GRANDE (CAMBIO PRINCIPAL) --- */
+.logo a {
+    display: flex;
+    align-items: center;
+}
+
+.logo img { 
+    /* Aumentamos de 45px a 90px para que destaque mucho más */
+    height: 40px; 
+    width: auto; 
+    display: block;
+    object-fit: contain; /* Asegura que no se deforme */
+    transition: height 0.4s ease;
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.3)); /* Sombra sutil para que resalte del fondo */
+}
+
+/* --- ESTADO SCROLLED (Cuando bajas) --- */
+.main-header.scrolled {
+    background: rgba(5, 10, 14, 0.95);
+    padding: 8px 0; /* Header más compacto al bajar */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 209, 0, 0.1);
+}
+
+/* El logo se reduce elegantemente al hacer scroll */
+.main-header.scrolled .logo img { 
+    height: 40px; 
+}
+
+/* --- NAVEGACIÓN --- */
+.main-nav ul { display: flex; gap: 40px; align-items: center; }
+.nav-link { font-size: 0.95rem; font-weight: 500; color: var(--text-muted); position: relative; }
+.nav-link:hover, .nav-link.active { color: var(--primary); }
+.nav-link::after {
+    content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px;
+    background: var(--primary); transition: 0.3s;
+}
+.nav-link:hover::after { width: 100%; }
+
+.btn-primary-outline {
+    border: 1px solid rgba(255,255,255,0.2); padding: 8px 24px; border-radius: 50px;
+    font-size: 0.9rem; font-weight: 600;
+}
+.btn-primary-outline:hover {
+    border-color: var(--primary); background: var(--primary); color: var(--primary-text);
+}
+
+/* Botón activo */
+.btn-primary-outline.active,
+.mobile-nav-menu .btn-primary-outline.active {
+    background-color: var(--primary) !important;
+    color: #000 !important;
+    border-color: var(--primary) !important;
+    font-weight: 800 !important;
+    box-shadow: 0 0 15px rgba(255, 209, 0, 0.4);
+}
+
+.mobile-toggle { display: none; color: white; font-size: 1.5rem; }
+
+/* --- RESPONSIVE LOGO (MÓVIL) --- */
+@media (max-width: 992px) {
+    .logo img {
+        /* En móvil un poco más pequeño para que quepa con la hamburguesa, pero grande */
+        height: 85px; 
+    }
+}
+/* =========================================
+   3. HEADER (LOGO GRANDE & DINÁMICO)
+   ========================================= */
+.main-header {
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    padding: 15px 0; 
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.header-content { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+/* LOGO */
+.logo a { display: flex; align-items: center; }
+.logo img { 
+    height: 45px; /* Tamaño base escritorio */
+    width: auto; 
+    display: block;
+    object-fit: contain;
+    transition: height 0.4s ease;
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
+}
+
+/* ESTADO SCROLLED (Cuando bajas) */
+.main-header.scrolled {
+    background: rgba(5, 10, 14, 0.95);
+    padding: 8px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 209, 0, 0.1);
+}
+.main-header.scrolled .logo img { height: 25px; } /* Se hace un poco más pequeño */
+
+/* NAVEGACIÓN ESCRITORIO */
+.main-nav ul { display: flex; gap: 40px; align-items: center; }
+.nav-link { font-size: 0.95rem; font-weight: 500; color: var(--text-muted); position: relative; }
+.nav-link:hover, .nav-link.active { color: var(--primary); }
+.nav-link::after {
+    content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px;
+    background: var(--primary); transition: 0.3s;
+}
+.nav-link:hover::after { width: 100%; }
+
+.btn-primary-outline {
+    border: 1px solid rgba(255,255,255,0.2); padding: 8px 24px; border-radius: 50px;
+    font-size: 0.9rem; font-weight: 600;
+}
+.btn-primary-outline:hover {
+    border-color: var(--primary); background: var(--primary); color: var(--primary-text);
+}
+.btn-primary-outline.active {
+    background-color: var(--primary) !important;
+    color: #000 !important;
+    border-color: var(--primary) !important;
+    font-weight: 800 !important;
+    box-shadow: 0 0 15px rgba(255, 209, 0, 0.4);
+}
+
+/* HAMBURGUESA (Oculta en escritorio por defecto) */
+.mobile-toggle { display: none; color: white; font-size: 1.5rem; cursor: pointer; }
+
+
+/* =========================================
+   10. RESPONSIVE & MOBILE MENU (ARREGLADO)
+   ========================================= */
+
+/* A. TABLET Y MÓVIL (Activar Menú Hamburguesa) */
+@media (max-width: 992px) {
+    .main-nav ul { display: none; } /* Ocultar menú normal */
+    .mobile-toggle { display: block; } /* Mostrar icono hamburguesa */
+    
+    /* Ajuste logo en móvil */
+    .logo img { height: 50px; } 
+    .main-header { padding: 15px 0; }
+    
+    .custom-lang-selector { display: none; } /* Ocultar selector idioma escritorio */
+}
+
+/* B. ESTILOS DEL MENÚ LATERAL (EL QUE TE GUSTABA) */
+.mobile-nav-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8); z-index: 998;
+    opacity: 0; visibility: hidden; transition: 0.3s;
+}
+.mobile-nav-overlay.active { opacity: 1; visibility: visible; }
+
+.mobile-nav-menu {
+    position: fixed; top: 0; right: -300px; width: 280px; height: 100%;
+    background: #0f161d; z-index: 999;
+    padding: 100px 30px 30px; /* Espacio arriba para que no se tape con la X */
+    box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+    transition: 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    display: flex; flex-direction: column; gap: 20px;
+    overflow-y: auto;
+}
+.mobile-nav-menu.active { right: 0; }
+
+/* Enlaces del menú móvil (Grandes y claros) */
+.mobile-nav-menu a {
+    font-size: 1.2rem; 
+    font-weight: 600; 
+    color: white;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 15px; 
+    display: block;
+}
+.mobile-nav-menu a.active, .mobile-nav-menu a:hover { 
+    color: var(--primary); 
+    border-color: var(--primary); 
+}
+.mobile-nav-menu .btn-primary-outline { 
+    text-align: center; 
+    border: 2px solid var(--primary); 
+    margin-top: 10px; 
+    display: block;
+}
+
+/* Selector de idioma móvil */
+.mobile-lang-wrapper {
+    margin-top: auto; 
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+.mobile-lang-select {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+.mobile-lang-select option { background: #0f161d; color: white; }
+
+
+/* C. PARCHE INDEX MÓVIL (TÍTULO Y RAYA) */
+@media (max-width: 768px) {
+    /* 1. Solución Raya */
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden !important;
+    }
+    .hero {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    /* 2. Solución Título 2 Líneas */
+    .hero h1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 3.5rem !important; 
+        line-height: 1;
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .hero h1 .text-gradient {
+        display: block;       
+        white-space: nowrap;  
+        font-size: 12vw !important; /* Ajuste automático */
+        margin-top: 0;
+        line-height: 1.1;
+        padding-bottom: 5px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 20px;
+        margin-top: 15px;
     }
 }

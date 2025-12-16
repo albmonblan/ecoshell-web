@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="nav_history">Historia | UPV Eco-Marathon</title>
     
-    <meta name="description" content="Trayectoria del equipo UPV Eco-Marathon. Desde 2006 innovando en eficiencia.">
+    <title data-i18n="nav_history">Historia y Trayectoria | UPV Eco-Marathon</title>
+    <meta name="description" content="Descubre los 20 años de innovación del equipo UPV Eco-Marathon. Desde la gasolina hasta el hidrógeno, rompiendo récords de eficiencia.">
     
+    <meta property="og:title" content="Nuestra Historia | UPV Eco-Marathon">
+    <meta property="og:description" content="20 años compitiendo en la élite de la eficiencia energética europea.">
+    <meta property="og:image" content="https://upvecomarathon.webs.upv.es/assets/img/logo_upv_ecomarathon3.png">
+    <meta property="og:url" content="https://upvecomarathon.webs.upv.es/historia.html">
+    <meta property="og:type" content="article">
+
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
     <link rel="manifest" href="assets/img/favicons/site.webmanifest">
     <link rel="shortcut icon" href="assets/img/favicons/favicon.ico">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -32,16 +39,11 @@
             background-image: url('assets/img/circuito_vacio.png');
             opacity: 0.15;
         }
-        .footer-brand-row {
-            display: flex; 
-            gap: 15px; 
-            align-items: center; 
-            margin-bottom: 15px;
-        }
-        /* Clase para evitar scroll en el body cuando el menú móvil está abierto */
-        .no-scroll {
-            overflow: hidden;
-        }
+        .footer-brand-row { display: flex; gap: 15px; align-items: center; margin-bottom: 15px; }
+        .no-scroll { overflow: hidden; }
+        
+        /* Ajuste fino para la línea central */
+        .timeline-line { z-index: 0; }
     </style>
 </head>
 <body>
@@ -49,27 +51,39 @@
     <header class="main-header glass">
         <div class="container header-content">
             <div class="logo">
-                <a href="index.html" aria-label="Ir al inicio"><img src="assets/img/logo_upv_ecomarathon.png" alt="Logo UPV Eco-Marathon"></a>
+                <a href="index.html" aria-label="Ir al inicio"><img src="assets/img/ECOMARATHON_BANNER_SINFONDO2.png" alt="Logo UPV Eco-Marathon"></a>
             </div>
             
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html" class="nav-link" data-i18n="nav_home" aria-label="Inicio"></a></li>
-                    <li><a href="historia.html" class="nav-link active" data-i18n="nav_history" aria-label="Historia"></a></li>
-                    <li><a href="patrocinadores.html" class="nav-link" data-i18n="nav_sponsors" aria-label="Patrocinadores"></a></li>
-                    <li><a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact" aria-label="Contacto"></a></li>
+                    <li><a href="index.html" class="nav-link" data-i18n="nav_home">Inicio</a></li>
+                    <li><a href="historia.html" class="nav-link active" data-i18n="nav_history">Historia</a></li>
+                    <li><a href="patrocinadores.html" class="nav-link" data-i18n="nav_sponsors">Patrocinadores</a></li>
+                    <li><a href="faq.html" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
+                    <li><a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact">Contacto</a></li>
                 </ul>
             </nav>
 
             <div class="custom-lang-selector">
                 <button class="lang-btn" id="lang-btn" aria-label="Cambiar idioma">
-                    <span id="current-flag">🇪🇸</span> <span id="current-lang-code">ES</span> <i class="fa-solid fa-chevron-down"></i>
+                    <img id="current-flag" src="https://flagcdn.com/w40/es.png" alt="Flag" class="lang-flag-icon"> 
+                    <span id="current-lang-code">ES</span> 
+                    <i class="fa-solid fa-chevron-down"></i>
                 </button>
+                
                 <div class="lang-dropdown" id="lang-dropdown">
-                    <div class="lang-option" data-lang="es"><span>🇪🇸</span> Español</div>
-                    <div class="lang-option" data-lang="en"><span>🇬🇧</span> English</div>
-                    <div class="lang-option" data-lang="fr"><span>🇫🇷</span> Français</div>
-                    <div class="lang-option" data-lang="de"><span>🇩🇪</span> Deutsch</div>
+                    <div class="lang-option" data-lang="es">
+                        <img src="https://flagcdn.com/w40/es.png" class="lang-flag-icon" alt="ES"> Español
+                    </div>
+                    <div class="lang-option" data-lang="en">
+                        <img src="https://flagcdn.com/w40/gb.png" class="lang-flag-icon" alt="EN"> English
+                    </div>
+                    <div class="lang-option" data-lang="fr">
+                        <img src="https://flagcdn.com/w40/fr.png" class="lang-flag-icon" alt="FR"> Français
+                    </div>
+                    <div class="lang-option" data-lang="de">
+                        <img src="https://flagcdn.com/w40/de.png" class="lang-flag-icon" alt="DE"> Deutsch
+                    </div>
                 </div>
             </div>
 
@@ -80,8 +94,9 @@
     <div class="mobile-nav-overlay" id="mobile-overlay"></div>
     <nav class="mobile-nav-menu" id="mobile-menu">
         <a href="index.html" data-i18n="nav_home" aria-label="Inicio"></a>
-        <a href="historia.html" data-i18n="nav_history" aria-label="Historia"></a>
+        <a href="historia.html" class="active" data-i18n="nav_history" aria-label="Historia"></a>
         <a href="patrocinadores.html" data-i18n="nav_sponsors" aria-label="Patrocinadores"></a>
+        <a href="faq.html" class="nav-link" data-i18n="nav_faq">FAQ</a>
         <a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact" aria-label="Contacto"></a>
         
         <div class="mobile-lang-wrapper">
@@ -95,53 +110,18 @@
         </div>
     </nav>  
 
-    <div class="year-nav-wrapper glass-nav">
-        <div class="container">
-            <div class="year-nav-container">
-                <span class="year-label" data-i18n="nav_season"></span>
-                <ul class="year-nav">
-                    <li><a href="#year-2006" aria-label="Año 2006">'06</a></li>
-                    <li><a href="#year-2007" aria-label="Año 2007">'07</a></li>
-                    <li><a href="#year-2008" aria-label="Año 2008">'08</a></li>
-                    <li><a href="#year-2009" aria-label="Año 2009">'09</a></li>
-                    <li><a href="#year-2010" aria-label="Año 2010">'10</a></li>
-                    <li><a href="#year-2011" aria-label="Año 2011">'11</a></li>
-                    <li><a href="#year-2012" aria-label="Año 2012">'12</a></li>
-                    <li><a href="#year-2013" aria-label="Año 2013">'13</a></li>
-                    <li><a href="#year-2014" class="highlight-year-link" aria-label="Año 2014">'14</a></li>
-                    <li><a href="#year-2015" class="highlight-year-link" aria-label="Año 2015">'15</a></li>
-                    <li><a href="#year-2016" aria-label="Año 2016">'16</a></li>
-                    <li><a href="#year-2017" aria-label="Año 2017">'17</a></li>
-                    <li><a href="#year-2018" class="highlight-year-link" aria-label="Año 2018">'18</a></li>
-                    <li><a href="#year-2019" aria-label="Año 2019">'19</a></li>
-                    <li><a href="#year-2020" aria-label="Año 2020">'20</a></li>
-                    <li><a href="#year-2021" aria-label="Año 2021">'21</a></li>
-                    <li><a href="#year-2022" aria-label="Año 2022">'22</a></li>
-                    <li><a href="#year-2023" aria-label="Año 2023">'23</a></li>
-                    <li><a href="#year-2024" aria-label="Año 2024">'24</a></li>
-                    <li><a href="#year-2025" class="highlight-year-link" aria-label="Año 2025">'25</a></li>
-                    <li><a href="#year-2026" aria-label="Año 2026">'26</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
     <section class="history-hero relative">
         <div class="hero-bg history-bg-image"></div>
         <div class="container relative z-10">
             <div class="history-grid align-center">
-                <div class="hero-text-block reveal">
+                <div class="hero-text-block reveal fade-up">
                     <span class="badge" data-i18n="hero_badge"></span>
                     <h1 class="title-decor" data-i18n="hist_hero_title"></h1>
                     <p data-i18n="hist_hero_text_2"></p>
                     <p data-i18n="hist_hero_text_1"></p>
-                    <div class="academic-text">
-                        <!--<p data-i18n="hist_hero_text_1"></p>
-                        <p data-i18n="hist_hero_text_2"></p>-->
-                    </div>
                 </div>
                 
-                <div class="counter-display reveal delay-200">
+                <div class="counter-display reveal zoom-in delay-200">
                     <div class="counter-content">
                         <span class="counter-label" data-i18n="hist_record_label"></span>
                         <div class="counter-number">
@@ -154,10 +134,40 @@
             </div>
         </div>
         <div class="scroll-indicator">
-            <!--<<span data-i18n="scroll_text"></span>-->
             <div class="line"></div>
         </div>
     </section>
+
+    <div class="year-nav-wrapper glass-nav">
+        <div class="container">
+            <div class="year-nav-container">
+                <span class="year-label" data-i18n="nav_season"></span>
+                <ul class="year-nav">
+                    <li><a href="#year-2006">'06</a></li>
+                    <li><a href="#year-2007">'07</a></li>
+                    <li><a href="#year-2008">'08</a></li>
+                    <li><a href="#year-2009">'09</a></li>
+                    <li><a href="#year-2010">'10</a></li>
+                    <li><a href="#year-2011">'11</a></li>
+                    <li><a href="#year-2012">'12</a></li>
+                    <li><a href="#year-2013">'13</a></li>
+                    <li><a href="#year-2014" class="highlight-year-link">'14</a></li>
+                    <li><a href="#year-2015" class="highlight-year-link">'15</a></li>
+                    <li><a href="#year-2016">'16</a></li>
+                    <li><a href="#year-2017">'17</a></li>
+                    <li><a href="#year-2018" class="highlight-year-link">'18</a></li>
+                    <li><a href="#year-2019">'19</a></li>
+                    <li><a href="#year-2020">'20</a></li>
+                    <li><a href="#year-2021">'21</a></li>
+                    <li><a href="#year-2022">'22</a></li>
+                    <li><a href="#year-2023">'23</a></li>
+                    <li><a href="#year-2024">'24</a></li>
+                    <li><a href="#year-2025" class="highlight-year-link">'25</a></li>
+                    <li><a href="#year-2026">'26</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <section class="timeline-section relative">
         <div class="bg-fixed timeline-bg-image"></div>
@@ -165,8 +175,8 @@
         <div class="container relative z-10">
             <div class="timeline-line"></div>
 
-            <div id="year-2006" class="timeline-row reveal left">
-                <div class="timeline-date">2006</div>
+            <div id="year-2006" class="timeline-row left reveal from-left">
+                <div class="timeline-date reveal zoom-in delay-200">2006</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2006.jpg" alt="2006" onerror="this.style.display='none'"></div>
                     <div class="card-content">
@@ -176,160 +186,160 @@
                 </div>
             </div>
 
-            <div id="year-2007" class="timeline-row reveal right">
-                <div class="timeline-date">2007</div>
+            <div id="year-2007" class="timeline-row right reveal from-right">
+                <div class="timeline-date reveal zoom-in delay-200">2007</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2007.jpg" alt="2007" onerror="this.style.display='none'"></div>
                     <div class="card-content"><h3 data-i18n="h_2007_t"></h3><p data-i18n="h_2007_d"></p></div>
                 </div>
             </div>
 
-            <div id="year-2008" class="timeline-row reveal left">
-                <div class="timeline-date">2008</div>
+            <div id="year-2008" class="timeline-row left reveal from-left">
+                <div class="timeline-date reveal zoom-in delay-200">2008</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2008.jpg" alt="2008" onerror="this.style.display='none'"></div>
                     <div class="card-content"><h3 data-i18n="h_2008_t"></h3><p data-i18n="h_2008_d"></p></div>
                 </div>
             </div>
 
-            <div id="year-2009" class="timeline-row reveal right">
-                <div class="timeline-date">2009</div>
+            <div id="year-2009" class="timeline-row right reveal from-right">
+                <div class="timeline-date reveal zoom-in delay-200">2009</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2009.jpg" alt="2009" onerror="this.style.display='none'"></div>
                     <div class="card-content"><h3 data-i18n="h_2009_t"></h3><p data-i18n="h_2009_d"></p></div>
                 </div>
             </div>
 
-            <div id="year-2010" class="timeline-row reveal left">
-                <div class="timeline-date">2010</div>
+            <div id="year-2010" class="timeline-row left reveal from-left">
+                <div class="timeline-date reveal zoom-in delay-200">2010</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2010.jpg" alt="2010" onerror="this.style.display='none'"></div>
                     <div class="card-content"><h3 data-i18n="h_2010_t"></h3><p data-i18n="h_2010_d"></p></div>
                 </div>
             </div>
 
-            <div id="year-2011" class="timeline-row reveal right">
-                <div class="timeline-date">2011</div>
+            <div id="year-2011" class="timeline-row right reveal from-right">
+                <div class="timeline-date reveal zoom-in delay-200">2011</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2011.jpg" alt="2011" onerror="this.style.display='none'"></div>
                     <div class="card-content"><h3 data-i18n="h_2011_t"></h3><p data-i18n="h_2011_d"></p></div>
                 </div>
             </div>
 
-            <div id="year-2012" class="timeline-row reveal left">
-                <div class="timeline-date">2012</div>
+            <div id="year-2012" class="timeline-row left reveal from-left">
+                <div class="timeline-date reveal zoom-in delay-200">2012</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2012.jpg" alt="2012" onerror="this.style.display='none'"></div>
                     <div class="card-content"><h3 data-i18n="h_2012_t"></h3><p data-i18n="h_2012_d"></p></div>
                 </div>
             </div>
 
-            <div id="year-2013" class="timeline-row reveal right">
-                <div class="timeline-date">2013</div>
+            <div id="year-2013" class="timeline-row right reveal from-right">
+                <div class="timeline-date reveal zoom-in delay-200">2013</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2013.jpg" alt="2013" onerror="this.style.display='none'"></div>
                     <div class="card-content"><h3 data-i18n="h_2013_t"></h3><p data-i18n="h_2013_d"></p></div>
                 </div>
             </div>
 
-            <div id="year-2014" class="timeline-row reveal left">
-                <div class="timeline-date">2014</div>
+            <div id="year-2014" class="timeline-row left reveal from-left">
+                <div class="timeline-date reveal zoom-in delay-200">2014</div>
                 <div class="timeline-card glass border-accent">
                     <div class="card-image"><img src="assets/img/2014.jpg" alt="2014" onerror="this.style.display='none'"></div>
                     <div class="card-content"><h3 data-i18n="h_2014_t"></h3><p data-i18n="h_2014_d"></p></div>
                 </div>
             </div>
 
-            <div id="year-2015" class="timeline-row reveal right">
-                <div class="timeline-date highlight">2015</div>
+            <div id="year-2015" class="timeline-row right reveal from-right">
+                <div class="timeline-date highlight reveal zoom-in delay-200">2015</div>
                 <div class="timeline-card glass card-record">
                     <div class="card-image"><img src="assets/img/2015.jpg" alt="2015" onerror="this.style.display='none'"></div>
                     <div class="card-content"><h3 data-i18n="h_2015_t"></h3><p data-i18n="h_2015_d"></p></div>
                 </div>
             </div>
 
-            <div id="year-2016" class="timeline-row reveal left">
-                <div class="timeline-date">2016</div>
+            <div id="year-2016" class="timeline-row left reveal from-left">
+                <div class="timeline-date reveal zoom-in delay-200">2016</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2016.jpg" alt="2016" onerror="this.style.display='none'"></div>
                     <div class="card-content"><h3 data-i18n="h_2016_t"></h3><p data-i18n="h_2016_d"></p></div>
                 </div>
             </div>
 
-            <div id="year-2017" class="timeline-row reveal right">
-                <div class="timeline-date">2017</div>
+            <div id="year-2017" class="timeline-row right reveal from-right">
+                <div class="timeline-date reveal zoom-in delay-200">2017</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2017.jpg" alt="2017" onerror="this.style.display='none'"></div>
                     <div class="card-content"><h3 data-i18n="h_2017_t"></h3><p data-i18n="h_2017_d"></p></div>
                 </div>
             </div>
 
-            <div id="year-2018" class="timeline-row reveal left">
-                <div class="timeline-date highlight">2018</div>
+            <div id="year-2018" class="timeline-row left reveal from-left">
+                <div class="timeline-date highlight reveal zoom-in delay-200">2018</div>
                 <div class="timeline-card glass border-accent">
                     <div class="card-image"><img src="assets/img/2018.jpg" alt="2018" onerror="this.style.display='none'"></div>
                     <div class="card-content"><h3 data-i18n="h_2018_t"></h3><p data-i18n="h_2018_d"></p></div>
                 </div>
             </div>
 
-            <div id="year-2019" class="timeline-row reveal right">
-                <div class="timeline-date">2019</div>
+            <div id="year-2019" class="timeline-row right reveal from-right">
+                <div class="timeline-date reveal zoom-in delay-200">2019</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2019.jpg" alt="2019" onerror="this.style.display='none'"></div>
                     <div class="card-content"><h3 data-i18n="h_2019_t"></h3><p data-i18n="h_2019_d"></p></div>
                 </div>
             </div>
 
-            <div id="year-2020" class="timeline-row reveal left">
-                <div class="timeline-date">2020</div>
+            <div id="year-2020" class="timeline-row left reveal from-left">
+                <div class="timeline-date reveal zoom-in delay-200">2020</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2020.jpg" alt="2020" onerror="this.style.display='none'"></div>
                     <div class="card-content"><h3 data-i18n="h_2020_t"></h3><p data-i18n="h_2020_d"></p></div>
                 </div>
             </div>
 
-            <div id="year-2021" class="timeline-row reveal right">
-                <div class="timeline-date">2021</div>
+            <div id="year-2021" class="timeline-row right reveal from-right">
+                <div class="timeline-date reveal zoom-in delay-200">2021</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2021.jpg" alt="2021" onerror="this.style.display='none'"></div>
                     <div class="card-content"><h3 data-i18n="h_2021_t"></h3><p data-i18n="h_2021_d"></p></div>
                 </div>
             </div>
 
-            <div id="year-2022" class="timeline-row reveal left">
-                <div class="timeline-date">2022</div>
+            <div id="year-2022" class="timeline-row left reveal from-left">
+                <div class="timeline-date reveal zoom-in delay-200">2022</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2022.jpg" alt="2022" onerror="this.style.display='none'"></div>
                     <div class="card-content"><h3 data-i18n="h_2022_t"></h3><p data-i18n="h_2022_d"></p></div>
                 </div>
             </div>
 
-            <div id="year-2023" class="timeline-row reveal right">
-                <div class="timeline-date">2023</div>
+            <div id="year-2023" class="timeline-row right reveal from-right">
+                <div class="timeline-date reveal zoom-in delay-200">2023</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2023.jpg" alt="2023" onerror="this.style.display='none'"></div>
                     <div class="card-content"><h3 data-i18n="h_2023_t"></h3><p data-i18n="h_2023_d"></p></div>
                 </div>
             </div>
 
-            <div id="year-2024" class="timeline-row reveal left">
-                <div class="timeline-date">2024</div>
+            <div id="year-2024" class="timeline-row left reveal from-left">
+                <div class="timeline-date reveal zoom-in delay-200">2024</div>
                 <div class="timeline-card glass">
                     <div class="card-image"><img src="assets/img/2024.jpg" alt="2024" onerror="this.style.display='none'"></div>
                     <div class="card-content"><h3 data-i18n="h_2024_t"></h3><p data-i18n="h_2024_d"></p></div>
                 </div>
             </div>
 
-            <div id="year-2025" class="timeline-row reveal right">
-                <div class="timeline-date">2025</div>
+            <div id="year-2025" class="timeline-row right reveal from-right">
+                <div class="timeline-date reveal zoom-in delay-200">2025</div>
                 <div class="timeline-card glass border-accent">
                     <div class="card-image"><img src="assets/img/2025.jpg" alt="2025" onerror="this.style.display='none'"></div>
                     <div class="card-content"><h3 data-i18n="h_2025_t"></h3><p data-i18n="h_2025_d"></p></div>
                 </div>
             </div>
 
-            <div id="year-2026" class="timeline-row reveal left">
-                <div class="timeline-date">2026</div>
+            <div id="year-2026" class="timeline-row left reveal from-left">
+                <div class="timeline-date reveal zoom-in delay-200">2026</div>
                 <div class="timeline-card glass dashed-border">
                     <div class="card-image"><img src="assets/img/future.jpg" alt="Futuro" onerror="this.style.display='none'"></div>
                     <div class="card-content">
@@ -364,16 +374,18 @@
                 <div class="footer-col links">
                     <h4 data-i18n="footer_sections"></h4>
                     <ul>
-                        <li><a href="index.html" data-i18n="nav_home" aria-label="Inicio"></a></li>
-                        <li><a href="historia.html" data-i18n="nav_history" aria-label="Historia"></a></li>
-                        <li><a href="patrocinadores.html" data-i18n="nav_sponsors" aria-label="Patrocinadores"></a></li>
+                    <li><a href="index.html" class="nav-link" data-i18n="nav_home" aria-label="Inicio"></a></li>
+                    <li><a href="historia.html" class="nav-link" data-i18n="nav_history" aria-label="Historia"></a></li>
+                    <li><a href="patrocinadores.html" class="nav-link" data-i18n="nav_sponsors" aria-label="Patrocinadores"></a></li>
+                    <li><a href="faq.html" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
+                    <li><a href="contactanos.html" class="nav-link" data-i18n="nav_contact" aria-label="Contacto"></a></li>
                     </ul>
                 </div>
                 <div class="footer-col contact">
                     <h4 data-i18n="nav_contact"></h4>
-                    <p><i class="fa-solid fa-location-dot"></i> Pabellón Deportivo Georgina Blanes</p>
-                    <p>C/ Alarcón, 1, 03801 Alcoy (Alicante)</p>
-                    <p><i class="fa-solid fa-envelope"></i> ecomarathon@upv.es</p>
+                    <p><i class="fa-solid fa-location-dot"></i> <span data-i18n="footer_address_lab"></span></p>
+                    <p>C/ Alarcón, 1, 03801 Alcoy (Alicante) </p>
+                    <p style="margin-top: 15px;"><i class="fa-solid fa-envelope"></i> ecomarathon@upv.es</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -382,18 +394,28 @@
                     <a href="https://www.instagram.com/upvecomarathon/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.facebook.com/upvecomarathon/" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
                     <a href="https://es.linkedin.com/company/upv-ecomarathon-team" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                    
                 </div>
             </div>
         </div>
     </footer>
 
+    <div id="cookie-consent" class="cookie-consent-modal">
+        <div class="cookie-content-wrapper glass">
+            <button id="btn-close-cookies" class="cookie-close-btn" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+            <div class="cookie-header"><h4 data-i18n="cookie_title">Privacidad</h4></div>
+            <div class="cookie-body">
+                <p data-i18n="cookie_text">Utilizamos cookies para mejorar tu experiencia.</p>
+                <a href="cookies-policy.html" class="cookie-link" data-i18n="cookie_link">Leer Política Completa</a>
+            </div>
+            <div class="cookie-actions">
+                <button id="btn-reject-cookies" class="btn-cookie-secondary" data-i18n="cookie_reject">Rechazar</button>
+                <button id="btn-accept-cookies" class="btn-cookie-primary" data-i18n="cookie_accept">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
     <script src="assets/js/i18n.js"></script> 
-
-<script src="assets/js/main.js" defer></script> 
-
-</body>
-</html>   
+    <script src="assets/js/main.js" defer></script> 
 
 </body>
 </html>

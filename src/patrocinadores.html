@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="nav_sponsors">Patrocinadores | UPV Eco-Marathon</title>
     
-    <meta name="description" content="Nuestros partners. Ingeniería e innovación impulsada por la industria.">
-    <meta property="og:title" content="Patrocinadores | UPV Eco-Marathon Team">
-    <meta property="og:image" content="assets/img/banter_coche.jpeg">
+    <title data-i18n="nav_sponsors">Patrocinadores | UPV Eco-Marathon</title>
+    <meta name="description" content="Conoce a las empresas e instituciones que hacen posible nuestro proyecto. Colabora con el equipo UPV Eco-Marathon.">
+    
+    <meta property="og:title" content="Nuestros Patrocinadores | UPV Eco-Marathon">
+    <meta property="og:description" content="Innovación impulsada por la industria. Conoce a nuestros partners tecnológicos.">
+    <meta property="og:image" content="https://upvecomarathon.webs.upv.es/assets/img/motor1.jpg">
+    <meta property="og:url" content="https://upvecomarathon.webs.upv.es/patrocinadores.html">
     <meta property="og:type" content="website">
 
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
@@ -15,6 +18,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
     <link rel="manifest" href="assets/img/favicons/site.webmanifest">
     <link rel="shortcut icon" href="assets/img/favicons/favicon.ico">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -24,7 +28,6 @@
     
     <script src="assets/js/i18n.js"></script>
 
-
     <link rel="preload" as="image" href="assets/img/motor1.jpg">
 
     <style>
@@ -32,23 +35,13 @@
             background-image: url('assets/img/motor1.jpg'); 
             filter: grayscale(100%) brightness(25%);
         }
-        .bg-dark-texture {
-            background-image: url('assets/img/fondo_oscuro.jpg');
-        }
+        .bg-dark-texture { background-image: url('assets/img/fondo_oscuro.jpg'); }
         .bg-cta-collab {
             background-image: url('assets/img/socio_colaborar.jpg'); 
             opacity: 0.2;
         }
-        .cta-text-container {
-            max-width: 600px; 
-            margin: 0 auto 30px;
-        }
-        .footer-brand-row {
-            display: flex; 
-            gap: 15px; 
-            align-items: center; 
-            margin-bottom: 15px;
-        }
+        .cta-text-container { max-width: 600px; margin: 0 auto 30px; }
+        .footer-brand-row { display: flex; gap: 15px; align-items: center; margin-bottom: 15px; }
     </style>
 </head>
 <body>
@@ -56,27 +49,39 @@
     <header class="main-header glass">
         <div class="container header-content">
             <div class="logo">
-                <a href="index.html" aria-label="Ir al inicio"><img src="assets/img/logo_upv_ecomarathon.png" alt="Logo UPV Eco-Marathon"></a>
+                <a href="index.html" aria-label="Ir al inicio"><img src="assets/img/ECOMARATHON_BANNER_SINFONDO2.png" alt="Logo UPV Eco-Marathon"></a>
             </div>
             
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html" class="nav-link" data-i18n="nav_home" aria-label="Inicio"></a></li>
-                    <li><a href="historia.html" class="nav-link" data-i18n="nav_history" aria-label="Historia"></a></li>
-                    <li><a href="patrocinadores.html" class="nav-link active" data-i18n="nav_sponsors" aria-label="Patrocinadores"></a></li>
-                    <li><a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact" aria-label="Contacto"></a></li>
+                    <li><a href="index.html" class="nav-link" data-i18n="nav_home">Inicio</a></li>
+                    <li><a href="historia.html" class="nav-link" data-i18n="nav_history">Historia</a></li>
+                    <li><a href="patrocinadores.html" class="nav-link active" data-i18n="nav_sponsors">Patrocinadores</a></li>
+                    <li><a href="faq.html" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
+                    <li><a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact">Contacto</a></li>
                 </ul>
             </nav>
 
             <div class="custom-lang-selector">
                 <button class="lang-btn" id="lang-btn" aria-label="Cambiar idioma">
-                    <span id="current-flag">🇪🇸</span> <span id="current-lang-code">ES</span> <i class="fa-solid fa-chevron-down"></i>
+                    <img id="current-flag" src="https://flagcdn.com/w40/es.png" alt="Flag" class="lang-flag-icon"> 
+                    <span id="current-lang-code">ES</span> 
+                    <i class="fa-solid fa-chevron-down"></i>
                 </button>
+                
                 <div class="lang-dropdown" id="lang-dropdown">
-                    <div class="lang-option" data-lang="es"><span>🇪🇸</span> Español</div>
-                    <div class="lang-option" data-lang="en"><span>🇬🇧</span> English</div>
-                    <div class="lang-option" data-lang="fr"><span>🇫🇷</span> Français</div>
-                    <div class="lang-option" data-lang="de"><span>🇩🇪</span> Deutsch</div>
+                    <div class="lang-option" data-lang="es">
+                        <img src="https://flagcdn.com/w40/es.png" class="lang-flag-icon" alt="ES"> Español
+                    </div>
+                    <div class="lang-option" data-lang="en">
+                        <img src="https://flagcdn.com/w40/gb.png" class="lang-flag-icon" alt="EN"> English
+                    </div>
+                    <div class="lang-option" data-lang="fr">
+                        <img src="https://flagcdn.com/w40/fr.png" class="lang-flag-icon" alt="FR"> Français
+                    </div>
+                    <div class="lang-option" data-lang="de">
+                        <img src="https://flagcdn.com/w40/de.png" class="lang-flag-icon" alt="DE"> Deutsch
+                    </div>
                 </div>
             </div>
 
@@ -88,7 +93,8 @@
     <nav class="mobile-nav-menu" id="mobile-menu">
         <a href="index.html" data-i18n="nav_home" aria-label="Inicio"></a>
         <a href="historia.html" data-i18n="nav_history" aria-label="Historia"></a>
-        <a href="patrocinadores.html" data-i18n="nav_sponsors" aria-label="Patrocinadores"></a>
+        <a href="patrocinadores.html" class="active" data-i18n="nav_sponsors" aria-label="Patrocinadores"></a>
+        <a href="faq.html" class="nav-link" data-i18n="nav_faq">FAQ</a>
         <a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact" aria-label="Contacto"></a>
         
         <div class="mobile-lang-wrapper">
@@ -105,10 +111,10 @@
     <section class="page-hero compact-hero relative">
         <div class="hero-bg hero-bg-sponsors"></div>
         <div class="container relative z-10 text-center">
-            <span class="badge" data-i18n="sponsors_hero_badge"></span>
-            <h1 class="title-decor" data-i18n="sponsors_hero_title"></h1>
+            <span class="badge reveal fade-up" data-i18n="sponsors_hero_badge"></span>
+            <h1 class="title-decor reveal fade-up delay-100" data-i18n="sponsors_hero_title"></h1>
             
-            <div class="hero-desc-box reveal">
+            <div class="hero-desc-box reveal fade-up delay-200">
                 <p data-i18n="sponsors_hero_text"></p>
                 <p class="small-note" data-i18n="sponsors_idea_text"></p>
             </div>
@@ -119,10 +125,10 @@
         <div class="bg-fixed bg-dark-texture"></div>
         
         <div class="container relative z-10">
-            <h2 class="section-title text-center mb-80" data-i18n="sponsors_inst_title"></h2>
+            <h2 class="section-title text-center mb-80 reveal zoom-in" data-i18n="sponsors_inst_title"></h2>
             
-            <div class="institutions-grid reveal">
-                <div class="institution-card">
+            <div class="institutions-grid">
+                <div class="institution-card reveal from-left">
                     <div class="inst-header"><img src="assets/img/logo_campus_alcoy.jpg" alt="UPV" class="inst-logo"></div>
                     <div class="inst-body">
                         <h3>Universitat Politècnica de València (Campus Alcoy)</h3>
@@ -131,7 +137,7 @@
                     </div>
                 </div>
 
-                <div class="institution-card">
+                <div class="institution-card reveal from-right delay-200">
                     <div class="inst-header"><img src="assets/img/logo_generacion_espontanea.png" alt="Generación Espontánea" class="inst-logo"></div>
                     <div class="inst-body">
                         <h3>Generación Espontánea</h3>
@@ -147,22 +153,22 @@
         <div class="bg-fixed bg-dark-texture"></div>
         
         <div class="container relative z-10">
-            <h2 class="section-title text-center mb-80" data-i18n="sponsors_tech_title"></h2>
+            <h2 class="section-title text-center mb-80 reveal" data-i18n="sponsors_tech_title"></h2>
             
             <div class="clean-grid" id="sponsors-grid">
                 
-                <div class="clean-item reveal sponsor-trigger" 
+                <div class="clean-item reveal zoom-in sponsor-trigger" 
                      data-index="0"
                      data-name="Loctite" 
                      data-logo="assets/img/patro_loctite.png"
-                     data-link="https://www.henkel-adhesives.com/"
-                     data-insta="https://instagram.com/loctite" 
-                     data-linkedin="https://linkedin.com/company/loctite">
+                     data-link="https://next.henkel-adhesives.com"
+                     data-insta="https://www.instagram.com/loctiteglue/" 
+                     data-linkedin="https://www.linkedin.com/showcase/henkel-adhesives">
                     <span class="hidden-desc" data-i18n="sp_loctite_desc" hidden></span>
                     <img src="assets/img/patro_loctite.png" alt="Loctite">
                 </div>
 
-                <div class="clean-item reveal delay-100 sponsor-trigger" 
+                <div class="clean-item reveal zoom-in delay-100 sponsor-trigger" 
                      data-index="1"
                      data-name="Gurit" 
                      data-logo="assets/img/patro_gurit.png"
@@ -172,7 +178,7 @@
                     <img src="assets/img/patro_gurit.png" alt="Gurit">
                 </div>
 
-                <div class="clean-item reveal delay-200 sponsor-trigger"
+                <div class="clean-item reveal zoom-in delay-200 sponsor-trigger"
                      data-index="2"
                      data-name="TeXtreme" 
                      data-logo="assets/img/patro_textreme.png"
@@ -181,7 +187,7 @@
                     <img src="assets/img/patro_textreme.png" alt="TeXtreme">
                 </div>
 
-                <div class="clean-item reveal sponsor-trigger"
+                <div class="clean-item reveal zoom-in delay-300 sponsor-trigger"
                      data-index="3"
                      data-name="NZI Helmets" 
                      data-logo="assets/img/patro_nzihelmets2.png"
@@ -191,7 +197,7 @@
                     <img src="assets/img/patro_nzihelmets2.png" alt="NZI" onerror="this.src='assets/img/logo-placeholder.png'">
                 </div>
 
-                <div class="clean-item reveal delay-100 sponsor-trigger"
+                <div class="clean-item reveal zoom-in delay-100 sponsor-trigger"
                      data-index="4"
                      data-name="Cadenas Moblat" 
                      data-logo="assets/img/patro_cadenasmoblat.png"
@@ -200,7 +206,7 @@
                     <img src="assets/img/patro_cadenasmoblat.png" alt="Moblat" onerror="this.src='assets/img/logo-placeholder.png'">
                 </div>
 
-                <div class="clean-item reveal delay-200 sponsor-trigger"
+                <div class="clean-item reveal zoom-in delay-200 sponsor-trigger"
                      data-index="5"
                      data-name="Industrias Muvisa" 
                      data-logo="assets/img/patro_muvisa.png"
@@ -209,25 +215,25 @@
                     <img src="assets/img/patro_muvisa.png" alt="Muvisa" onerror="this.src='assets/img/logo-placeholder.png'">
                 </div>
 
-                <div class="clean-item reveal sponsor-trigger"
+                <div class="clean-item reveal zoom-in delay-300 sponsor-trigger"
                      data-index="6"
                      data-name="Xuquer" 
                      data-logo="assets/img/patro_xuquer.png"
-                     data-link="https://xuquer-sl.es/">
+                     data-link="https://xuquersl.com/">
                     <span class="hidden-desc" data-i18n="sp_xuquer_desc" hidden></span>
                     <img src="assets/img/patro_xuquer.png" alt="Xuquer" onerror="this.src='assets/img/logo-placeholder.png'">
                 </div>
 
-                <div class="clean-item reveal delay-100 sponsor-trigger"
+                <div class="clean-item reveal zoom-in delay-100 sponsor-trigger"
                      data-index="7"
                      data-name="Mecanizados XYZ" 
                      data-logo="assets/img/patro_mecanizados.jpeg"
-                     data-link="#">
+                     data-link="https://www.mecanizadosxyz.es/">
                     <span class="hidden-desc" data-i18n="sp_xyz_desc" hidden></span>
                     <img src="assets/img/patro_mecanizados.jpeg" alt="XYZ" onerror="this.src='assets/img/logo-placeholder.png'">
                 </div>
 
-                <div class="clean-item reveal delay-200 sponsor-trigger"
+                <div class="clean-item reveal zoom-in delay-200 sponsor-trigger"
                      data-index="8"
                      data-name="3Dconnexion" 
                      data-logo="assets/img/patro_3dconnexion.png"
@@ -251,7 +257,6 @@
                     <img id="modal-logo" src="" alt="Sponsor Logo">
                 </div>
                 <h3 id="modal-title">Nombre del Patrocinador</h3>
-                
                 <p id="modal-desc">Descripción detallada...</p>
                 
                 <div class="modal-socials">
@@ -269,9 +274,8 @@
     <section class="sponsor-cta relative">
         <div class="cta-bg bg-cta-collab"></div>
         <div class="container text-center relative z-10">
-            <h2 class="title-decor" data-i18n="cta_title"></h2>
-            <!--<p class="cta-text-container" data-i18n="cta_text"></p>-->
-            <a href="contactanos.html" class="btn-primary" data-i18n="btn_company" aria-label="Contactar"></a>
+            <h2 class="title-decor reveal fade-up" data-i18n="cta_title"></h2>
+            <a href="contactanos.html" class="btn-primary reveal fade-up delay-200" data-i18n="btn_company" aria-label="Contactar"></a>
         </div>
     </section>
 
@@ -283,7 +287,6 @@
                         <a href="https://www.upv.es/" target="_blank" rel="noopener noreferrer" aria-label="Visitar web de la UPV">
                             <img src="assets/img/logo_upv.png" alt="Logo UPV" class="footer-logo">
                         </a>
-
                         <a href="https://generacionespontanea.upv.es/" target="_blank" rel="noopener noreferrer" aria-label="Visitar web de Generación Espontánea">
                             <img src="assets/img/logo_generacion_espontanea_sinfondo.png" alt="Generación Espontánea" class="footer-logo"> 
                         </a>
@@ -293,36 +296,48 @@
                 <div class="footer-col links">
                     <h4 data-i18n="footer_sections"></h4>
                     <ul>
-                        <li><a href="index.html" data-i18n="nav_home" aria-label="Inicio"></a></li>
-                        <li><a href="historia.html" data-i18n="nav_history" aria-label="Historia"></a></li>
-                        <li><a href="patrocinadores.html" data-i18n="nav_sponsors" aria-label="Patrocinadores"></a></li>
+                    <li><a href="index.html" class="nav-link" data-i18n="nav_home" aria-label="Inicio"></a></li>
+                    <li><a href="historia.html" class="nav-link" data-i18n="nav_history" aria-label="Historia"></a></li>
+                    <li><a href="patrocinadores.html" class="nav-link active" data-i18n="nav_sponsors" aria-label="Patrocinadores"></a></li>
+                    <li><a href="faq.html" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
+                    <li><a href="contactanos.html" class="nav-link" data-i18n="nav_contact" aria-label="Contacto"></a></li>
                     </ul>
                 </div>
                 <div class="footer-col contact">
                     <h4 data-i18n="nav_contact"></h4>
-                    <p><i class="fa-solid fa-location-dot"></i> Pabellón Deportivo Georgina Blanes</p>
-                    <p>C/ Alarcón, 1, 03801 Alcoy (Alicante)</p>
-                    <p><i class="fa-solid fa-envelope"></i> ecomarathon@upv.es</p>
+                    <p><i class="fa-solid fa-location-dot"></i> <span data-i18n="footer_address_lab"></span></p>
+                    <p>C/ Alarcón, 1, 03801 Alcoy (Alicante) </p>
+                    <p style="margin-top: 15px;"><i class="fa-solid fa-envelope"></i> ecomarathon@upv.es</p>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 UPV Eco-Marathon Team.</p>
                 <div class="footer-socials">
                     <a href="https://www.instagram.com/upvecomarathon/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/upvecomarathon/" aria-label="Facebook"<i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/upvecomarathon/" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
                     <a href="https://es.linkedin.com/company/upv-ecomarathon-team" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                    
                 </div>
             </div>
         </div>
     </footer>
 
-    <<script src="assets/js/i18n.js"></script> 
+    <script src="assets/js/i18n.js"></script> 
+    <script src="assets/js/main.js" defer></script> 
 
-<script src="assets/js/main.js" defer></script> 
-
-</body>
-</html>
+    <div id="cookie-consent" class="cookie-consent-modal">
+        <div class="cookie-content-wrapper glass">
+            <button id="btn-close-cookies" class="cookie-close-btn" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+            <div class="cookie-header"><h4 data-i18n="cookie_title">Privacidad</h4></div>
+            <div class="cookie-body">
+                <p data-i18n="cookie_text">Utilizamos cookies para mejorar tu experiencia.</p>
+                <a href="cookies-policy.html" class="cookie-link" data-i18n="cookie_link">Leer Política Completa</a>
+            </div>
+            <div class="cookie-actions">
+                <button id="btn-reject-cookies" class="btn-cookie-secondary" data-i18n="cookie_reject">Rechazar</button>
+                <button id="btn-accept-cookies" class="btn-cookie-primary" data-i18n="cookie_accept">Aceptar</button>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

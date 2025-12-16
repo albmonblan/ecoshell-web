@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title data-i18n="nav_faq">FAQ y Normativa | UPV Eco-Marathon</title>
+    <meta name="description" content="Respuestas a dudas técnicas sobre el prototipo y resumen de la normativa oficial Shell Eco-Marathon 2026.">
+    
+    <meta property="og:title" content="FAQ y Normativa | UPV Eco-Marathon">
+    <meta property="og:description" content="Todo sobre la ingeniería de nuestro coche y las reglas de la competición.">
+    <meta property="og:image" content="https://upvecomarathon.webs.upv.es/assets/img/banter_coche.jpeg">
+    <meta property="og:url" content="https://upvecomarathon.webs.upv.es/faq.html">
+    <meta property="og:type" content="website">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicons/site.webmanifest">
+    <link rel="shortcut icon" href="assets/img/favicons/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/main.js" defer></script>
+
+    <style>
+        .hero-bg-faq {
+            background-image: url('assets/img/banter_coche.jpeg'); 
+            filter: grayscale(100%) brightness(30%);
+        }
+        .faq-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; align-items: start; }
+        .faq-category { margin-bottom: 50px; }
+        .faq-category h3 { 
+            color: var(--primary); border-bottom: 1px solid rgba(255,255,255,0.1); 
+            padding-bottom: 10px; margin-bottom: 25px; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 1px;
+        }
+        .accordion-item {
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 6px; margin-bottom: 10px; transition: 0.3s;
+        }
+        .accordion-item:hover { border-color: rgba(255, 209, 0, 0.2); }
+        .accordion-item.active { border-color: var(--primary); background: rgba(255,255,255,0.05); }
+        .accordion-header {
+            width: 100%; padding: 18px 25px; text-align: left; background: none; border: none;
+            color: white; font-family: var(--font-body); font-weight: 600; font-size: 1rem;
+            cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+        }
+        .accordion-header i { color: var(--text-muted); transition: 0.3s; }
+        .accordion-item.active .accordion-header i { transform: rotate(180deg); color: var(--primary); }
+        .accordion-content {
+            max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; border-top: 1px solid transparent;
+        }
+        .accordion-item.active .accordion-content { border-top-color: rgba(255,255,255,0.05); }
+        .accordion-content p { padding: 20px 25px; color: var(--text-muted); line-height: 1.6; font-size: 0.95rem; }
+        
+        .rules-card {
+            background: #0f161d; border: 1px solid var(--primary); border-radius: 8px; padding: 30px; position: sticky; top: 120px;
+        }
+        .rules-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .rules-header h3 { margin: 0; font-size: 1.8rem; }
+        .rules-year { font-size: 2.5rem; font-weight: 800; color: rgba(255,255,255,0.1); font-family: var(--font-heading); line-height: 1; }
+        .rules-list li { margin-bottom: 15px; padding-left: 20px; position: relative; font-size: 0.9rem; color: var(--text-muted); }
+        .rules-list li::before { content: '•'; color: var(--primary); font-weight: bold; position: absolute; left: 0; font-size: 1.2rem; line-height: 1; }
+        .rules-intro { font-size: 0.95rem; line-height: 1.6; }
+        .footer-brand-row { display: flex; gap: 15px; align-items: center; margin-bottom: 15px; }
+        .rules-btn { text-align: center; display: block; }
+        @media (max-width: 992px) {
+            .faq-grid { grid-template-columns: 1fr; }
+            .rules-card { position: static; margin-top: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header glass">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html" aria-label="Ir al inicio"><img src="assets/img/ECOMARATHON_BANNER_SINFONDO2.png" alt="Logo UPV Eco-Marathon"></a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link" data-i18n="nav_home">Inicio</a></li>
+                    <li><a href="historia.html" class="nav-link" data-i18n="nav_history">Historia</a></li>
+                    <li><a href="patrocinadores.html" class="nav-link" data-i18n="nav_sponsors">Patrocinadores</a></li>
+                    <li><a href="faq.html" class="nav-link active" data-i18n="nav_faq">FAQ</a></li>
+                    <li><a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="custom-lang-selector">
+                <button class="lang-btn" id="lang-btn" aria-label="Cambiar idioma">
+                    <img id="current-flag" src="https://flagcdn.com/w40/es.png" alt="Flag" class="lang-flag-icon"> 
+                    <span id="current-lang-code">ES</span> 
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                
+                <div class="lang-dropdown" id="lang-dropdown">
+                    <div class="lang-option" data-lang="es">
+                        <img src="https://flagcdn.com/w40/es.png" class="lang-flag-icon" alt="ES"> Español
+                    </div>
+                    <div class="lang-option" data-lang="en">
+                        <img src="https://flagcdn.com/w40/gb.png" class="lang-flag-icon" alt="EN"> English
+                    </div>
+                    <div class="lang-option" data-lang="fr">
+                        <img src="https://flagcdn.com/w40/fr.png" class="lang-flag-icon" alt="FR"> Français
+                    </div>
+                    <div class="lang-option" data-lang="de">
+                        <img src="https://flagcdn.com/w40/de.png" class="lang-flag-icon" alt="DE"> Deutsch
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-toggle"><i class="fa-solid fa-bars"></i></div>
+        </div>
+    </header>
+
+    <div class="mobile-nav-overlay" id="mobile-overlay"></div>
+    <nav class="mobile-nav-menu" id="mobile-menu">
+        <a href="index.html" data-i18n="nav_home">Inicio</a>
+        <a href="historia.html" data-i18n="nav_history">Historia</a>
+        <a href="patrocinadores.html" data-i18n="nav_sponsors">Patrocinadores</a>
+        <a href="faq.html" class="active" data-i18n="nav_faq">FAQ</a>
+        <a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact">Contacto</a>
+        
+        <div class="mobile-lang-wrapper">
+            <label data-i18n="menu_lang_label">Idioma</label>
+            <select id="mobile-lang-select" class="mobile-lang-select" aria-label="Seleccionar idioma">
+                <option value="es">🇪🇸 Español</option>
+                <option value="en">🇬🇧 English</option>
+                <option value="fr">🇫🇷 Français</option>
+                <option value="de">🇩🇪 Deutsch</option>
+            </select>
+        </div>
+    </nav> 
+
+    <section class="page-hero compact-hero relative">
+        <div class="hero-bg hero-bg-faq"></div>
+        <div class="container relative z-10 text-center">
+            <span class="badge reveal fade-up" data-i18n="faq_badge">DATOS TÉCNICOS</span>
+            <h1 class="title-decor reveal fade-up delay-100" data-i18n="faq_title">Preguntas <span class="text-gradient">Frecuentes</span></h1>
+            <div class="hero-desc-box reveal fade-up delay-200">
+                <p data-i18n="faq_hero_desc">Ingeniería al detalle. Todo sobre nuestro prototipo, especificaciones técnicas y la normativa Shell Eco-Marathon 2026.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding relative">
+        <div class="bg-fixed bg-dark-texture"></div>
+        <div class="container relative z-10">
+            
+            <div class="faq-grid">
+                
+                <div class="faq-content">
+                    
+                    <div class="faq-category reveal from-left">
+                        <h3 data-i18n="cat_chassis">Chasis y Aerodinámica</h3>
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span data-i18n="q_material">¿De qué material está compuesto el monocasco?</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content"><p data-i18n="a_material"></p></div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span data-i18n="q_weight">¿Cuál es el peso total del vehículo?</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content"><p data-i18n="a_weight"></p></div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span data-i18n="q_position">¿Cuál es la posición de conducción?</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content"><p data-i18n="a_position"></p></div>
+                        </div>
+                    </div>
+
+                    <div class="faq-category reveal from-left delay-100">
+                        <h3 data-i18n="cat_engine">Motorización</h3>
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span data-i18n="q_engine_spec">¿Qué especificaciones tiene el motor?</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content"><p data-i18n="a_engine_spec"></p></div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span data-i18n="q_fuel">¿Qué combustible utiliza?</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content"><p data-i18n="a_fuel"></p></div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span data-i18n="q_performance">¿Qué velocidad alcanza en pista?</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content"><p data-i18n="a_performance"></p></div>
+                        </div>
+                    </div>
+
+                    <div class="faq-category reveal from-left delay-200">
+                        <h3 data-i18n="cat_electronics">Sistemas Electrónicos</h3>
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span data-i18n="q_ecu">¿Cómo gestionáis la electrónica?</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content"><p data-i18n="a_ecu"></p></div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span data-i18n="q_pcb">¿Es complejo el cableado?</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content"><p data-i18n="a_pcb"></p></div>
+                        </div>
+                    </div>
+
+                    <div class="faq-category reveal from-left delay-300">
+                        <h3 data-i18n="cat_steering">Dirección y Control</h3>
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span data-i18n="q_steering_mat">¿Materiales de dirección y llantas?</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content"><p data-i18n="a_steering_mat"></p></div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span data-i18n="q_steering_angle">¿Tiene mucho ángulo de giro?</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content"><p data-i18n="a_steering_angle"></p></div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span data-i18n="q_wheel_buttons">¿Qué controles tiene el volante?</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content"><p data-i18n="a_wheel_buttons"></p></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="sidebar-sticky reveal from-right delay-200">
+                    <div class="rules-card">
+                        <div class="rules-header">
+                            <h3 data-i18n="rules_title">Reglamento</h3>
+                            <span class="rules-year">2026</span>
+                        </div>
+                        <p class="mb-40 rules-intro" data-i18n="rules_intro">Resumen de las actualizaciones clave del Capítulo I para la temporada oficial.</p>
+                        
+                        <ul class="rules-list">
+                            <li data-i18n="rule_1"><strong>Campeonato Global 2027:</strong> La temporada 2026 servirá de clasificación para el primer Campeonato Mundial multidisciplinar.</li>
+                            <li data-i18n="rule_2"><strong>Conducción Autónoma:</strong> Se abre la categoría a vehículos 'Urban Concept' y 'Prototype'.</li>
+                            <li data-i18n="rule_3"><strong>Hidrógeno (H2 ICE):</strong> Oportunidades de demostración para motores de combustión interna de hidrógeno en todos los eventos.</li>
+                            <li data-i18n="rule_4"><strong>Telemetría Propia:</strong> Se elimina el kit de telemetría oficial. Los equipos deben desarrollar sus propios sistemas de datos.</li>
+                            <li data-i18n="rule_5"><strong>Registro Multiequipo:</strong> Se permite registrar múltiples vehículos por institución si son de diferente categoría o energía.</li>
+                        </ul>
+
+                        <div class="mt-30">
+                            <a href="https://www.shellecomarathon.com/about/global-rules.html" target="_blank" class="btn-primary-outline full-width rules-btn">
+                                <span data-i18n="btn_rules_full">Ver Normativa Completa</span> <i class="fa-solid fa-file-pdf"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col brand">
+                    <div class="footer-brand-row">
+                        <a href="https://www.upv.es/" target="_blank" rel="noopener noreferrer" aria-label="Web UPV">
+                            <img src="assets/img/logo_upv.png" alt="Logo UPV" class="footer-logo">
+                        </a>
+                        <a href="https://generacionespontanea.upv.es/" target="_blank" rel="noopener noreferrer" aria-label="Web Generación Espontánea">
+                            <img src="assets/img/logo_generacion_espontanea_sinfondo.png" alt="Generación Espontánea" class="footer-logo">
+                        </a>
+                    </div>
+                    <p data-i18n="footer_desc"></p>
+                </div>
+                <div class="footer-col links">
+                    <h4 data-i18n="footer_sections">Secciones</h4>
+                    <ul>
+                    <li><a href="index.html" class="nav-link" data-i18n="nav_home" aria-label="Inicio"></a></li>
+                    <li><a href="historia.html" class="nav-link" data-i18n="nav_history" aria-label="Historia"></a></li>
+                    <li><a href="patrocinadores.html" class="nav-link" data-i18n="nav_sponsors" aria-label="Patrocinadores"></a></li>
+                    <li><a href="faq.html" class="nav-link active" data-i18n="nav_faq">FAQ</a></li>
+                    <li><a href="contactanos.html" class="nav-link" data-i18n="nav_contact" aria-label="Contacto"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact">
+                    <h4 data-i18n="nav_contact"></h4>
+                    <p><i class="fa-solid fa-location-dot"></i> <span data-i18n="footer_address_lab"></span></p>
+                    <p>C/ Alarcón, 1, 03801 Alcoy (Alicante) </p>
+                    <p style="margin-top: 5px;"><i class="fa-solid fa-envelope"></i> ecomarathon@upv.es</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 UPV Eco-Marathon Team.</p>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/upvecomarathon/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/upvecomarathon/" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://es.linkedin.com/company/upv-ecomarathon-team" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-consent" class="cookie-consent-modal">
+        <div class="cookie-content-wrapper glass">
+            <button id="btn-close-cookies" class="cookie-close-btn" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="cookie-header">
+                <h4 data-i18n="cookie_title">Privacidad</h4>
+            </div>
+            <div class="cookie-body">
+                <p data-i18n="cookie_text">
+                    Utilizamos cookies para mejorar tu experiencia y analizar nuestro tráfico. No compartimos tus datos personales.
+                </p>
+                <a href="cookies-policy.html" class="cookie-link" data-i18n="cookie_link">Leer Política Completa</a>
+            </div>
+            <div class="cookie-actions">
+                <button id="btn-reject-cookies" class="btn-cookie-secondary" data-i18n="cookie_reject">Rechazar</button>
+                <button id="btn-accept-cookies" class="btn-cookie-primary" data-i18n="cookie_accept">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Script específico para los acordeones
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordions = document.querySelectorAll('.accordion-header');
+            accordions.forEach(acc => {
+                acc.addEventListener('click', function() {
+                    const item = this.parentElement;
+                    const content = this.nextElementSibling;
+                    
+                    // Cerrar otros
+                    document.querySelectorAll('.accordion-item').forEach(other => {
+                        if(other !== item && other.classList.contains('active')) {
+                            other.classList.remove('active');
+                            other.querySelector('.accordion-content').style.maxHeight = null;
+                        }
+                    });
+
+                    // Alternar actual
+                    item.classList.toggle('active');
+                    if (item.classList.contains('active')) {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    } else {
+                        content.style.maxHeight = null;
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

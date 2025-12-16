@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="cp_title_meta">Política de Cookies | UPV Eco-Marathon</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicons/site.webmanifest">
+    <link rel="shortcut icon" href="assets/img/favicons/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/main.js" defer></script>
+
+    <style>
+        .legal-content {
+            background: var(--bg-card);
+            padding: 60px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .legal-content h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 20px;
+        }
+        .legal-content h2 {
+            color: white;
+            font-size: 1.5rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 3px solid var(--primary);
+            padding-left: 15px;
+        }
+        .legal-content p, .legal-content li {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            text-align: justify;
+        }
+        .legal-content ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+        .legal-content li {
+            position: relative;
+            padding-left: 20px;
+        }
+        .legal-content li::before {
+            content: "▹";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+        .legal-content strong { color: white; }
+        
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 50px;
+        }
+        .btn-back:hover { 
+            color: var(--primary); 
+            border-color: var(--primary);
+            background: rgba(255, 209, 0, 0.05);
+        }
+
+        /* TABLA DE COOKIES */
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .cookie-table th, .cookie-table td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            text-align: left;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .cookie-table th {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+        .cookie-table tr:last-child td { border-bottom: none; }
+        
+        @media (max-width: 768px) {
+            .legal-content { padding: 30px 20px; }
+            .legal-content h1 { font-size: 2rem; }
+            .cookie-table { display: block; overflow-x: auto; white-space: nowrap; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header glass">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html"><img src="assets/img/ECOMARATHON_BANNER_SINFONDO2.png" alt="Logo UPV Eco-Marathon"></a>
+            </div>
+            
+            <div class="custom-lang-selector">
+                <button class="lang-btn" id="lang-btn" aria-label="Cambiar idioma">
+                    <img id="current-flag" src="https://flagcdn.com/w40/es.png" alt="Flag" class="lang-flag-icon"> 
+                    <span id="current-lang-code">ES</span> <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="lang-dropdown" id="lang-dropdown">
+                    <div class="lang-option" data-lang="es"><img src="https://flagcdn.com/w40/es.png" class="lang-flag-icon" alt="Bandera de España"> Español</div>
+                    <div class="lang-option" data-lang="en"><img src="https://flagcdn.com/w40/gb.png" class="lang-flag-icon" alt="Bandera del Reino Unido"> English</div>
+                    <div class="lang-option" data-lang="fr"><img src="https://flagcdn.com/w40/fr.png" class="lang-flag-icon" alt="Bandera de Francia"> Français</div>
+                    <div class="lang-option" data-lang="de"><img src="https://flagcdn.com/w40/de.png" class="lang-flag-icon" alt="Bandera de Alemania"> Deutsch</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="section-padding relative">
+        <div class="bg-fixed bg-dark-texture"></div>
+        <div class="container relative z-10">
+            
+            <a href="index.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="cp_back">Volver a Inicio</span></a>
+
+            <div class="legal-content reveal">
+                <h1 data-i18n="cp_h1">Política de Cookies</h1>
+                
+                <p data-i18n="cp_intro">En cumplimiento con lo dispuesto en el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo (RGPD) y el artículo 22.2 de la Ley 34/2002 de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), UPV Eco-Marathon Team informa sobre la política de recogida y tratamiento de cookies y tecnologías similares de almacenamiento local.</p>
+
+                <h2 data-i18n="cp_h2_1">1. Definición y Función de las Cookies</h2>
+                <p data-i18n="cp_p_1">Una cookie es un fichero que se descarga en su dispositivo al acceder a determinadas páginas web. Las cookies permiten a una página web, entre otras cosas, almacenar y recuperar información sobre los hábitos de navegación de un usuario o de su equipo y, dependiendo de la información que contengan, pueden utilizarse para reconocer al usuario.</p>
+                <p data-i18n="cp_p_1_2">Esta web utiliza también <strong>Almacenamiento Local (LocalStorage)</strong>, una tecnología estándar de la industria que permite almacenar datos localmente en el navegador web del usuario, similar a las cookies, pero con mayor capacidad y sin fecha de expiración automática.</p>
+
+                <h2 data-i18n="cp_h2_2">2. Tipología de Cookies Utilizadas</h2>
+                <p data-i18n="cp_p_2">A continuación, detallamos las tecnologías de almacenamiento utilizadas en este sitio web:</p>
+                
+                <ul>
+                    <li data-i18n="cp_li_1"><strong>Cookies Técnicas y Estrictamente Necesarias:</strong> Son aquellas que permiten al usuario la navegación a través de la página web y la utilización de las diferentes opciones o servicios que en ella existan, como el control de tráfico, la identificación de sesión o la configuración de idioma.</li>
+                    <li data-i18n="cp_li_2"><strong>Cookies de Terceros:</strong> Son aquellas que se envían al equipo terminal del usuario desde un equipo o dominio que no es gestionado por el editor, sino por otra entidad que trata los datos obtenidos. En nuestro caso, Google Maps.</li>
+                </ul>
+
+                <h3 data-i18n="cp_h3_table">Detalle Técnico</h3>
+                <table class="cookie-table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="cp_th_name">Nombre</th>
+                            <th data-i18n="cp_th_provider">Proveedor</th>
+                            <th data-i18n="cp_th_type">Tipo</th>
+                            <th data-i18n="cp_th_purpose">Finalidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>upv-lang</td>
+                            <td>UPV Eco-Marathon</td>
+                            <td data-i18n="cp_td_local">LocalStorage</td>
+                            <td data-i18n="cp_td_lang_desc">Persistencia de la preferencia de idioma seleccionada por el usuario (ES/EN/FR/DE).</td>
+                        </tr>
+                        <tr>
+                            <td>upv_consent_status</td>
+                            <td>UPV Eco-Marathon</td>
+                            <td data-i18n="cp_td_local">LocalStorage</td>
+                            <td data-i18n="cp_td_consent_desc">Almacena el estado del consentimiento de cookies (Aceptado/Rechazado) para no mostrar el aviso nuevamente.</td>
+                        </tr>
+                        <tr>
+                            <td>NID, 1P_JAR, CONSENT</td>
+                            <td>Google LLC</td>
+                            <td data-i18n="cp_td_cookie">Cookie (Terceros)</td>
+                            <td data-i18n="cp_td_google_desc">Utilizadas por el servicio de Google Maps integrado en la sección de contacto para la visualización de mapas y gestión de preferencias.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 data-i18n="cp_h2_3">3. Gestión y Desactivación</h2>
+                <p data-i18n="cp_p_3">Puede usted permitir, bloquear o eliminar las cookies instaladas en su equipo mediante la configuración de las opciones del navegador instalado en su ordenador:</p>
+                <ul>
+                    <li><strong>Google Chrome:</strong> Configuración > Privacidad y seguridad > Cookies y otros datos de sitios.</li>
+                    <li><strong>Mozilla Firefox:</strong> Opciones > Privacidad y Seguridad > Cookies y datos del sitio.</li>
+                    <li><strong>Safari:</strong> Preferencias > Privacidad.</li>
+                    <li><strong>Microsoft Edge:</strong> Configuración > Cookies y permisos del sitio.</li>
+                </ul>
+
+                <h2 data-i18n="cp_h2_4">4. Transferencias Internacionales</h2>
+                <p data-i18n="cp_p_4">Las cookies de terceros (Google Maps) pueden implicar la transferencia de datos a Estados Unidos. Google está adherido al Marco de Privacidad de Datos UE-EE.UU., garantizando un nivel adecuado de protección de datos personales.</p>
+
+                <h2 data-i18n="cp_h2_5">5. Actualización</h2>
+                <p data-i18n="cp_p_5">El equipo UPV Eco-Marathon se reserva el derecho a modificar esta Política de Cookies en función de nuevas exigencias legislativas, reglamentarias, o con la finalidad de adaptar dicha política a las instrucciones dictadas por la Agencia Española de Protección de Datos.</p>
+
+                <p style="margin-top: 40px; font-size: 0.9rem; opacity: 0.7; font-family: monospace;"><span data-i18n="cp_last_update">Última actualización</span>: <span data-i18n="cp_date">Diciembre 2025</span> </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container" style="text-align: center;">
+            <p>© 2025 UPV Eco-Marathon Team.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

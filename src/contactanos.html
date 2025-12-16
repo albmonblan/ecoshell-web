@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title data-i18n="nav_contact">Contacto | UPV Eco-Marathon</title>
+    <meta name="description" content="Ponte en contacto con el equipo UPV Eco-Marathon. Formulario para estudiantes, empresas y prensa. Ubicación en Campus de Alcoy.">
     
-    <meta name="description" content="Ponte en contacto con el equipo UPV Eco-Marathon. Estudiantes, empresas y prensa.">
-    <meta property="og:title" content="Contacto | UPV Eco-Marathon Team">
-    <meta property="og:image" content="assets/img/banter_coche.jpeg">
+    <meta property="og:title" content="Contacta con Nosotros | UPV Eco-Marathon">
+    <meta property="og:description" content="¿Quieres unirte o patrocinarnos? Escríbenos.">
+    <meta property="og:image" content="https://upvecomarathon.webs.upv.es/assets/img/contactar.jpg">
+    <meta property="og:url" content="https://upvecomarathon.webs.upv.es/contactanos.html">
     <meta property="og:type" content="website">
-    
+
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
     <link rel="manifest" href="assets/img/favicons/site.webmanifest">
     <link rel="shortcut icon" href="assets/img/favicons/favicon.ico">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -35,15 +39,9 @@
             background-image: url('assets/img/future.jpg');
             filter: grayscale(100%) brightness(50%);
         }
-        .footer-brand-row {
-            display: flex; 
-            gap: 15px; 
-            align-items: center; 
-            margin-bottom: 15px;
-        }
-        .map-iframe {
-            border: 0;
-        }
+        .footer-brand-row { display: flex; gap: 15px; align-items: center; margin-bottom: 15px; }
+        .map-iframe { border: 0; }
+        .footer-contact-email { margin-top: 15px; }
     </style>
 </head>
 <body>
@@ -51,27 +49,39 @@
     <header class="main-header glass">
         <div class="container header-content">
             <div class="logo">
-                <a href="index.html" aria-label="Ir al inicio"><img src="assets/img/logo_upv_ecomarathon.png" alt="Logo UPV Eco-Marathon"></a>
+                <a href="index.html" aria-label="Ir al inicio"><img src="assets/img/ECOMARATHON_BANNER_SINFONDO2.png" alt="Logo UPV Eco-Marathon"></a>
             </div>
             
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html" class="nav-link" data-i18n="nav_home" aria-label="Inicio"></a></li>
-                    <li><a href="historia.html" class="nav-link" data-i18n="nav_history" aria-label="Historia"></a></li>
-                    <li><a href="patrocinadores.html" class="nav-link" data-i18n="nav_sponsors" aria-label="Patrocinadores"></a></li>
-                    <li><a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact" aria-label="Contacto"></a></li>
+                    <li><a href="index.html" class="nav-link" data-i18n="nav_home">Inicio</a></li>
+                    <li><a href="historia.html" class="nav-link" data-i18n="nav_history">Historia</a></li>
+                    <li><a href="patrocinadores.html" class="nav-link" data-i18n="nav_sponsors">Patrocinadores</a></li>
+                    <li><a href="faq.html" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
+                    <li><a href="contactanos.html" class="btn-primary-outline active" data-i18n="nav_contact">Contacto</a></li>
                 </ul>
             </nav>
 
             <div class="custom-lang-selector">
                 <button class="lang-btn" id="lang-btn" aria-label="Cambiar idioma">
-                    <span id="current-flag">🇪🇸</span> <span id="current-lang-code">ES</span> <i class="fa-solid fa-chevron-down"></i>
+                    <img id="current-flag" src="https://flagcdn.com/w40/es.png" alt="Flag" class="lang-flag-icon"> 
+                    <span id="current-lang-code">ES</span> 
+                    <i class="fa-solid fa-chevron-down"></i>
                 </button>
+                
                 <div class="lang-dropdown" id="lang-dropdown">
-                    <div class="lang-option" data-lang="es"><span>🇪🇸</span> Español</div>
-                    <div class="lang-option" data-lang="en"><span>🇬🇧</span> English</div>
-                    <div class="lang-option" data-lang="fr"><span>🇫🇷</span> Français</div>
-                    <div class="lang-option" data-lang="de"><span>🇩🇪</span> Deutsch</div>
+                    <div class="lang-option" data-lang="es">
+                        <img src="https://flagcdn.com/w40/es.png" class="lang-flag-icon" alt="ES"> Español
+                    </div>
+                    <div class="lang-option" data-lang="en">
+                        <img src="https://flagcdn.com/w40/gb.png" class="lang-flag-icon" alt="EN"> English
+                    </div>
+                    <div class="lang-option" data-lang="fr">
+                        <img src="https://flagcdn.com/w40/fr.png" class="lang-flag-icon" alt="FR"> Français
+                    </div>
+                    <div class="lang-option" data-lang="de">
+                        <img src="https://flagcdn.com/w40/de.png" class="lang-flag-icon" alt="DE"> Deutsch
+                    </div>
                 </div>
             </div>
 
@@ -84,7 +94,8 @@
         <a href="index.html" data-i18n="nav_home" aria-label="Inicio"></a>
         <a href="historia.html" data-i18n="nav_history" aria-label="Historia"></a>
         <a href="patrocinadores.html" data-i18n="nav_sponsors" aria-label="Patrocinadores"></a>
-        <a href="contactanos.html" class="btn-primary-outline" data-i18n="nav_contact" aria-label="Contacto"></a>
+        <a href="faq.html" class="nav-link" data-i18n="nav_faq">FAQ</a>
+        <a href="contactanos.html" class="btn-primary-outline active" data-i18n="nav_contact" aria-label="Contacto"></a>
         
         <div class="mobile-lang-wrapper">
             <label data-i18n="menu_lang_label"></label>
@@ -100,9 +111,9 @@
     <section class="page-hero small-hero">
         <div class="hero-bg hero-bg-contact"></div>
         <div class="container relative z-10 text-center">
-            <span class="badge" data-i18n="contact_hero_badge"></span>
-            <h1 class="title-decor" data-i18n="contact_hero_title"></h1>
-            <div class="hero-desc-box reveal">
+            <span class="badge reveal fade-up" data-i18n="contact_hero_badge"></span>
+            <h1 class="title-decor reveal fade-up delay-100" data-i18n="contact_hero_title"></h1>
+            <div class="hero-desc-box reveal fade-up delay-200">
                 <p data-i18n="contact_hero_text"></p>
             </div>
         </div>
@@ -113,15 +124,49 @@
 
         <div class="container relative z-10">
             
-            <div class="contact-intro-mobile reveal">
+            <div class="contact-intro-mobile reveal fade-up">
                 <h3 data-i18n="contact_form_title"></h3>
                 <p class="info-intro" data-i18n="contact_form_intro"></p>
             </div>
 
             <div class="contact-grid">
                 
-                <div class="contact-form-wrapper glass reveal">
-                    <form action="#" class="contact-form">
+                <div class="contact-info reveal from-left">
+                    
+                    <div class="desktop-intro">
+                        <h3 data-i18n="contact_form_title"></h3>
+                        <p class="info-intro" data-i18n="contact_form_intro"></p>
+                    </div>
+
+                    <div class="info-items">
+                        <div class="info-item">
+                            <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h4 data-i18n="contact_loc_title"></h4>
+                                <p>Pabellón Deportivo Georgina Blanes<br>C/ Alarcón, 1, 03801 Alcoy (Alicante)</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <h4 data-i18n="contact_email_title"></h4>
+                                <p><a href="mailto:ecomarathon@upv.es" aria-label="Enviar email a ecomarathon@upv.es">ecomarathon@upv.es</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-container reveal zoom-in delay-200">
+                        <iframe src="https://maps.google.com/maps?q=Campus%20de%20Alcoy%20UPV&t=&z=15&ie=UTF8&iwloc=&output=embed" class="map-iframe" width="100%" height="300" allowfullscreen="" loading="lazy" title="Mapa de ubicación"></iframe>
+                    </div>
+
+                    <div class="backup-link mt-30 reveal fade-up delay-300">
+                        <p class="text-sm text-muted" data-i18n="contact_backup"></p>
+                        <a href="https://forms.gle/oeFr1eyUQM4R5pMW8" target="_blank" class="text-link-yellow" aria-label="Abrir formulario de Google"><span data-i18n="contact_backup_link"></span> <i class="fa-solid fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper glass reveal from-right delay-200">
+                    <form action="enviar.php" method="POST" class="contact-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="nombre" data-i18n="form_name"></label>
@@ -167,40 +212,6 @@
                     </form>
                 </div>
 
-                <div class="contact-info reveal">
-                    
-                    <div class="desktop-intro">
-                        <h3 data-i18n="contact_form_title"></h3>
-                        <p class="info-intro" data-i18n="contact_form_intro"></p>
-                    </div>
-
-                    <div class="info-items">
-                        <div class="info-item">
-                            <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
-                            <div>
-                                <h4 data-i18n="contact_loc_title"></h4>
-                                <p>Pabellón Deportivo Georgina Blanes<br>C/ Alarcón, 1, 03801 Alcoy (Alicante)</p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
-                            <div>
-                                <h4 data-i18n="contact_email_title"></h4>
-                                <p><a href="mailto:ecomarathon@upv.es" aria-label="Enviar email a ecomarathon@upv.es">ecomarathon@upv.es</a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="map-container">
-                        <iframe src="https://maps.google.com/maps?q=Campus%20de%20Alcoy%20UPV&t=&z=15&ie=UTF8&iwloc=&output=embed" class="map-iframe" width="100%" height="300" allowfullscreen="" loading="lazy" title="Mapa de ubicación"></iframe>
-                    </div>
-
-                    <div class="backup-link mt-30">
-                        <p class="text-sm text-muted" data-i18n="contact_backup"></p>
-                        <a href="https://forms.gle/oeFr1eyUQM4R5pMW8" target="_blank" class="text-link-yellow" aria-label="Abrir formulario de Google"><span data-i18n="contact_backup_link"></span> <i class="fa-solid fa-external-link-alt"></i></a>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
@@ -223,20 +234,22 @@
                 <div class="footer-col links">
                     <h4 data-i18n="footer_sections"></h4>
                     <ul>
-                        <li><a href="index.html" data-i18n="nav_home" aria-label="Inicio"></a></li>
-                        <li><a href="historia.html" data-i18n="nav_history" aria-label="Historia"></a></li>
-                        <li><a href="patrocinadores.html" data-i18n="nav_sponsors" aria-label="Patrocinadores"></a></li>
+                    <li><a href="index.html" class="nav-link" data-i18n="nav_home" aria-label="Inicio"></a></li>
+                    <li><a href="historia.html" class="nav-link" data-i18n="nav_history" aria-label="Historia"></a></li>
+                    <li><a href="patrocinadores.html" class="nav-link" data-i18n="nav_sponsors" aria-label="Patrocinadores"></a></li>
+                    <li><a href="faq.html" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
+                    <li><a href="contactanos.html" class="nav-link" data-i18n="nav_contact" aria-label="Contacto"></a></li>
                     </ul>
                 </div>
                 <div class="footer-col contact">
                     <h4 data-i18n="nav_contact"></h4>
-                    <p><i class="fa-solid fa-location-dot"></i> Pabellón Deportivo Georgina Blanes</p>
-                    <p>C/ Alarcón, 1, 03801 Alcoy (Alicante)</p>
-                    <p><i class="fa-solid fa-envelope"></i> ecomarathon@upv.es</p>
+                    <p><i class="fa-solid fa-location-dot"></i> <span data-i18n="footer_address_lab"></span></p>
+                    <p>C/ Alarcón, 1, 03801 Alcoy (Alicante) </p>
+                    <p class="footer-contact-email"><i class="fa-solid fa-envelope"></i> ecomarathon@upv.es</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 UPV Eco-Marathon Team.</p>
+                <p>© 2025 UPV Eco-Marathon Team.</p>
                 <div class="footer-socials">
                     <a href="https://www.instagram.com/upvecomarathon/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.facebook.com/upvecomarathon/" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
@@ -246,10 +259,36 @@
         </div>
     </footer>
 
+    <div id="cookie-consent" class="cookie-consent-modal">
+        <div class="cookie-content-wrapper glass">
+            <button id="btn-close-cookies" class="cookie-close-btn" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+            <div class="cookie-header"><h4 data-i18n="cookie_title">Privacidad</h4></div>
+            <div class="cookie-body">
+                <p data-i18n="cookie_text">Utilizamos cookies para mejorar tu experiencia.</p>
+                <a href="cookies-policy.html" class="cookie-link" data-i18n="cookie_link">Leer Política Completa</a>
+            </div>
+            <div class="cookie-actions">
+                <button id="btn-reject-cookies" class="btn-cookie-secondary" data-i18n="cookie_reject">Rechazar</button>
+                <button id="btn-accept-cookies" class="btn-cookie-primary" data-i18n="cookie_accept">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
     <script src="assets/js/i18n.js"></script> 
+    <script src="assets/js/main.js" defer></script> 
 
-<script src="assets/js/main.js" defer></script> 
+    <script>
+        // Detectar si el correo se envió correctamente
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get('status');
 
+        if (status === 'success') {
+            alert("¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.");
+            window.history.replaceState({}, document.title, window.location.pathname);
+        } else if (status === 'error_server') {
+            alert("Hubo un error al enviar el mensaje. Por favor, inténtalo más tarde o escribe directamente a ecomarathon@upv.es");
+        }
+    </script>
 
 </body>
 </html>
